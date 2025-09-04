@@ -1,0 +1,31 @@
+=== PALABRAS ORDENADAS ALFABÉTICAMENTE ===
+Archivo fuente: 455_clean.txt
+Total de palabras únicas: 25
+Total de palabras: 30
+--------------------------------------------------
+
+aacute                         (1 veces)
+argelia                        (1 veces)
+chile                          (1 veces)
+de                             (2 veces)
+del                            (1 veces)
+eacute                         (2 veces)
+en                             (1 veces)
+est                            (1 veces)
+estadounidense                 (1 veces)
+exploraci                      (1 veces)
+golfo                          (1 veces)
+la                             (1 veces)
+maxus                          (2 veces)
+nez                            (1 veces)
+oacute                         (2 veces)
+otras                          (1 veces)
+participaciones                (1 veces)
+per                            (1 veces)
+realizando                     (1 veces)
+regi                           (1 veces)
+tambi                          (1 veces)
+tareas                         (1 veces)
+uacute                         (2 veces)
+xico                           (1 veces)
+ypf                            (1 veces)

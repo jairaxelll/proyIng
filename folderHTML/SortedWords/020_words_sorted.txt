@@ -1,0 +1,35 @@
+=== PALABRAS ORDENADAS ALFABÉTICAMENTE ===
+Archivo fuente: 020_clean.txt
+Total de palabras únicas: 29
+Total de palabras: 44
+--------------------------------------------------
+
+abb                            (2 veces)
+an                             (2 veces)
+and                            (1 veces)
+april                          (1 veces)
+are                            (1 veces)
+copy                           (1 veces)
+copyright                      (1 veces)
+dispenser                      (2 veces)
+front                          (2 veces)
+glue                           (2 veces)
+home                           (1 veces)
+in                             (2 veces)
+irb6000                        (2 veces)
+last                           (1 veces)
+ltd                            (2 veces)
+manipulating                   (2 veces)
+of                             (3 veces)
+page                           (1 veces)
+part                           (2 veces)
+pedastal                       (2 veces)
+registered                     (1 veces)
+return                         (1 veces)
+revision                       (1 veces)
+robot                          (2 veces)
+robotrak                       (1 veces)
+simulations                    (2 veces)
+to                             (1 veces)
+trademarks                     (1 veces)
+workspace                      (1 veces)

@@ -1,0 +1,30 @@
+=== PALABRAS ORDENADAS ALFABÉTICAMENTE ===
+Archivo fuente: hard_clean.txt
+Total de palabras únicas: 24
+Total de palabras: 25
+--------------------------------------------------
+
+designed                       (1 veces)
+file                           (1 veces)
+gauch                          (1 veces)
+handle                         (1 veces)
+has                            (1 veces)
+home                           (1 veces)
+how                            (1 veces)
+html                           (1 veces)
+in                             (1 veces)
+information                    (1 veces)
+is                             (1 veces)
+it                             (1 veces)
+page                           (1 veces)
+ph                             (1 veces)
+retrieval                      (1 veces)
+see                            (1 veces)
+some                           (1 veces)
+susan                          (1 veces)
+tags                           (1 veces)
+text                           (2 veces)
+the                            (1 veces)
+this                           (1 veces)
+to                             (1 veces)
+you                            (1 veces)

@@ -1,0 +1,33 @@
+=== PALABRAS ORDENADAS ALFABÉTICAMENTE ===
+Archivo fuente: 093_clean.txt
+Total de palabras únicas: 27
+Total de palabras: 42
+--------------------------------------------------
+
+and                            (1 veces)
+april                          (1 veces)
+are                            (1 veces)
+at                             (2 veces)
+copy                           (1 veces)
+copyright                      (1 veces)
+eurobot                        (2 veces)
+exhibition                     (2 veces)
+frankfurt                      (2 veces)
+germany                        (2 veces)
+home                           (1 veces)
+in                             (2 veces)
+last                           (1 veces)
+ltd                            (2 veces)
+of                             (1 veces)
+page                           (1 veces)
+registered                     (1 veces)
+return                         (1 veces)
+revision                       (1 veces)
+robot                          (2 veces)
+robotrak                       (1 veces)
+simulations                    (2 veces)
+stand                          (2 veces)
+the                            (4 veces)
+to                             (1 veces)
+trademarks                     (1 veces)
+workspace                      (3 veces)

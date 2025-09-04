@@ -1,0 +1,33 @@
+=== PALABRAS ORDENADAS ALFABÉTICAMENTE ===
+Archivo fuente: simple_clean.txt
+Total de palabras únicas: 27
+Total de palabras: 35
+--------------------------------------------------
+
+all                            (2 veces)
+are                            (1 veces)
+content                        (2 veces)
+contents                       (1 veces)
+english                        (1 veces)
+file                           (2 veces)
+gauch                          (1 veces)
+has                            (2 veces)
+in                             (1 veces)
+interesting                    (1 veces)
+is                             (2 veces)
+it                             (2 veces)
+last                           (1 veces)
+much                           (1 veces)
+my                             (1 veces)
+name                           (1 veces)
+nothing                        (1 veces)
+or                             (1 veces)
+rare                           (1 veces)
+simple                         (1 veces)
+some                           (2 veces)
+test                           (1 veces)
+text                           (1 veces)
+that                           (1 veces)
+the                            (1 veces)
+this                           (2 veces)
+very                           (1 veces)
