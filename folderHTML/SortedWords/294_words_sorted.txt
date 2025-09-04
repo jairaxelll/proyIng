@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 294_clean.txt
-Total de palabras únicas: 246
-Total de palabras: 479
+Total de palabras únicas: 244
+Total de palabras: 477
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -52,7 +52,6 @@ communications                 (1 veces)
 conference                     (1 veces)
 contributing                   (1 veces)
 cope                           (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 court                          (5 veces)
 courts                         (4 veces)
@@ -145,7 +144,6 @@ minors                         (4 veces)
 music                          (1 veces)
 narcotic                       (3 veces)
 nature                         (1 veces)
-nbsp                           (1 veces)
 new                            (4 veces)
 next                           (1 veces)
 nj                             (1 veces)

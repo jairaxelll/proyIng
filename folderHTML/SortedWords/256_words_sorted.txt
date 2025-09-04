@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 256_clean.txt
-Total de palabras únicas: 575
-Total de palabras: 1360
+Total de palabras únicas: 573
+Total de palabras: 1358
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -112,7 +112,6 @@ content                        (1 veces)
 context                        (1 veces)
 contrasting                    (1 veces)
 contribute                     (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 counseling                     (1 veces)
 creative                       (3 veces)
@@ -325,7 +324,6 @@ music                          (3 veces)
 musical                        (2 veces)
 mythology                      (1 veces)
 nation                         (1 veces)
-nbsp                           (1 veces)
 necessary                      (1 veces)
 new                            (1 veces)
 next                           (1 veces)

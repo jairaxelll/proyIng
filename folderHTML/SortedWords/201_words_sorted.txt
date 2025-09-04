@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 201_clean.txt
-Total de palabras únicas: 69
-Total de palabras: 93
+Total de palabras únicas: 66
+Total de palabras: 89
 --------------------------------------------------
 
 aascpa                         (2 veces)
@@ -27,7 +27,6 @@ completion                     (1 veces)
 composite                      (2 veces)
 construction                   (2 veces)
 consultation                   (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 cpa                            (2 veces)
 detail                         (1 veces)
@@ -53,14 +52,12 @@ lead                           (1 veces)
 marketing                      (1 veces)
 materials                      (1 veces)
 melvin                         (1 veces)
-nbsp                           (1 veces)
 of                             (3 veces)
 passed                         (1 veces)
 performance                    (1 veces)
 portfolio                      (1 veces)
 production                     (1 veces)
 profiles                       (2 veces)
-quot                           (2 veces)
 requisite                      (1 veces)
 responsible                    (1 veces)
 senior                         (1 veces)

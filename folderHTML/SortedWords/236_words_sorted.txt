@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 236_clean.txt
-Total de palabras únicas: 528
-Total de palabras: 1252
+Total de palabras únicas: 526
+Total de palabras: 1250
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -108,7 +108,6 @@ contradictions                 (1 veces)
 contrasts                      (1 veces)
 control                        (1 veces)
 cooperation                    (2 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 coup                           (2 veces)
 critical                       (1 veces)
@@ -303,7 +302,6 @@ nakhodka                       (1 veces)
 nationalism                    (1 veces)
 nations                        (4 veces)
 naval                          (2 veces)
-nbsp                           (1 veces)
 necessity                      (1 veces)
 new                            (2 veces)
 newly                          (1 veces)

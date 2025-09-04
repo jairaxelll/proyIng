@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 331_clean.txt
-Total de palabras únicas: 1190
-Total de palabras: 3352
+Total de palabras únicas: 1188
+Total de palabras: 3350
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -245,7 +245,6 @@ controversial                  (1 veces)
 cook                           (1 veces)
 cooperative                    (1 veces)
 copeland                       (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 cost                           (1 veces)
 costs                          (2 veces)
@@ -702,7 +701,6 @@ nations                        (9 veces)
 nato                           (2 veces)
 nature                         (2 veces)
 nazism                         (1 veces)
-nbsp                           (1 veces)
 necessary                      (1 veces)
 needed                         (1 veces)
 needs                          (3 veces)

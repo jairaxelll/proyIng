@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 313_clean.txt
-Total de palabras únicas: 460
-Total de palabras: 1044
+Total de palabras únicas: 458
+Total de palabras: 1042
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -92,7 +92,6 @@ contrasts                      (1 veces)
 controlling                    (1 veces)
 conventional                   (1 veces)
 convertible                    (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corp                           (2 veces)
 corporation                    (3 veces)
@@ -272,7 +271,6 @@ motor                          (1 veces)
 music                          (1 veces)
 mutual                         (1 veces)
 national                       (1 veces)
-nbsp                           (1 veces)
 new                            (1 veces)
 newman                         (1 veces)
 next                           (1 veces)

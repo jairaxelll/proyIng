@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 120_clean.txt
-Total de palabras únicas: 105
-Total de palabras: 183
+Total de palabras únicas: 104
+Total de palabras: 182
 --------------------------------------------------
 
 about                          (2 veces)
@@ -21,7 +21,6 @@ circulation                    (1 veces)
 com                            (1 veces)
 community                      (2 veces)
 contact                        (5 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 david                          (2 veces)
 dee                            (2 veces)

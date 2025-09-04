@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 304_clean.txt
-Total de palabras únicas: 1459
-Total de palabras: 4896
+Total de palabras únicas: 1457
+Total de palabras: 4894
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -283,7 +283,6 @@ convention                     (2 veces)
 conventions                    (3 veces)
 convergence                    (1 veces)
 conversations                  (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 cora                           (1 veces)
 core                           (1 veces)
@@ -889,7 +888,6 @@ myth                           (1 veces)
 named                          (5 veces)
 natural                        (1 veces)
 nature                         (9 veces)
-nbsp                           (1 veces)
 needs                          (1 veces)
 neill                          (5 veces)
 next                           (1 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 052_clean.txt
-Total de palabras únicas: 339
-Total de palabras: 575
+Total de palabras únicas: 337
+Total de palabras: 572
 --------------------------------------------------
 
 about                          (2 veces)
@@ -90,7 +90,6 @@ does                           (1 veces)
 done                           (1 veces)
 down                           (1 veces)
 during                         (1 veces)
-eacute                         (1 veces)
 editionno                      (1 veces)
 editorial                      (1 veces)
 editors                        (1 veces)
@@ -100,7 +99,7 @@ emanate                        (1 veces)
 escaped                        (1 veces)
 execution-style                (1 veces)
 exploding                      (1 veces)
-expos                          (1 veces)
+exposés                        (1 veces)
 face                           (1 veces)
 faced                          (1 veces)
 facing                         (1 veces)
@@ -197,7 +196,6 @@ murderers                      (1 veces)
 nadezhda                       (1 veces)
 narrowly                       (1 veces)
 natalya                        (1 veces)
-nbsp                           (2 veces)
 near                           (1 veces)
 necessarily                    (1 veces)
 necessary                      (1 veces)

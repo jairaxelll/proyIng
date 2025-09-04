@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 068_clean.txt
-Total de palabras únicas: 132
-Total de palabras: 296
+Total de palabras únicas: 131
+Total de palabras: 295
 --------------------------------------------------
 
 about                          (1 veces)
@@ -12,7 +12,6 @@ aesop                          (10 veces)
 all                            (1 veces)
 allows                         (2 veces)
 also                           (2 veces)
-amp                            (1 veces)
 and                            (10 veces)
 any                            (1 veces)
 applications                   (3 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 258_clean.txt
-Total de palabras únicas: 793
-Total de palabras: 2229
+Total de palabras únicas: 791
+Total de palabras: 2227
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -161,7 +161,6 @@ content                        (1 veces)
 control                        (1 veces)
 controlling                    (1 veces)
 cooperation                    (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corporate                      (3 veces)
 corporation                    (3 veces)
@@ -467,7 +466,6 @@ music                          (1 veces)
 nasty                          (1 veces)
 nationalities                  (1 veces)
 nature                         (2 veces)
-nbsp                           (1 veces)
 necessary                      (1 veces)
 need                           (1 veces)
 need-satisfaction              (1 veces)

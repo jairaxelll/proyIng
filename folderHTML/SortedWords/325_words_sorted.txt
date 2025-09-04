@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 325_clean.txt
-Total de palabras únicas: 879
-Total de palabras: 3505
+Total de palabras únicas: 877
+Total de palabras: 3503
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -185,7 +185,6 @@ conventions                    (1 veces)
 converge                       (1 veces)
 convictions                    (4 veces)
 convincing                     (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 correlation                    (1 veces)
 create                         (1 veces)
@@ -518,7 +517,6 @@ music                          (2 veces)
 must                           (1 veces)
 name                           (2 veces)
 nature                         (19 veces)
-nbsp                           (1 veces)
 needed                         (1 veces)
 negations                      (1 veces)
 neo-platonic                   (1 veces)

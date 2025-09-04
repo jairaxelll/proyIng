@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 237_clean.txt
-Total de palabras únicas: 394
-Total de palabras: 760
+Total de palabras únicas: 392
+Total de palabras: 758
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -80,7 +80,6 @@ continues                      (1 veces)
 contributions                  (1 veces)
 control                        (3 veces)
 copper                         (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corps                          (1 veces)
 correct                        (1 veces)
@@ -238,7 +237,6 @@ much                           (1 veces)
 music                          (1 veces)
 natural                        (3 veces)
 nature                         (2 veces)
-nbsp                           (1 veces)
 needed                         (1 veces)
 needs                          (1 veces)
 new                            (3 veces)

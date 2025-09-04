@@ -1,14 +1,13 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 085_clean.txt
-Total de palabras únicas: 187
-Total de palabras: 309
+Total de palabras únicas: 185
+Total de palabras: 306
 --------------------------------------------------
 
 absolute                       (1 veces)
 adjustments                    (1 veces)
 aesop                          (9 veces)
 allowing                       (1 veces)
-amp                            (1 veces)
 an                             (1 veces)
 and                            (9 veces)
 are                            (1 veces)
@@ -131,7 +130,6 @@ productive                     (1 veces)
 program                        (1 veces)
 proper                         (1 veces)
 publications                   (1 veces)
-quot                           (2 veces)
 reach                          (1 veces)
 reduces                        (4 veces)
 relaying                       (1 veces)

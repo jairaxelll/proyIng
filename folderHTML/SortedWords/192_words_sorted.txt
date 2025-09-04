@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 192_clean.txt
-Total de palabras únicas: 250
-Total de palabras: 487
+Total de palabras únicas: 251
+Total de palabras: 490
 --------------------------------------------------
 
 ababa                          (2 veces)
@@ -79,7 +79,7 @@ enacted                        (2 veces)
 encouraging                    (1 veces)
 enemy                          (1 veces)
 essay                          (1 veces)
-ethiopia                       (6 veces)
+ethiopia                       (7 veces)
 ethiopian                      (5 veces)
 exclusion                      (1 veces)
 exists                         (1 veces)
@@ -202,7 +202,7 @@ risk                           (2 veces)
 role                           (1 veces)
 safety                         (1 veces)
 said                           (1 veces)
-secretary                      (2 veces)
+secretary                      (3 veces)
 see                            (1 veces)
 served                         (1 veces)
 several                        (1 veces)
@@ -237,6 +237,7 @@ visit                          (1 veces)
 wants                          (1 veces)
 warren                         (1 veces)
 was                            (1 veces)
+we                             (1 veces)
 website                        (2 veces)
 welcome                        (1 veces)
 western                        (1 veces)

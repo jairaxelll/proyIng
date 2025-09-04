@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 234_clean.txt
-Total de palabras únicas: 1058
-Total de palabras: 3014
+Total de palabras únicas: 1056
+Total de palabras: 3012
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -214,7 +214,6 @@ control                        (1 veces)
 controversial                  (2 veces)
 controversy                    (1 veces)
 convention                     (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 counties                       (1 veces)
 countries                      (2 veces)
@@ -605,7 +604,6 @@ national                       (1 veces)
 nations                        (4 veces)
 nature                         (2 veces)
 nazi                           (5 veces)
-nbsp                           (1 veces)
 necessary                      (1 veces)
 necessity                      (1 veces)
 necissity                      (1 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 298_clean.txt
-Total de palabras únicas: 1714
-Total de palabras: 5235
+Total de palabras únicas: 1712
+Total de palabras: 5233
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -356,7 +356,6 @@ controversial                  (1 veces)
 convention                     (3 veces)
 conversations                  (1 veces)
 cooper                         (4 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 cormier                        (1 veces)
 corporate                      (1 veces)
@@ -1029,7 +1028,6 @@ national                       (1 veces)
 native                         (1 veces)
 natty                          (1 veces)
 nature                         (4 veces)
-nbsp                           (1 veces)
 near                           (1 veces)
 necessarily                    (1 veces)
 necessity                      (2 veces)

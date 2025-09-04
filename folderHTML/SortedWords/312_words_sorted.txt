@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 312_clean.txt
-Total de palabras únicas: 210
-Total de palabras: 320
+Total de palabras únicas: 208
+Total de palabras: 318
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -52,7 +52,6 @@ concluding                     (1 veces)
 contemporary                   (1 veces)
 control                        (1 veces)
 controls                       (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 cows                           (1 veces)
 crisis                         (1 veces)
@@ -113,7 +112,6 @@ modern                         (1 veces)
 more                           (1 veces)
 most                           (1 veces)
 music                          (1 veces)
-nbsp                           (1 veces)
 new                            (1 veces)
 next                           (1 veces)
 noting                         (1 veces)

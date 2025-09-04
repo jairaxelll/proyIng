@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 268_clean.txt
-Total de palabras únicas: 257
-Total de palabras: 476
+Total de palabras únicas: 255
+Total de palabras: 474
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -62,7 +62,6 @@ concepts                       (1 veces)
 concerning                     (1 veces)
 confusion                      (1 veces)
 connection                     (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 critical                       (1 veces)
 dealing                        (1 veces)
@@ -147,7 +146,6 @@ mid-life                       (2 veces)
 middle-aged                    (1 veces)
 more                           (1 veces)
 music                          (1 veces)
-nbsp                           (1 veces)
 near                           (1 veces)
 necessary                      (1 veces)
 next                           (1 veces)

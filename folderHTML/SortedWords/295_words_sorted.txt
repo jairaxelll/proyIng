@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 295_clean.txt
-Total de palabras únicas: 494
-Total de palabras: 1159
+Total de palabras únicas: 492
+Total de palabras: 1157
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -110,7 +110,6 @@ contract                       (2 veces)
 contracts                      (1 veces)
 control                        (1 veces)
 coordination                   (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corruption                     (5 veces)
 countries                      (1 veces)
@@ -283,7 +282,6 @@ music                          (1 veces)
 must                           (1 veces)
 national                       (1 veces)
 nature                         (1 veces)
-nbsp                           (1 veces)
 necessary                      (1 veces)
 necessity                      (1 veces)
 needs                          (1 veces)

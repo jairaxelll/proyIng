@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 387_clean.txt
-Total de palabras únicas: 466
-Total de palabras: 1140
+Total de palabras únicas: 464
+Total de palabras: 1138
 --------------------------------------------------
 
 about                          (1 veces)
@@ -25,7 +25,6 @@ already                        (1 veces)
 also                           (1 veces)
 american                       (1 veces)
 amount                         (1 veces)
-amp                            (1 veces)
 an                             (16 veces)
 and                            (23 veces)
 another                        (1 veces)
@@ -98,7 +97,6 @@ complicated                    (3 veces)
 component-parts                (1 veces)
 conditions                     (3 veces)
 contents                       (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corporate                      (1 veces)
 corporationall                 (1 veces)

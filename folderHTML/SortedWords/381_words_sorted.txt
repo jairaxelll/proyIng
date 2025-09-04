@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 381_clean.txt
-Total de palabras únicas: 1252
-Total de palabras: 5375
+Total de palabras únicas: 1250
+Total de palabras: 5371
 --------------------------------------------------
 
 ability                        (1 veces)
@@ -79,7 +79,6 @@ american                       (3 veces)
 americans                      (2 veces)
 amount                         (12 veces)
 amounts                        (2 veces)
-amp                            (3 veces)
 an                             (45 veces)
 ancestry                       (1 veces)
 and                            (125 veces)
@@ -261,7 +260,6 @@ contracts                      (1 veces)
 contradictory                  (1 veces)
 controversial                  (1 veces)
 conversion                     (2 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corporationall                 (1 veces)
 cost                           (2 veces)

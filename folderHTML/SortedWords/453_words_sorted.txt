@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 453_clean.txt
-Total de palabras únicas: 350
-Total de palabras: 1007
+Total de palabras únicas: 349
+Total de palabras: 1006
 --------------------------------------------------
 
 actuator                       (4 veces)
@@ -202,12 +202,12 @@ monograde                      (1 veces)
 more                           (1 veces)
 motion                         (2 veces)
 motogas                        (1 veces)
+móvil                          (1 veces)
 natural                        (1 veces)
 necks                          (2 veces)
 neutralized                    (1 veces)
 non-flammable                  (1 veces)
 normal                         (1 veces)
-oacute                         (1 veces)
 objeto                         (1 veces)
 of                             (14 veces)
 oil                            (14 veces)
@@ -342,7 +342,6 @@ using                          (3 veces)
 vacuum                         (1 veces)
 velocidad                      (1 veces)
 very                           (2 veces)
-vil                            (1 veces)
 viscosity                      (4 veces)
 water                          (5 veces)
 well                           (3 veces)

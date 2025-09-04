@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 114_clean.txt
-Total de palabras únicas: 218
-Total de palabras: 481
+Total de palabras únicas: 217
+Total de palabras: 480
 --------------------------------------------------
 
 about                          (1 veces)
@@ -14,7 +14,6 @@ agreement                      (1 veces)
 albion                         (1 veces)
 alfred                         (1 veces)
 amherst                        (2 veces)
-amp                            (1 veces)
 and                            (9 veces)
 any                            (1 veces)
 arizona                        (1 veces)

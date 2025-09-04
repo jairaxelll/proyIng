@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 059_clean.txt
-Total de palabras únicas: 106
-Total de palabras: 171
+Total de palabras únicas: 104
+Total de palabras: 166
 --------------------------------------------------
 
 aascpa                         (1 veces)
@@ -29,7 +29,6 @@ complaints                     (1 veces)
 compliance                     (1 veces)
 control                        (1 veces)
 controls                       (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 criteria                       (2 veces)
 customer                       (1 veces)
@@ -76,7 +75,6 @@ proper                         (1 veces)
 properly                       (1 veces)
 prospectus                     (1 veces)
 provisions                     (1 veces)
-quot                           (4 veces)
 regularly                      (1 veces)
 regulatory                     (1 veces)
 relationship                   (1 veces)

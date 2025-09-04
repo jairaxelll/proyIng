@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 146_clean.txt
-Total de palabras únicas: 814
-Total de palabras: 2534
+Total de palabras únicas: 811
+Total de palabras: 2531
 --------------------------------------------------
 
 about                          (3 veces)
@@ -37,7 +37,6 @@ alternatives                   (1 veces)
 although                       (2 veces)
 always                         (1 veces)
 among                          (2 veces)
-amp                            (1 veces)
 an                             (13 veces)
 analyse                        (1 veces)
 analysing                      (1 veces)
@@ -67,7 +66,6 @@ assumptions                    (3 veces)
 at                             (16 veces)
 attention                      (1 veces)
 attracting                     (1 veces)
-auml                           (1 veces)
 authorities                    (4 veces)
 available                      (6 veces)
 average                        (1 veces)
@@ -491,7 +489,6 @@ multi-area                     (1 veces)
 names                          (2 veces)
 national                       (5 veces)
 national-regional              (1 veces)
-nder                           (1 veces)
 necessary                      (1 veces)
 need                           (2 veces)
 new                            (6 veces)

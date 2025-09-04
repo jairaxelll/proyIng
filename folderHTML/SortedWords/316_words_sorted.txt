@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 316_clean.txt
-Total de palabras únicas: 380
-Total de palabras: 725
+Total de palabras únicas: 378
+Total de palabras: 723
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -91,7 +91,6 @@ conducting                     (2 veces)
 consideration                  (1 veces)
 contemporary                   (2 veces)
 content                        (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 creating                       (1 veces)
 critical                       (1 veces)
@@ -227,7 +226,6 @@ music                          (21 veces)
 musical                        (5 veces)
 musically                      (1 veces)
 musician                       (1 veces)
-nbsp                           (1 veces)
 new                            (1 veces)
 next                           (1 veces)
 number                         (1 veces)

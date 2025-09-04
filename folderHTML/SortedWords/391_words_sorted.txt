@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 391_clean.txt
-Total de palabras únicas: 641
-Total de palabras: 2721
+Total de palabras únicas: 639
+Total de palabras: 2719
 --------------------------------------------------
 
 able                           (1 veces)
@@ -25,7 +25,6 @@ also                           (9 veces)
 always                         (1 veces)
 american                       (1 veces)
 amount                         (2 veces)
-amp                            (1 veces)
 an                             (14 veces)
 and                            (70 veces)
 annually                       (1 veces)
@@ -143,7 +142,6 @@ contracts                      (1 veces)
 contributions                  (1 veces)
 control                        (10 veces)
 controls                       (2 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corporate                      (1 veces)
 corporation                    (30 veces)

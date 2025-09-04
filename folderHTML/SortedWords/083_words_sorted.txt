@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 083_clean.txt
-Total de palabras únicas: 113
-Total de palabras: 176
+Total de palabras únicas: 111
+Total de palabras: 172
 --------------------------------------------------
 
 abm                            (1 veces)
@@ -31,7 +31,6 @@ classic                        (1 veces)
 commission-free                (1 veces)
 complimentary                  (1 veces)
 consider                       (1 veces)
-copy                           (2 veces)
 copyright                      (1 veces)
 customers                      (2 veces)
 depending                      (1 veces)
@@ -69,7 +68,6 @@ money                          (1 veces)
 more                           (1 veces)
 mortgage                       (1 veces)
 much                           (2 veces)
-nbsp                           (2 veces)
 need                           (1 veces)
 networks                       (1 veces)
 of                             (7 veces)

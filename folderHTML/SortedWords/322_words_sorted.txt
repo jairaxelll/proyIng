@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 322_clean.txt
-Total de palabras únicas: 361
-Total de palabras: 791
+Total de palabras únicas: 359
+Total de palabras: 789
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -88,7 +88,6 @@ contribution                   (1 veces)
 contributors                   (1 veces)
 controversy                    (1 veces)
 conversation                   (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 country                        (1 veces)
 creativity                     (1 veces)
@@ -218,7 +217,6 @@ musical                        (5 veces)
 musicals                       (1 veces)
 musician                       (2 veces)
 musicians                      (1 veces)
-nbsp                           (1 veces)
 new                            (4 veces)
 next                           (1 veces)
 noting                         (1 veces)

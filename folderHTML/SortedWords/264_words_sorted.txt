@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 264_clean.txt
-Total de palabras únicas: 425
-Total de palabras: 808
+Total de palabras únicas: 423
+Total de palabras: 806
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -95,7 +95,6 @@ constrictive                   (1 veces)
 contradictory                  (1 veces)
 control                        (2 veces)
 controversy                    (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 counseling                     (1 veces)
 coverage                       (1 veces)
@@ -258,7 +257,6 @@ minority                       (1 veces)
 more                           (1 veces)
 music                          (1 veces)
 nails                          (1 veces)
-nbsp                           (1 veces)
 new                            (2 veces)
 next                           (1 veces)
 not                            (1 veces)

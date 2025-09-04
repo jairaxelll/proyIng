@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 261_clean.txt
-Total de palabras únicas: 282
-Total de palabras: 465
+Total de palabras únicas: 280
+Total de palabras: 463
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -68,7 +68,6 @@ consent                        (2 veces)
 control                        (1 veces)
 controversial                  (1 veces)
 controversy                    (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 costs                          (1 veces)
 counsel                        (1 veces)
@@ -158,7 +157,6 @@ movements                      (1 veces)
 murder                         (1 veces)
 music                          (1 veces)
 nature                         (1 veces)
-nbsp                           (1 veces)
 new                            (1 veces)
 next                           (1 veces)
 number                         (1 veces)

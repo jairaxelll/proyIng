@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 105_clean.txt
-Total de palabras únicas: 423
-Total de palabras: 832
+Total de palabras únicas: 421
+Total de palabras: 826
 --------------------------------------------------
 
 about                          (1 veces)
@@ -18,7 +18,6 @@ alone                          (1 veces)
 also                           (1 veces)
 although                       (1 veces)
 always                         (1 veces)
-amp                            (1 veces)
 an                             (3 veces)
 ancestor                       (1 veces)
 and                            (20 veces)
@@ -303,7 +302,6 @@ published                      (1 veces)
 publishers                     (1 veces)
 pursue                         (1 veces)
 questions                      (1 veces)
-quot                           (5 veces)
 quotes                         (1 veces)
 rain                           (1 veces)
 readers                        (1 veces)

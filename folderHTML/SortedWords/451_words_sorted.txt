@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 451_clean.txt
-Total de palabras únicas: 66
-Total de palabras: 89
+Total de palabras únicas: 65
+Total de palabras: 87
 --------------------------------------------------
 
 additives                      (1 veces)
@@ -40,8 +40,8 @@ lube                           (2 veces)
 lubes                          (1 veces)
 mixing                         (1 veces)
 motos                          (2 veces)
+móvil                          (2 veces)
 number                         (1 veces)
-oacute                         (2 veces)
 oil                            (1 veces)
 oils                           (2 veces)
 on                             (2 veces)
@@ -66,7 +66,6 @@ two-stroke                     (4 veces)
 under                          (1 veces)
 upon                           (1 veces)
 used                           (1 veces)
-vil                            (2 veces)
 water-cooled                   (1 veces)
 which                          (1 veces)
 yamaha                         (1 veces)

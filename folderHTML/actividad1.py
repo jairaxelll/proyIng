@@ -3,15 +3,11 @@ import time
 import re
 from pathlib import Path
 from collections import Counter
+import html
 
-# Ruta específica de los archivos
 FOLDER = r'C:\Users\jairm\OneDrive\Documentos\proyIng\folderHTML\Files'
 
 def open_file(file_path):
-    """
-    Función para abrir archivos con múltiples encodings.
-    Utilizada en todas las actividades.
-    """
     encodings = ['utf-8', 'latin-1', 'cp1252']
    
     for encoding in encodings:
@@ -26,10 +22,6 @@ def open_file(file_path):
     return f"Failed to decode {file_path.name} with any encoding"
 
 def actividad1():
-    """
-    ACTIVIDAD 1: Abrir archivos HTML y cronometrar tiempos.
-    Genera reporte a1.txt
-    """
     print("=== EJECUTANDO ACTIVIDAD 1: ABRIR ARCHIVOS HTML ===")
     
     folder_path = Path(FOLDER)
@@ -50,7 +42,6 @@ def actividad1():
     total_opening_time = 0
     successful_files = 0
     
-    # Encabezado del reporte
     log_lines.append("=== ACTIVIDAD 1: REPORTE DE APERTURA DE ARCHIVOS HTML ===")
     log_lines.append(f"Fecha: {time.strftime('%Y-%m-%d %H:%M:%S')}")
     log_lines.append(f"Directorio: {FOLDER}")
@@ -58,7 +49,6 @@ def actividad1():
     log_lines.append("Archivos procesados:")
     log_lines.append("-" * 60)
     
-    # Procesar cada archivo HTML
     for html_file in html_files:
         file_start = time.time()
         
@@ -80,7 +70,6 @@ def actividad1():
     program_end = time.time()
     total_program_time = program_end - program_start
     
-    # Estadísticas
     log_lines.extend([
         "",
         "=== ESTADÍSTICAS ===",
@@ -89,10 +78,9 @@ def actividad1():
         f"Tiempo total abriendo archivos: {total_opening_time:.6f} segundos",
         f"Tiempo promedio por archivo: {total_opening_time/successful_files if successful_files > 0 else 0:.6f} segundos",
         f"Tiempo total del programa: {total_program_time:.6f} segundos",
-        f"Overhead del programa: {total_program_time - total_opening_time:.6f} segundos"
+        f"Tiempo del programa: {total_program_time - total_opening_time:.6f} segundos"
     ])
     
-    # Guardar reporte
     log_path = Path('a1.txt')
     with open(log_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(log_lines))
@@ -103,10 +91,6 @@ def actividad1():
     print(f"Tiempo total: {total_program_time:.6f} segundos")
 
 def remove_html_tags(filename):
-    """
-    Función para la Actividad 2: elimina etiquetas HTML de un archivo.
-    Retorna el tiempo de procesamiento.
-    """
     file_path = Path(FOLDER) / filename
     
     if not file_path.exists():
@@ -121,17 +105,17 @@ def remove_html_tags(filename):
         print(f"Error al leer {filename}: {content}")
         return 0
     
-    # Eliminar etiquetas HTML usando regex
     clean_content = re.sub(r'<[^>]+>', '', content)
+    clean_content = html.unescape(clean_content)
+    clean_content = re.sub(r'\s+', ' ', clean_content)
+    clean_content = clean_content.strip()
     
-    # Crear carpeta de salida si no existe
     output_folder = Path('CleanFiles')
     output_folder.mkdir(exist_ok=True)
     
     clean_filename = file_path.stem + '_clean.txt'
     output_path = output_folder / clean_filename
     
-    # Guardar contenido limpio
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(clean_content)
     
@@ -141,10 +125,6 @@ def remove_html_tags(filename):
     return processing_time
 
 def actividad2():
-    """
-    ACTIVIDAD 2: Eliminar etiquetas HTML y cronometrar tiempos.
-    Genera reporte a2.txt
-    """
     print("=== EJECUTANDO ACTIVIDAD 2: ELIMINAR ETIQUETAS HTML ===")
     
     folder_path = Path(FOLDER)
@@ -165,7 +145,6 @@ def actividad2():
     total_processing_time = 0
     successful_files = 0
     
-    # Encabezado del reporte
     log_lines.append("=== ACTIVIDAD 2: REPORTE DE ELIMINACIÓN DE ETIQUETAS HTML ===")
     log_lines.append(f"Fecha: {time.strftime('%Y-%m-%d %H:%M:%S')}")
     log_lines.append(f"Directorio: {FOLDER}")
@@ -173,7 +152,6 @@ def actividad2():
     log_lines.append("Archivos procesados:")
     log_lines.append("-" * 60)
     
-    # Procesar cada archivo HTML
     for html_file in html_files:
         processing_time = remove_html_tags(html_file.name)
         
@@ -188,7 +166,6 @@ def actividad2():
     program_end = time.time()
     total_program_time = program_end - program_start
     
-    # Estadísticas
     log_lines.extend([
         "",
         "=== ESTADÍSTICAS ===",
@@ -202,7 +179,6 @@ def actividad2():
         f"Archivos limpios guardados en: ./CleanFiles/"
     ])
     
-    # Guardar reporte
     log_path = Path('a2.txt')
     with open(log_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(log_lines))
@@ -214,20 +190,8 @@ def actividad2():
     print(f"Tiempo total: {total_program_time:.6f} segundos")
 
 def process_words(text):
-    """
-    Procesa el texto para extraer palabras, manejando caracteres especiales.
-    
-    Lógica para caracteres especiales:
-    - Palabras con guiones (ej: "Automata-based") se mantienen como una sola palabra
-    - Se eliminan signos de puntuación al final/inicio de palabras
-    - Se convierten a minúsculas para consistencia
-    - Se eliminan palabras muy cortas (menos de 2 caracteres)
-    """
     text = text.lower()
-    
-    # Encontrar palabras usando regex
-    # Incluye letras, números y guiones internos
-    word_pattern = r'\b[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ][a-zA-ZáéíóúüñÁÉÍÓÚÜÑ0-9\-]*[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ0-9]\b|\b[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]\b'
+    word_pattern = r'\b[a-záéíóúüñç][a-záéíóúüñç0-9\-]*[a-záéíóúüñç0-9]\b|\b[a-záéíóúüñç]\b'
     words = re.findall(word_pattern, text)
     
     cleaned_words = []
@@ -239,9 +203,6 @@ def process_words(text):
     return cleaned_words
 
 def extract_and_sort_words(clean_filename):
-    """
-    Extrae palabras de un archivo limpio y las ordena alfabéticamente.
-    """
     start_time = time.time()
     
     clean_file_path = Path('CleanFiles') / clean_filename
@@ -257,7 +218,6 @@ def extract_and_sort_words(clean_filename):
         return 0, 0
     
     words = process_words(content)
-    
     word_counter = Counter(words)
     sorted_words = sorted(word_counter.items())
     
@@ -284,10 +244,6 @@ def extract_and_sort_words(clean_filename):
     return processing_time, len(sorted_words)
 
 def actividad3():
-    """
-    ACTIVIDAD 3: Extraer y ordenar palabras de archivos limpios.
-    Genera reporte a3.txt
-    """
     print("=== EJECUTANDO ACTIVIDAD 3: PROCESAMIENTO DE PALABRAS ===")
     
     clean_folder = Path('CleanFiles')
@@ -318,7 +274,7 @@ def actividad3():
     for clean_file in clean_files:
         processing_time, unique_words = extract_and_sort_words(clean_file.name)
         
-        if processing_time > 0:  
+        if processing_time > 0:
             successful_files += 1
             total_words_processing_time += processing_time
             total_unique_words += unique_words
@@ -358,17 +314,35 @@ def actividad3():
     print(f"Tiempo total: {total_program_time:.6f} segundos")
 
 def test_single_file():
-    """Función para probar con un solo archivo"""
-    filename = "001.html"
+    filename = "467.html"
     print(f"Probando con archivo: {filename}")
     
     tiempo = remove_html_tags(filename)
     print(f"Tiempo para procesar {filename}: {tiempo:.6f} segundos")
     
-    clean_filename = "001_clean.txt"
+    clean_file = Path('CleanFiles') / f"{Path(filename).stem}_clean.txt"
+    if clean_file.exists():
+        with open(clean_file, 'r', encoding='utf-8') as f:
+            content_sample = f.read()[:200]
+            print(f"Muestra del contenido limpio: {content_sample}...")
+    
+    clean_filename = f"{Path(filename).stem}_clean.txt"
     tiempo, palabras = extract_and_sort_words(clean_filename)
     print(f"Tiempo para extraer palabras de {clean_filename}: {tiempo:.6f} segundos")
     print(f"Palabras únicas encontradas: {palabras}")
+    
+    words_file = Path('SortedWords') / f"{Path(filename).stem}_words_sorted.txt"
+    if words_file.exists():
+        with open(words_file, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+            print("\nAlgunas palabras encontradas (con acentos):")
+            word_count = 0
+            for line in lines[5:]:
+                if word_count >= 10:
+                    break
+                if line.strip() and ('ó' in line or 'á' in line or 'é' in line or 'í' in line or 'ú' in line or 'ñ' in line):
+                    print(f"  {line.strip()}")
+                    word_count += 1
 
 if __name__ == "__main__":
     print("=== PROYECTO HTML - ACTIVIDADES 1, 2 y 3 ===\n")
@@ -380,3 +354,5 @@ if __name__ == "__main__":
     print("\n" + "="*60 + "\n")
     
     actividad3()
+    
+    # test_single_file()

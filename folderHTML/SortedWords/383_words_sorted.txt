@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 383_clean.txt
-Total de palabras únicas: 1350
-Total de palabras: 6663
+Total de palabras únicas: 1348
+Total de palabras: 6661
 --------------------------------------------------
 
 abated                         (2 veces)
@@ -82,7 +82,6 @@ amending                       (1 veces)
 american                       (2 veces)
 among                          (1 veces)
 amount                         (4 veces)
-amp                            (1 veces)
 an                             (55 veces)
 ancestor                       (1 veces)
 and                            (198 veces)
@@ -288,7 +287,6 @@ contributions                  (1 veces)
 control                        (2 veces)
 conviction                     (1 veces)
 cooperate                      (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corporationall                 (1 veces)
 council                        (1 veces)

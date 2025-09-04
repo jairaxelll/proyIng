@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 257_clean.txt
-Total de palabras únicas: 278
-Total de palabras: 537
+Total de palabras únicas: 276
+Total de palabras: 535
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -63,7 +63,6 @@ conclusions                    (1 veces)
 conditions                     (1 veces)
 consist                        (1 veces)
 context                        (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 counseling                     (4 veces)
 counselors                     (1 veces)
@@ -172,7 +171,6 @@ multifaceted                   (1 veces)
 multiplication                 (1 veces)
 music                          (1 veces)
 national                       (1 veces)
-nbsp                           (1 veces)
 need                           (1 veces)
 newer                          (1 veces)
 next                           (1 veces)

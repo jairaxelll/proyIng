@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 232_clean.txt
-Total de palabras únicas: 356
-Total de palabras: 742
+Total de palabras únicas: 354
+Total de palabras: 740
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -70,7 +70,6 @@ context                        (1 veces)
 contributing                   (1 veces)
 control                        (3 veces)
 controlled                     (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 counter                        (1 veces)
 coupled                        (1 veces)
@@ -207,7 +206,6 @@ national                       (2 veces)
 nations                        (3 veces)
 nato                           (2 veces)
 nature                         (1 veces)
-nbsp                           (1 veces)
 negotiations                   (1 veces)
 next                           (1 veces)
 nixon                          (2 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 306_clean.txt
-Total de palabras únicas: 339
-Total de palabras: 585
+Total de palabras únicas: 337
+Total de palabras: 583
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -72,7 +72,6 @@ conservation                   (1 veces)
 contemporary                   (1 veces)
 contention                     (1 veces)
 contractors                    (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 creative                       (1 veces)
 critical                       (1 veces)
@@ -200,7 +199,6 @@ music                          (1 veces)
 mystery                        (1 veces)
 naive                          (1 veces)
 narrative                      (1 veces)
-nbsp                           (1 veces)
 new                            (1 veces)
 next                           (1 veces)
 night                          (1 veces)

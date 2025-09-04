@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 239_clean.txt
-Total de palabras únicas: 441
-Total de palabras: 1034
+Total de palabras únicas: 439
+Total de palabras: 1032
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -85,7 +85,6 @@ contemporary                   (1 veces)
 contributing                   (1 veces)
 control                        (6 veces)
 convention                     (2 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 countries                      (1 veces)
 critical                       (1 veces)
@@ -253,7 +252,6 @@ national                       (2 veces)
 nations                        (2 veces)
 natural                        (1 veces)
 nature                         (1 veces)
-nbsp                           (1 veces)
 needs                          (1 veces)
 new                            (2 veces)
 next                           (1 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 221_clean.txt
-Total de palabras únicas: 142
-Total de palabras: 216
+Total de palabras únicas: 141
+Total de palabras: 215
 --------------------------------------------------
 
 access                         (2 veces)
@@ -9,7 +9,6 @@ according                      (1 veces)
 advantages                     (1 veces)
 aircraft                       (1 veces)
 alternatively                  (1 veces)
-amp                            (1 veces)
 and                            (9 veces)
 applied                        (1 veces)
 are                            (1 veces)

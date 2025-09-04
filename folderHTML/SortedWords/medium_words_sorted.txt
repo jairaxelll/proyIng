@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: medium_clean.txt
-Total de palabras únicas: 52
-Total de palabras: 62
+Total de palabras únicas: 51
+Total de palabras: 61
 --------------------------------------------------
 
 another                        (1 veces)
@@ -33,7 +33,6 @@ it                             (1 veces)
 jgauch                         (1 veces)
 joined                         (1 veces)
 live                           (1 veces)
-lt                             (1 veces)
 maybe                          (1 veces)
 nickel                         (1 veces)
 of                             (1 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 163_clean.txt
-Total de palabras únicas: 225
-Total de palabras: 385
+Total de palabras únicas: 224
+Total de palabras: 384
 --------------------------------------------------
 
 about                          (1 veces)
@@ -52,7 +52,6 @@ congressman-elect              (1 veces)
 constructed                    (1 veces)
 consumer                       (1 veces)
 contact                        (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 cost                           (1 veces)
 country                        (1 veces)

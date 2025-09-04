@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 010_clean.txt
-Total de palabras únicas: 251
-Total de palabras: 455
+Total de palabras únicas: 250
+Total de palabras: 454
 --------------------------------------------------
 
 about                          (1 veces)
@@ -65,7 +65,6 @@ desktop                        (1 veces)
 digest                         (1 veces)
 directed                       (1 veces)
 does                           (1 veces)
-eacute                         (1 veces)
 economic                       (1 veces)
 editions                       (1 veces)
 editorial                      (2 veces)
@@ -77,7 +76,7 @@ entrepreneur                   (1 veces)
 equipped                       (1 veces)
 ethnic                         (1 veces)
 excerpt                        (1 veces)
-expos                          (1 veces)
+exposés                        (1 veces)
 expression                     (1 veces)
 extensively                    (1 veces)
 facing                         (2 veces)

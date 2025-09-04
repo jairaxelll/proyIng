@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 335_clean.txt
-Total de palabras únicas: 598
-Total de palabras: 1319
+Total de palabras únicas: 596
+Total de palabras: 1317
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -124,7 +124,6 @@ control                        (3 veces)
 controlling                    (1 veces)
 controversies                  (1 veces)
 coordinate                     (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 correction                     (1 veces)
 correlated                     (1 veces)
@@ -348,7 +347,6 @@ national                       (1 veces)
 nations                        (1 veces)
 natural                        (2 veces)
 nature                         (1 veces)
-nbsp                           (1 veces)
 needs                          (1 veces)
 new                            (3 veces)
 next                           (1 veces)

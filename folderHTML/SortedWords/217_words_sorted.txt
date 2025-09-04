@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 217_clean.txt
-Total de palabras únicas: 46
-Total de palabras: 59
+Total de palabras únicas: 45
+Total de palabras: 56
 --------------------------------------------------
 
 after                          (1 veces)
@@ -22,7 +22,6 @@ head                           (1 veces)
 load                           (1 veces)
 misery                         (1 veces)
 mr                             (1 veces)
-nbsp                           (3 veces)
 next                           (1 veces)
 of                             (2 veces)
 on                             (1 veces)

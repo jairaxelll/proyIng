@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 397_clean.txt
-Total de palabras únicas: 1016
-Total de palabras: 3746
+Total de palabras únicas: 1015
+Total de palabras: 3744
 --------------------------------------------------
 
 able                           (3 veces)
@@ -49,7 +49,6 @@ america                        (1 veces)
 american                       (1 veces)
 americans                      (1 veces)
 amount                         (4 veces)
-amp                            (1 veces)
 an                             (21 veces)
 anatomical                     (4 veces)
 and                            (91 veces)
@@ -207,7 +206,7 @@ contracts                      (1 veces)
 contradicting                  (1 veces)
 conversion                     (1 veces)
 cooperative                    (1 veces)
-copy                           (3 veces)
+copy                           (2 veces)
 copyright                      (1 veces)
 corporate                      (1 veces)
 corporationall                 (1 veces)

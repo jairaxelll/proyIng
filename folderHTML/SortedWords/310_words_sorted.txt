@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 310_clean.txt
-Total de palabras únicas: 735
-Total de palabras: 1671
+Total de palabras únicas: 733
+Total de palabras: 1669
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -140,7 +140,6 @@ contends                       (1 veces)
 contrast                       (2 veces)
 contrasts                      (1 veces)
 conventions                    (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corregidora                    (1 veces)
 correlation                    (1 veces)
@@ -423,7 +422,6 @@ narcissus                      (1 veces)
 native                         (1 veces)
 natural                        (2 veces)
 nature                         (2 veces)
-nbsp                           (1 veces)
 necessary                      (1 veces)
 need                           (5 veces)
 negative                       (1 veces)

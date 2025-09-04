@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 076_clean.txt
-Total de palabras únicas: 852
-Total de palabras: 3891
+Total de palabras únicas: 850
+Total de palabras: 3860
 --------------------------------------------------
 
 abdomen                        (1 veces)
@@ -51,7 +51,6 @@ alternative                    (1 veces)
 always                         (2 veces)
 amaral                         (1 veces)
 amenable                       (1 veces)
-amp                            (1 veces)
 an                             (18 veces)
 and                            (137 veces)
 another                        (2 veces)
@@ -619,7 +618,6 @@ provides                       (6 veces)
 providing                      (3 veces)
 publications                   (1 veces)
 quality                        (4 veces)
-quot                           (30 veces)
 raised                         (1 veces)
 rather                         (2 veces)
 reactivate                     (1 veces)

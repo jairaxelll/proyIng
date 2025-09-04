@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 044_clean.txt
-Total de palabras únicas: 372
-Total de palabras: 697
+Total de palabras únicas: 373
+Total de palabras: 699
 --------------------------------------------------
 
 abacha                         (1 veces)
@@ -209,6 +209,7 @@ local                          (1 veces)
 macharia                       (1 veces)
 maina                          (1 veces)
 major                          (2 veces)
+many                           (1 veces)
 march                          (1 veces)
 marcus                         (2 veces)
 marton                         (2 veces)
@@ -328,7 +329,7 @@ taken                          (1 veces)
 terrorists                     (1 veces)
 than                           (3 veces)
 that                           (1 veces)
-the                            (44 veces)
+the                            (45 veces)
 their                          (3 veces)
 them                           (1 veces)
 these                          (1 veces)

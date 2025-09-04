@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 382_clean.txt
-Total de palabras únicas: 1145
-Total de palabras: 4876
+Total de palabras únicas: 1143
+Total de palabras: 4874
 --------------------------------------------------
 
 abilities                      (2 veces)
@@ -63,7 +63,6 @@ american                       (1 veces)
 americans                      (4 veces)
 amount                         (7 veces)
 amounts                        (1 veces)
-amp                            (1 veces)
 an                             (90 veces)
 ancestry                       (1 veces)
 and                            (92 veces)
@@ -228,7 +227,6 @@ contributions                  (1 veces)
 control                        (1 veces)
 controlled                     (2 veces)
 cook                           (3 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corporationall                 (1 veces)
 coulson                        (1 veces)

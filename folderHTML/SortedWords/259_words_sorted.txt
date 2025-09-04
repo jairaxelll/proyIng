@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 259_clean.txt
-Total de palabras únicas: 437
-Total de palabras: 957
+Total de palabras únicas: 435
+Total de palabras: 955
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -89,7 +89,6 @@ continuing                     (1 veces)
 contrasts                      (2 veces)
 contributes                    (1 veces)
 controversy                    (2 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 counseling                     (3 veces)
 counselors                     (1 veces)
@@ -241,7 +240,6 @@ more                           (1 veces)
 multiculturalism               (2 veces)
 music                          (1 veces)
 national                       (1 veces)
-nbsp                           (1 veces)
 new                            (1 veces)
 next                           (1 veces)
 night                          (1 veces)

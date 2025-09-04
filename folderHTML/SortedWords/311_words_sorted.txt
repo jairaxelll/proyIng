@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 311_clean.txt
-Total de palabras únicas: 706
-Total de palabras: 1772
+Total de palabras únicas: 704
+Total de palabras: 1770
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -135,7 +135,6 @@ contrasts                      (1 veces)
 contribution                   (1 veces)
 control                        (4 veces)
 controversy                    (3 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corporation                    (1 veces)
 correspondents                 (1 veces)
@@ -400,7 +399,6 @@ movies                         (2 veces)
 murders                        (1 veces)
 music                          (3 veces)
 national                       (2 veces)
-nbsp                           (1 veces)
 need                           (1 veces)
 new                            (2 veces)
 news                           (6 veces)

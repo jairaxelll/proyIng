@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 265_clean.txt
-Total de palabras únicas: 171
-Total de palabras: 251
+Total de palabras únicas: 169
+Total de palabras: 249
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -36,7 +36,6 @@ compared                       (1 veces)
 comparison                     (1 veces)
 compounds                      (1 veces)
 conditions                     (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 cosmetic                       (1 veces)
 critical                       (1 veces)
@@ -86,7 +85,6 @@ methods                        (1 veces)
 mexico                         (1 veces)
 music                          (1 veces)
 national                       (1 veces)
-nbsp                           (1 veces)
 next                           (1 veces)
 number                         (1 veces)
 occlusion                      (1 veces)

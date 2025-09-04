@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 260_clean.txt
-Total de palabras únicas: 1005
-Total de palabras: 2494
+Total de palabras únicas: 1003
+Total de palabras: 2492
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -206,7 +206,6 @@ contrasted                     (1 veces)
 contribute                     (1 veces)
 contributions                  (1 veces)
 control                        (3 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corns                          (1 veces)
 correct                        (1 veces)
@@ -586,7 +585,6 @@ mutual                         (1 veces)
 narrative                      (1 veces)
 narratives                     (1 veces)
 nature                         (3 veces)
-nbsp                           (1 veces)
 necessary                      (2 veces)
 need                           (1 veces)
 neural                         (2 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 317_clean.txt
-Total de palabras únicas: 197
-Total de palabras: 296
+Total de palabras únicas: 195
+Total de palabras: 294
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -48,7 +48,6 @@ composers                      (1 veces)
 computer                       (1 veces)
 concert                        (1 veces)
 contemporary                   (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 critical                       (1 veces)
 death                          (2 veces)
@@ -118,7 +117,6 @@ melodies                       (1 veces)
 movement                       (1 veces)
 music                          (15 veces)
 nature                         (1 veces)
-nbsp                           (1 veces)
 new                            (1 veces)
 next                           (1 veces)
 notes                          (1 veces)

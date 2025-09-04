@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 029_clean.txt
-Total de palabras únicas: 721
-Total de palabras: 3785
+Total de palabras únicas: 720
+Total de palabras: 3784
 --------------------------------------------------
 
 abb                            (1 veces)
@@ -143,7 +143,6 @@ converting                     (1 veces)
 converts                       (3 veces)
 coordinate                     (5 veces)
 copies                         (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 cord                           (7 veces)
 cords                          (3 veces)

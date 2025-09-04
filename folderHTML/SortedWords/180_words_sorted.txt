@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 180_clean.txt
-Total de palabras únicas: 90
-Total de palabras: 148
+Total de palabras únicas: 87
+Total de palabras: 144
 --------------------------------------------------
 
 about                          (1 veces)
@@ -25,7 +25,6 @@ cheque                         (1 veces)
 cheques                        (1 veces)
 chequing                       (1 veces)
 consider                       (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 country                        (1 veces)
 currencies                     (2 veces)
@@ -49,7 +48,6 @@ is                             (4 veces)
 issued                         (1 veces)
 metro                          (2 veces)
 money                          (6 veces)
-nbsp                           (2 veces)
 need                           (1 veces)
 not                            (1 veces)
 of                             (3 veces)
@@ -66,7 +64,6 @@ range                          (1 veces)
 receipt                        (1 veces)
 recipient                      (1 veces)
 redemption                     (1 veces)
-reg                            (1 veces)
 relative                       (1 veces)
 responsible                    (1 veces)
 savings                        (2 veces)

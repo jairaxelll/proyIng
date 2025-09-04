@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 272_clean.txt
-Total de palabras únicas: 797
-Total de palabras: 2296
+Total de palabras únicas: 795
+Total de palabras: 2294
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -172,7 +172,6 @@ continuing                     (2 veces)
 contribution                   (1 veces)
 contributions                  (1 veces)
 coping                         (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 correlation                    (1 veces)
 cost-effective                 (1 veces)
@@ -470,7 +469,6 @@ mutual                         (1 veces)
 myocardial                     (1 veces)
 national                       (1 veces)
 nature                         (2 veces)
-nbsp                           (1 veces)
 near                           (1 veces)
 need                           (3 veces)
 needs                          (2 veces)

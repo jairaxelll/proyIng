@@ -1,11 +1,11 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 495_clean.txt
-Total de palabras únicas: 85
-Total de palabras: 171
+Total de palabras únicas: 84
+Total de palabras: 170
 --------------------------------------------------
 
 achievement                    (1 veces)
-ad                             (1 veces)
+adúm                           (1 veces)
 agreement                      (1 veces)
 aires                          (1 veces)
 alfredo                        (1 veces)
@@ -79,7 +79,6 @@ their                          (1 veces)
 through                        (1 veces)
 time                           (1 veces)
 to                             (5 veces)
-uacute                         (1 veces)
 well                           (1 veces)
 which                          (2 veces)
 willingness                    (1 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 333_clean.txt
-Total de palabras únicas: 1712
-Total de palabras: 6111
+Total de palabras únicas: 1710
+Total de palabras: 6109
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -373,7 +373,6 @@ controlling                    (1 veces)
 controversial                  (2 veces)
 controversy                    (2 veces)
 cooperation                    (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corporate                      (3 veces)
 corporation                    (1 veces)
@@ -1007,7 +1006,6 @@ nasa                           (1 veces)
 national                       (16 veces)
 nations                        (1 veces)
 nature                         (2 veces)
-nbsp                           (1 veces)
 needed                         (1 veces)
 needs                          (3 veces)
 negative                       (1 veces)

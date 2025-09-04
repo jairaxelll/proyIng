@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 300_clean.txt
-Total de palabras únicas: 338
-Total de palabras: 666
+Total de palabras únicas: 336
+Total de palabras: 664
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -65,7 +65,6 @@ concluding                     (2 veces)
 considered                     (1 veces)
 contribution                   (1 veces)
 copperfield                    (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 crazy                          (1 veces)
 creative                       (1 veces)
@@ -186,7 +185,6 @@ melancholy                     (1 veces)
 most                           (1 veces)
 music                          (1 veces)
 myth                           (1 veces)
-nbsp                           (1 veces)
 next                           (1 veces)
 noted                          (1 veces)
 novel                          (2 veces)

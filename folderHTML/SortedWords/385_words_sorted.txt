@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 385_clean.txt
-Total de palabras únicas: 901
-Total de palabras: 3497
+Total de palabras únicas: 899
+Total de palabras: 3493
 --------------------------------------------------
 
 ability                        (2 veces)
@@ -44,7 +44,6 @@ also                           (6 veces)
 although                       (2 veces)
 american                       (2 veces)
 amount                         (3 veces)
-amp                            (3 veces)
 an                             (20 veces)
 analyzing                      (1 veces)
 and                            (64 veces)
@@ -212,7 +211,6 @@ contributed                    (1 veces)
 control                        (3 veces)
 convince                       (1 veces)
 convincing                     (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corporationall                 (1 veces)
 cost                           (1 veces)

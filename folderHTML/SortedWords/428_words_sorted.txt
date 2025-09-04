@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 428_clean.txt
-Total de palabras únicas: 340
-Total de palabras: 920
+Total de palabras únicas: 339
+Total de palabras: 908
 --------------------------------------------------
 
 abortion                       (1 veces)
@@ -242,7 +242,6 @@ predisposition                 (1 veces)
 provide                        (2 veces)
 provides                       (1 veces)
 provokes                       (1 veces)
-quot                           (12 veces)
 quotient                       (1 veces)
 ralph                          (1 veces)
 range                          (1 veces)

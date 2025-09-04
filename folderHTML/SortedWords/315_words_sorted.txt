@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 315_clean.txt
-Total de palabras únicas: 685
-Total de palabras: 1641
+Total de palabras únicas: 683
+Total de palabras: 1639
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -142,7 +142,6 @@ control                        (4 veces)
 controversial                  (1 veces)
 controversy                    (1 veces)
 cool                           (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corporate                      (1 veces)
 counterpart                    (1 veces)
@@ -388,7 +387,6 @@ movies                         (1 veces)
 music                          (1 veces)
 national                       (1 veces)
 nature                         (1 veces)
-nbsp                           (1 veces)
 need                           (1 veces)
 negative                       (3 veces)
 network                        (5 veces)

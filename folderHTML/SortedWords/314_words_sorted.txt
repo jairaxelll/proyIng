@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 314_clean.txt
-Total de palabras únicas: 245
-Total de palabras: 440
+Total de palabras únicas: 243
+Total de palabras: 438
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -56,7 +56,6 @@ concentrates                   (1 veces)
 concentration                  (1 veces)
 concerning                     (1 veces)
 contends                       (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 coverage                       (7 veces)
 critical                       (1 veces)
@@ -127,7 +126,6 @@ movement                       (5 veces)
 movies                         (1 veces)
 music                          (1 veces)
 nation                         (1 veces)
-nbsp                           (1 veces)
 need                           (1 veces)
 new                            (2 veces)
 news                           (2 veces)

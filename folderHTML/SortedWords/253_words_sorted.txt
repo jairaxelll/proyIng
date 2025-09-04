@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 253_clean.txt
-Total de palabras únicas: 266
-Total de palabras: 475
+Total de palabras únicas: 264
+Total de palabras: 473
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -59,7 +59,6 @@ competence                     (1 veces)
 competitive                    (1 veces)
 conducive                      (1 veces)
 control                        (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 cost                           (2 veces)
 credits                        (4 veces)
@@ -149,7 +148,6 @@ medicine                       (1 veces)
 methods                        (2 veces)
 mid                            (1 veces)
 music                          (1 veces)
-nbsp                           (1 veces)
 needed                         (2 veces)
 new                            (2 veces)
 next                           (1 veces)

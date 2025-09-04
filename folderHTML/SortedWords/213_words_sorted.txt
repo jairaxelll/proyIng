@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 213_clean.txt
-Total de palabras únicas: 342
-Total de palabras: 383
+Total de palabras únicas: 341
+Total de palabras: 381
 --------------------------------------------------
 
 activity                       (1 veces)
@@ -64,7 +64,6 @@ pen                            (1 veces)
 pinto                          (1 veces)
 providing                      (1 veces)
 puerto                         (1 veces)
-quot                           (2 veces)
 register                       (1 veces)
 represent                      (1 veces)
 requirement                    (2 veces)

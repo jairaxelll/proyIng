@@ -1,14 +1,13 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 182_clean.txt
-Total de palabras únicas: 125
-Total de palabras: 166
+Total de palabras únicas: 122
+Total de palabras: 163
 --------------------------------------------------
 
 abc                            (2 veces)
 alberto                        (1 veces)
 allina                         (1 veces)
 amendment                      (1 veces)
-amp                            (1 veces)
 anderson                       (1 veces)
 angeles                        (1 veces)
 anthony                        (1 veces)
@@ -35,7 +34,6 @@ director                       (1 veces)
 directors                      (3 veces)
 dow                            (1 veces)
 elliot                         (1 veces)
-en                             (1 veces)
 executive                      (1 veces)
 first                          (1 veces)
 for                            (1 veces)
@@ -58,7 +56,7 @@ herald                         (1 veces)
 honorary                       (1 veces)
 house                          (1 veces)
 hunter-gault                   (1 veces)
-ibarg                          (1 veces)
+ibargüen                       (1 veces)
 index                          (1 veces)
 info                           (1 veces)
 isaacson                       (1 veces)
@@ -118,7 +116,6 @@ time                           (1 veces)
 times                          (3 veces)
 to                             (1 veces)
 tom                            (1 veces)
-uuml                           (1 veces)
 vice                           (1 veces)
 victor                         (1 veces)
 walter                         (2 veces)

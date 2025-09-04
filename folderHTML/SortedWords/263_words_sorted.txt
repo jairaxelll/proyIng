@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 263_clean.txt
-Total de palabras únicas: 291
-Total de palabras: 541
+Total de palabras únicas: 289
+Total de palabras: 539
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -79,7 +79,6 @@ consisting                     (1 veces)
 contemporary                   (1 veces)
 contraindications              (1 veces)
 controlled                     (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 critical                       (1 veces)
 current                        (1 veces)
@@ -173,7 +172,6 @@ mortality                      (1 veces)
 music                          (1 veces)
 myocardia                      (1 veces)
 myocardial                     (3 veces)
-nbsp                           (1 veces)
 necessary                      (1 veces)
 needs                          (1 veces)
 next                           (1 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 176_clean.txt
-Total de palabras únicas: 41
-Total de palabras: 135
+Total de palabras únicas: 40
+Total de palabras: 115
 --------------------------------------------------
 
 ascot                          (1 veces)
@@ -35,7 +35,6 @@ premium                        (2 veces)
 price                          (4 veces)
 primo                          (1 veces)
 prince                         (2 veces)
-quot                           (20 veces)
 rey                            (1 veces)
 ring                           (4 veces)
 rothschild                     (1 veces)

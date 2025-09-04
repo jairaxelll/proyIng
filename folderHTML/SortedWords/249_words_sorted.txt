@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 249_clean.txt
-Total de palabras únicas: 1551
-Total de palabras: 5660
+Total de palabras únicas: 1549
+Total de palabras: 5658
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -316,7 +316,6 @@ converse                       (1 veces)
 conviction                     (1 veces)
 cooperation                    (1 veces)
 cooperative                    (8 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 correct                        (1 veces)
 correcting                     (1 veces)
@@ -931,7 +930,6 @@ nation                         (1 veces)
 nationalism                    (1 veces)
 native                         (1 veces)
 nature                         (5 veces)
-nbsp                           (1 veces)
 nearly                         (1 veces)
 neccesity                      (1 veces)
 necessary                      (3 veces)

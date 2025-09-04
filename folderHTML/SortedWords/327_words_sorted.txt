@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 327_clean.txt
-Total de palabras únicas: 296
-Total de palabras: 563
+Total de palabras únicas: 294
+Total de palabras: 561
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -62,7 +62,6 @@ confucianism                   (1 veces)
 confucius                      (1 veces)
 contemporary                   (1 veces)
 contributions                  (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 creation                       (1 veces)
 credited                       (1 veces)
@@ -178,7 +177,6 @@ music                          (3 veces)
 mystery                        (1 veces)
 mysticism                      (1 veces)
 nature                         (3 veces)
-nbsp                           (1 veces)
 neal                           (1 veces)
 next                           (1 veces)
 noting                         (1 veces)

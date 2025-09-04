@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 106_clean.txt
-Total de palabras únicas: 231
-Total de palabras: 513
+Total de palabras únicas: 230
+Total de palabras: 493
 --------------------------------------------------
 
 about                          (2 veces)
@@ -162,7 +162,6 @@ pretty                         (1 veces)
 problem                        (1 veces)
 protect                        (1 veces)
 protects                       (2 veces)
-quot                           (20 veces)
 r-first                        (1 veces)
 re                             (3 veces)
 related                        (1 veces)

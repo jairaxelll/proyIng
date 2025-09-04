@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 378_clean.txt
-Total de palabras únicas: 558
-Total de palabras: 2317
+Total de palabras únicas: 556
+Total de palabras: 2315
 --------------------------------------------------
 
 about                          (2 veces)
@@ -27,7 +27,6 @@ along                          (1 veces)
 also                           (4 veces)
 american                       (1 veces)
 amount                         (1 veces)
-amp                            (1 veces)
 an                             (25 veces)
 and                            (31 veces)
 another                        (3 veces)
@@ -119,7 +118,6 @@ constitutional                 (1 veces)
 contact                        (1 veces)
 contents                       (1 veces)
 continue                       (2 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corporationall                 (1 veces)
 correct                        (1 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 278_clean.txt
-Total de palabras únicas: 442
-Total de palabras: 926
+Total de palabras únicas: 440
+Total de palabras: 924
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -98,7 +98,6 @@ contract                       (1 veces)
 contrasted                     (1 veces)
 contributions                  (3 veces)
 convictions                    (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 could                          (1 veces)
 createa                        (1 veces)
@@ -266,7 +265,6 @@ modern                         (2 veces)
 monarch                        (1 veces)
 much                           (1 veces)
 music                          (1 veces)
-nbsp                           (1 veces)
 necessities                    (1 veces)
 next                           (1 veces)
 no                             (1 veces)

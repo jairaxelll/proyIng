@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 320_clean.txt
-Total de palabras únicas: 285
-Total de palabras: 656
+Total de palabras únicas: 283
+Total de palabras: 654
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -61,7 +61,6 @@ contribution                   (2 veces)
 contributions                  (2 veces)
 contributors                   (1 veces)
 cool                           (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 country                        (1 veces)
 creole                         (1 veces)
@@ -172,7 +171,6 @@ modern                         (1 veces)
 music                          (18 veces)
 musical                        (2 veces)
 nat                            (2 veces)
-nbsp                           (1 veces)
 negro                          (1 veces)
 new                            (4 veces)
 next                           (1 veces)

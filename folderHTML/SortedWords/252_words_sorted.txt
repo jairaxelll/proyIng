@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 252_clean.txt
-Total de palabras únicas: 809
-Total de palabras: 2315
+Total de palabras únicas: 807
+Total de palabras: 2313
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -161,7 +161,6 @@ controversy                    (1 veces)
 convey                         (1 veces)
 cope                           (1 veces)
 coping                         (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 counseling                     (3 veces)
 counterpa                      (1 veces)
@@ -476,7 +475,6 @@ music                          (1 veces)
 must                           (1 veces)
 national                       (1 veces)
 nature                         (1 veces)
-nbsp                           (1 veces)
 necessary                      (1 veces)
 need                           (4 veces)
 needs                          (3 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 172_clean.txt
-Total de palabras únicas: 214
-Total de palabras: 444
+Total de palabras únicas: 213
+Total de palabras: 438
 --------------------------------------------------
 
 acquitted                      (1 veces)
@@ -162,7 +162,6 @@ provided                       (1 veces)
 publishing                     (1 veces)
 pursuit                        (1 veces)
 questioned                     (1 veces)
-quot                           (6 veces)
 rallied                        (1 veces)
 range                          (1 veces)
 rebori                         (1 veces)

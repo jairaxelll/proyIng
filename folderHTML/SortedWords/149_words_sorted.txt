@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 149_clean.txt
-Total de palabras únicas: 77
-Total de palabras: 128
+Total de palabras únicas: 74
+Total de palabras: 125
 --------------------------------------------------
 
 about                          (1 veces)
@@ -23,7 +23,6 @@ cheque                         (1 veces)
 cheques                        (1 veces)
 chequing                       (1 veces)
 consider                       (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 currency                       (2 veces)
 dealer                         (1 veces)
@@ -40,7 +39,6 @@ in                             (4 veces)
 is                             (4 veces)
 metro                          (3 veces)
 money                          (8 veces)
-nbsp                           (1 veces)
 need                           (1 veces)
 not                            (1 veces)
 of                             (1 veces)
@@ -56,7 +54,6 @@ purchase                       (2 veces)
 purchaser                      (1 veces)
 receipt                        (1 veces)
 recipient                      (1 veces)
-reg                            (1 veces)
 relative                       (1 veces)
 responsible                    (1 veces)
 savings                        (3 veces)

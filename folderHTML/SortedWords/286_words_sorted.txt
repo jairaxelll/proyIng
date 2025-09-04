@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 286_clean.txt
-Total de palabras únicas: 659
-Total de palabras: 1711
+Total de palabras únicas: 657
+Total de palabras: 1709
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -149,7 +149,6 @@ contribution                   (1 veces)
 control                        (1 veces)
 controversies                  (1 veces)
 conventions                    (2 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 created                        (1 veces)
 crimes                         (3 veces)
@@ -392,7 +391,6 @@ nation                         (1 veces)
 nationalist                    (3 veces)
 nationalistic                  (1 veces)
 nationalists                   (1 veces)
-nbsp                           (1 veces)
 necessary                      (1 veces)
 neutralization                 (1 veces)
 new                            (1 veces)

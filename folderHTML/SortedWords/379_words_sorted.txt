@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 379_clean.txt
-Total de palabras únicas: 685
-Total de palabras: 2311
+Total de palabras únicas: 683
+Total de palabras: 2300
 --------------------------------------------------
 
 abetting                       (4 veces)
@@ -49,7 +49,6 @@ amendment                      (1 veces)
 american                       (1 veces)
 among                          (1 veces)
 amount                         (1 veces)
-amp                            (10 veces)
 an                             (10 veces)
 ancestry                       (1 veces)
 and                            (48 veces)
@@ -172,7 +171,6 @@ controlled                     (2 veces)
 convicted                      (6 veces)
 conviction                     (2 veces)
 convictions                    (3 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corporationall                 (1 veces)
 court                          (9 veces)

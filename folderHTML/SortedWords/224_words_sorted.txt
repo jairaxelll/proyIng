@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 224_clean.txt
-Total de palabras únicas: 87
-Total de palabras: 214
+Total de palabras únicas: 86
+Total de palabras: 212
 --------------------------------------------------
 
 always                         (1 veces)
@@ -58,7 +58,6 @@ posted                         (1 veces)
 problem                        (9 veces)
 program                        (2 veces)
 protocol                       (1 veces)
-quot                           (2 veces)
 re                             (5 veces)
 received                       (1 veces)
 regards                        (2 veces)

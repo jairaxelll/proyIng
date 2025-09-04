@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 254_clean.txt
-Total de palabras únicas: 480
-Total de palabras: 1115
+Total de palabras únicas: 478
+Total de palabras: 1113
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -98,7 +98,6 @@ consequences                   (1 veces)
 content                        (2 veces)
 context                        (1 veces)
 cooperative                    (5 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 correcting                     (1 veces)
 counselors                     (1 veces)
@@ -280,7 +279,6 @@ motivate                       (1 veces)
 motivating                     (1 veces)
 music                          (1 veces)
 natural                        (1 veces)
-nbsp                           (1 veces)
 necessary                      (1 veces)
 negative                       (1 veces)
 new                            (1 veces)

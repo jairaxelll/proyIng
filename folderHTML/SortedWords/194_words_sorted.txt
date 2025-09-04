@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 194_clean.txt
-Total de palabras únicas: 264
-Total de palabras: 498
+Total de palabras únicas: 261
+Total de palabras: 491
 --------------------------------------------------
 
 a-510                          (1 veces)
@@ -31,7 +31,6 @@ artemis                        (1 veces)
 available                      (1 veces)
 aw-010a                        (1 veces)
 be                             (1 veces)
-bli                            (3 veces)
 bosch                          (3 veces)
 browser                        (2 veces)
 by                             (1 veces)
@@ -41,7 +40,6 @@ clicking                       (1 veces)
 cloos                          (5 veces)
 cm6404d                        (1 veces)
 comau                          (3 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 crs                            (2 veces)
 cybernetic                     (2 veces)
@@ -218,8 +216,8 @@ sr5438                         (1 veces)
 sr600                          (1 veces)
 sr800                          (1 veces)
 srv12l                         (1 veces)
-sta                            (3 veces)
 standard                       (2 veces)
+staübli                        (3 veces)
 supplied                       (1 veces)
 t3426                          (1 veces)
 t3776                          (1 veces)
@@ -245,7 +243,6 @@ unimation                      (7 veces)
 upgrade                        (1 veces)
 upgraded                       (2 veces)
 use                            (1 veces)
-uuml                           (3 veces)
 ux120                          (1 veces)
 ux150                          (1 veces)
 v01                            (1 veces)

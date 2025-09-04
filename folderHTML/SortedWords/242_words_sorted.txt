@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 242_clean.txt
-Total de palabras únicas: 598
-Total de palabras: 1473
+Total de palabras únicas: 596
+Total de palabras: 1471
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -112,7 +112,6 @@ considered                     (1 veces)
 constitution                   (2 veces)
 contrasting                    (1 veces)
 cooperation                    (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 cotton                         (2 veces)
 counter                        (1 veces)
@@ -346,7 +345,6 @@ nation                         (1 veces)
 national                       (2 veces)
 nations                        (1 veces)
 nature                         (3 veces)
-nbsp                           (1 veces)
 need                           (1 veces)
 neoclassical                   (1 veces)
 new                            (2 veces)

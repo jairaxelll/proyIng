@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 190_clean.txt
-Total de palabras únicas: 92
-Total de palabras: 163
+Total de palabras únicas: 90
+Total de palabras: 160
 --------------------------------------------------
 
 able                           (1 veces)
@@ -22,7 +22,6 @@ can                            (1 veces)
 closed                         (2 veces)
 consider                       (1 veces)
 convert                        (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 current                        (1 veces)
 does                           (1 veces)
@@ -52,7 +51,6 @@ metromortgage                  (6 veces)
 monthly                        (2 veces)
 mortgage                       (3 veces)
 move                           (1 veces)
-nbsp                           (2 veces)
 near                           (1 veces)
 of                             (3 veces)
 off                            (3 veces)

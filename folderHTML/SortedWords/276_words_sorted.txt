@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 276_clean.txt
-Total de palabras únicas: 655
-Total de palabras: 1501
+Total de palabras únicas: 653
+Total de palabras: 1499
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -142,7 +142,6 @@ contributions                  (1 veces)
 controversy                    (2 veces)
 conventions                    (2 veces)
 cooperating                    (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 countries                      (3 veces)
 cowboy                         (1 veces)
@@ -391,7 +390,6 @@ nations                        (2 veces)
 native                         (6 veces)
 navajo                         (1 veces)
 nazi                           (1 veces)
-nbsp                           (1 veces)
 necessities                    (1 veces)
 new                            (2 veces)
 next                           (1 veces)

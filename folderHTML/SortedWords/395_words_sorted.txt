@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 395_clean.txt
-Total de palabras únicas: 586
-Total de palabras: 2039
+Total de palabras únicas: 584
+Total de palabras: 2036
 --------------------------------------------------
 
 a-3823                         (1 veces)
@@ -35,7 +35,6 @@ although                       (1 veces)
 alton                          (2 veces)
 american                       (6 veces)
 americans                      (1 veces)
-amp                            (2 veces)
 an                             (1 veces)
 and                            (61 veces)
 antitrust                      (1 veces)
@@ -127,7 +126,6 @@ convicted                      (1 veces)
 convicts                       (1 veces)
 cook                           (10 veces)
 copies                         (2 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corner                         (1 veces)
 corporationall                 (1 veces)

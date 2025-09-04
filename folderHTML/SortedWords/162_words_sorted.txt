@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 162_clean.txt
-Total de palabras únicas: 141
-Total de palabras: 208
+Total de palabras únicas: 140
+Total de palabras: 207
 --------------------------------------------------
 
 abroad                         (1 veces)
@@ -10,7 +10,6 @@ ag                             (1 veces)
 again                          (1 veces)
 agfor                          (1 veces)
 along                          (1 veces)
-amp                            (1 veces)
 an                             (1 veces)
 and                            (11 veces)
 announced                      (1 veces)

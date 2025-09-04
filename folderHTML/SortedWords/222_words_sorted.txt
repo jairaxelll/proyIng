@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 222_clean.txt
-Total de palabras únicas: 650
-Total de palabras: 1555
+Total de palabras únicas: 649
+Total de palabras: 1554
 --------------------------------------------------
 
 abolishing                     (1 veces)
@@ -388,7 +388,6 @@ my                             (1 veces)
 myanmar                        (3 veces)
 national                       (4 veces)
 nationals                      (1 veces)
-nbsp                           (1 veces)
 never                          (1 veces)
 new                            (3 veces)
 news                           (5 veces)

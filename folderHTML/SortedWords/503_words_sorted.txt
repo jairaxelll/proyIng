@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 503_clean.txt
-Total de palabras únicas: 89
-Total de palabras: 147
+Total de palabras únicas: 88
+Total de palabras: 146
 --------------------------------------------------
 
 addition                       (1 veces)
@@ -49,7 +49,6 @@ invisible                      (1 veces)
 is                             (2 veces)
 it                             (2 veces)
 marking                        (1 veces)
-nbsp                           (1 veces)
 new                            (1 veces)
 norton                         (1 veces)
 of                             (1 veces)

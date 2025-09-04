@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 043_clean.txt
-Total de palabras únicas: 3403
-Total de palabras: 16249
+Total de palabras únicas: 3402
+Total de palabras: 16075
 --------------------------------------------------
 
 aaa                            (8 veces)
@@ -1991,7 +1991,6 @@ nationals                      (1 veces)
 nations                        (1 veces)
 native                         (2 veces)
 natural                        (2 veces)
-nbsp                           (174 veces)
 near                           (5 veces)
 nearby-based                   (1 veces)
 nearly                         (1 veces)

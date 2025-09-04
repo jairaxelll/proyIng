@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 501_clean.txt
-Total de palabras únicas: 370
-Total de palabras: 697
+Total de palabras únicas: 369
+Total de palabras: 695
 --------------------------------------------------
 
 across                         (1 veces)
@@ -214,7 +214,6 @@ millions                       (1 veces)
 mis                            (1 veces)
 more                           (1 veces)
 most                           (1 veces)
-nbsp                           (2 veces)
 near                           (1 veces)
 net                            (2 veces)
 netscape                       (3 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 014_clean.txt
-Total de palabras únicas: 30
-Total de palabras: 37
+Total de palabras únicas: 29
+Total de palabras: 35
 --------------------------------------------------
 
 at                             (1 veces)
@@ -23,7 +23,6 @@ michigan                       (1 veces)
 minister                       (1 veces)
 mother                         (1 veces)
 mr                             (1 veces)
-nbsp                           (2 veces)
 nw                             (2 veces)
 of                             (1 veces)
 parish                         (1 veces)

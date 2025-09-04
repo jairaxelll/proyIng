@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 332_clean.txt
-Total de palabras únicas: 413
-Total de palabras: 921
+Total de palabras únicas: 411
+Total de palabras: 919
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -77,7 +77,6 @@ conflicts                      (1 veces)
 confrontation                  (1 veces)
 congo                          (1 veces)
 continuities                   (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 country                        (1 veces)
 creating                       (1 veces)
@@ -225,7 +224,6 @@ music                          (1 veces)
 nation                         (1 veces)
 national                       (1 veces)
 nations                        (4 veces)
-nbsp                           (1 veces)
 need                           (1 veces)
 needs                          (1 veces)
 negotiations                   (1 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 159_clean.txt
-Total de palabras únicas: 384
-Total de palabras: 1330
+Total de palabras únicas: 383
+Total de palabras: 1276
 --------------------------------------------------
 
 accept                         (1 veces)
@@ -278,7 +278,6 @@ purchaser                      (5 veces)
 purchasers                     (2 veces)
 purposes                       (2 veces)
 pursuant                       (1 veces)
-quot                           (54 veces)
 recipients                     (2 veces)
 reexport                       (3 veces)
 reexported                     (1 veces)

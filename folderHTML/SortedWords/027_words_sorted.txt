@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 027_clean.txt
-Total de palabras únicas: 1510
-Total de palabras: 7801
+Total de palabras únicas: 1508
+Total de palabras: 7507
 --------------------------------------------------
 
 ab                             (1 veces)
@@ -79,7 +79,6 @@ american                       (13 veces)
 among                          (3 veces)
 amount                         (1 veces)
 amounts                        (1 veces)
-amp                            (4 veces)
 amsterdam                      (1 veces)
 an                             (15 veces)
 analogy                        (1 veces)
@@ -1076,7 +1075,6 @@ purveyors                      (1 veces)
 quarantin                      (1 veces)
 question                       (2 veces)
 questions                      (2 veces)
-quot                           (290 veces)
 quotations                     (1 veces)
 quoted                         (1 veces)
 quoting                        (1 veces)

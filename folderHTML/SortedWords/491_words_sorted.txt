@@ -1,10 +1,9 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 491_clean.txt
-Total de palabras únicas: 42
-Total de palabras: 48
+Total de palabras únicas: 39
+Total de palabras: 44
 --------------------------------------------------
 
-aacute                         (2 veces)
 bmp                            (1 veces)
 brinda                         (1 veces)
 click                          (1 veces)
@@ -18,31 +17,29 @@ en                             (3 veces)
 entre                          (1 veces)
 estos                          (1 veces)
 fondos                         (1 veces)
-genes                          (1 veces)
-gina                           (1 veces)
 gratis                         (1 veces)
 guillermo                      (1 veces)
 haga                           (1 veces)
 hecho                          (1 veces)
-im                             (1 veces)
+imágenes                       (1 veces)
 internet                       (1 veces)
 kb                             (1 veces)
 las                            (1 veces)
 le                             (1 veces)
-lo                             (1 veces)
 los                            (1 veces)
 lubricantes                    (1 veces)
 maldonado                      (1 veces)
-oacute                         (1 veces)
 obtenga                        (1 veces)
 pantalla                       (1 veces)
 para                           (1 veces)
 pc                             (1 veces)
 por                            (1 veces)
 puede                          (1 veces)
+página                         (1 veces)
 que                            (1 veces)
 regalo                         (1 veces)
 regalos                        (1 veces)
 su                             (3 veces)
+sólo                           (1 veces)
 usted                          (1 veces)
 ypf                            (1 veces)

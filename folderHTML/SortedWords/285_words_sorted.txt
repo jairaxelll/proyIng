@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 285_clean.txt
-Total de palabras únicas: 502
-Total de palabras: 1179
+Total de palabras únicas: 500
+Total de palabras: 1177
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -100,7 +100,6 @@ constitutition                 (1 veces)
 contemporary                   (1 veces)
 contends                       (1 veces)
 contributed                    (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 countries                      (2 veces)
 country                        (1 veces)
@@ -289,7 +288,6 @@ monroe                         (2 veces)
 morales                        (1 veces)
 music                          (1 veces)
 nation                         (1 veces)
-nbsp                           (1 veces)
 neglected                      (1 veces)
 new                            (1 veces)
 next                           (1 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 074_clean.txt
-Total de palabras únicas: 403
-Total de palabras: 864
+Total de palabras únicas: 402
+Total de palabras: 850
 --------------------------------------------------
 
 able                           (3 veces)
@@ -287,7 +287,6 @@ profound                       (1 veces)
 pushing                        (1 veces)
 quests                         (1 veces)
 quite                          (1 veces)
-quot                           (14 veces)
 radiates                       (1 veces)
 rather                         (1 veces)
 ready                          (1 veces)

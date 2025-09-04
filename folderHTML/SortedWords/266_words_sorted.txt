@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 266_clean.txt
-Total de palabras únicas: 699
-Total de palabras: 1843
+Total de palabras únicas: 697
+Total de palabras: 1841
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -162,7 +162,6 @@ continues                      (1 veces)
 contributing                   (1 veces)
 control                        (1 veces)
 controversy                    (2 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 correlation                    (1 veces)
 counseling                     (3 veces)
@@ -420,7 +419,6 @@ mutual                         (1 veces)
 myths                          (1 veces)
 native                         (2 veces)
 natural                        (1 veces)
-nbsp                           (1 veces)
 negative                       (1 veces)
 nervous                        (1 veces)
 networks                       (1 veces)

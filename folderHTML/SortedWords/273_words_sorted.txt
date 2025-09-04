@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 273_clean.txt
-Total de palabras únicas: 391
-Total de palabras: 790
+Total de palabras únicas: 389
+Total de palabras: 788
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -95,7 +95,6 @@ contrasts                      (1 veces)
 contributing                   (2 veces)
 controlled                     (1 veces)
 cooking                        (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 critical                       (1 veces)
 cultural                       (1 veces)
@@ -227,7 +226,6 @@ mobility                       (1 veces)
 more                           (1 veces)
 music                          (1 veces)
 natural                        (1 veces)
-nbsp                           (1 veces)
 need                           (1 veces)
 needs                          (3 veces)
 negative                       (1 veces)

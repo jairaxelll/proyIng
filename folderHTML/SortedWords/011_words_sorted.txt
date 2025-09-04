@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 011_clean.txt
-Total de palabras únicas: 532
-Total de palabras: 1688
+Total de palabras únicas: 531
+Total de palabras: 1687
 --------------------------------------------------
 
 able                           (1 veces)
@@ -94,7 +94,6 @@ converts                       (1 veces)
 cooling                        (1 veces)
 copied                         (1 veces)
 copies                         (2 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 cords                          (1 veces)
 corner                         (1 veces)

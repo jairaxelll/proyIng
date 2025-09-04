@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 277_clean.txt
-Total de palabras únicas: 741
-Total de palabras: 1995
+Total de palabras únicas: 739
+Total de palabras: 1993
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -157,7 +157,6 @@ contributions                  (2 veces)
 controversy                    (1 veces)
 convention                     (1 veces)
 conversion                     (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 cosmic                         (2 veces)
 counterculture                 (1 veces)
@@ -453,7 +452,6 @@ music                          (1 veces)
 mysteries                      (1 veces)
 mythology                      (2 veces)
 nature                         (1 veces)
-nbsp                           (1 veces)
 nearly                         (1 veces)
 netherworld                    (1 veces)
 next                           (1 veces)

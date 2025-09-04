@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 287_clean.txt
-Total de palabras únicas: 788
-Total de palabras: 1997
+Total de palabras únicas: 786
+Total de palabras: 1995
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -161,7 +161,6 @@ constituting                   (2 veces)
 contemporary                   (2 veces)
 context                        (2 veces)
 contrasted                     (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 cost-benefit                   (1 veces)
 councils                       (1 veces)
@@ -469,7 +468,6 @@ nato                           (3 veces)
 nature                         (1 veces)
 nazi                           (1 veces)
 nazis                          (1 veces)
-nbsp                           (1 veces)
 needed                         (1 veces)
 neighbors                      (1 veces)
 new                            (2 veces)

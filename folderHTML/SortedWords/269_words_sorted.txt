@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 269_clean.txt
-Total de palabras únicas: 1125
-Total de palabras: 3796
+Total de palabras únicas: 1123
+Total de palabras: 3794
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -215,7 +215,6 @@ controls                       (1 veces)
 convenience                    (1 veces)
 cooperative                    (1 veces)
 coordinating                   (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corporate                      (11 veces)
 corporation                    (7 veces)
@@ -650,7 +649,6 @@ myth                           (1 veces)
 national                       (1 veces)
 nationalities                  (1 veces)
 nature                         (3 veces)
-nbsp                           (1 veces)
 necessary                      (3 veces)
 necessity                      (1 veces)
 need-satisfaction              (1 veces)

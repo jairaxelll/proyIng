@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 292_clean.txt
-Total de palabras únicas: 1018
-Total de palabras: 2883
+Total de palabras únicas: 1016
+Total de palabras: 2881
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -208,7 +208,6 @@ control                        (3 veces)
 convicted                      (1 veces)
 conviction                     (1 veces)
 cope                           (2 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 correctional                   (3 veces)
 corrections                    (1 veces)
@@ -610,7 +609,6 @@ music                          (1 veces)
 nation                         (1 veces)
 national                       (2 veces)
 natural                        (2 veces)
-nbsp                           (1 veces)
 need                           (4 veces)
 negative                       (2 veces)
 nettler                        (1 veces)

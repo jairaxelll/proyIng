@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 386_clean.txt
-Total de palabras únicas: 530
-Total de palabras: 1783
+Total de palabras únicas: 528
+Total de palabras: 1776
 --------------------------------------------------
 
 able                           (3 veces)
@@ -23,7 +23,6 @@ all                            (7 veces)
 allow                          (4 veces)
 although                       (1 veces)
 american                       (1 veces)
-amp                            (6 veces)
 an                             (12 veces)
 and                            (23 veces)
 another                        (8 veces)
@@ -106,7 +105,6 @@ constitute                     (1 veces)
 consumer                       (1 veces)
 contents                       (1 veces)
 contract                       (2 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corporate                      (1 veces)
 corporationall                 (1 veces)

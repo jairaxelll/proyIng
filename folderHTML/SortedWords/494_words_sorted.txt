@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 494_clean.txt
-Total de palabras únicas: 118
-Total de palabras: 187
+Total de palabras únicas: 117
+Total de palabras: 182
 --------------------------------------------------
 
 aa                             (2 veces)
@@ -94,7 +94,6 @@ mega                           (2 veces)
 mismo                          (1 veces)
 moriello                       (1 veces)
 más                            (1 veces)
-nbsp                           (5 veces)
 números                        (1 veces)
 ochoa                          (1 veces)
 omar                           (1 veces)

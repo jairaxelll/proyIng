@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 328_clean.txt
-Total de palabras únicas: 764
-Total de palabras: 2386
+Total de palabras únicas: 762
+Total de palabras: 2384
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -153,7 +153,6 @@ control                        (2 veces)
 convenient                     (1 veces)
 conventional                   (1 veces)
 copernican                     (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 core                           (1 veces)
 correct                        (1 veces)
@@ -460,7 +459,6 @@ national                       (2 veces)
 natural                        (8 veces)
 nature                         (10 veces)
 nazi                           (1 veces)
-nbsp                           (1 veces)
 necessity                      (2 veces)
 needs                          (1 veces)
 negative                       (1 veces)

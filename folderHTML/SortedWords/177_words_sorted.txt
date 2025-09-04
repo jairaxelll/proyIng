@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 177_clean.txt
-Total de palabras únicas: 166
-Total de palabras: 302
+Total de palabras únicas: 165
+Total de palabras: 298
 --------------------------------------------------
 
 accomplishments                (1 veces)
@@ -90,7 +90,6 @@ miserybay                      (2 veces)
 mistakes                       (1 veces)
 my                             (1 veces)
 name                           (1 veces)
-nbsp                           (4 veces)
 need                           (2 veces)
 needs                          (1 veces)
 net                            (1 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 309_clean.txt
-Total de palabras únicas: 1387
-Total de palabras: 4132
+Total de palabras únicas: 1385
+Total de palabras: 4130
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -259,7 +259,6 @@ contrasts                      (1 veces)
 contributions                  (1 veces)
 control                        (2 veces)
 convicted                      (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 correlations                   (1 veces)
 cortazar                       (1 veces)
@@ -815,7 +814,6 @@ narcissus                      (1 veces)
 narrative                      (1 veces)
 national                       (1 veces)
 nature                         (4 veces)
-nbsp                           (1 veces)
 near                           (1 veces)
 necklace                       (1 veces)
 nedezhda                       (1 veces)

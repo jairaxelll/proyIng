@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 275_clean.txt
-Total de palabras únicas: 360
-Total de palabras: 647
+Total de palabras únicas: 358
+Total de palabras: 645
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -78,7 +78,6 @@ conn                           (1 veces)
 connecticut                    (2 veces)
 considered                     (1 veces)
 considers                      (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 critical                       (1 veces)
 ct                             (2 veces)
@@ -212,7 +211,6 @@ most                           (1 veces)
 mostly                         (1 veces)
 mother                         (1 veces)
 music                          (1 veces)
-nbsp                           (1 veces)
 necessary                      (1 veces)
 need                           (1 veces)
 next                           (1 veces)

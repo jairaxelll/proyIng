@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 321_clean.txt
-Total de palabras únicas: 329
-Total de palabras: 621
+Total de palabras únicas: 327
+Total de palabras: 619
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -74,7 +74,6 @@ concert                        (1 veces)
 consumer                       (1 veces)
 contemporary                   (4 veces)
 contributions                  (3 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 critical                       (1 veces)
 dance-based                    (1 veces)
@@ -190,7 +189,6 @@ musical                        (4 veces)
 musician                       (1 veces)
 mutual                         (1 veces)
 nature                         (1 veces)
-nbsp                           (1 veces)
 new                            (1 veces)
 next                           (1 veces)
 notes                          (1 veces)

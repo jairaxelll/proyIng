@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 170_clean.txt
-Total de palabras únicas: 94
-Total de palabras: 126
+Total de palabras únicas: 92
+Total de palabras: 122
 --------------------------------------------------
 
 accident                       (1 veces)
@@ -21,7 +21,6 @@ come                           (1 veces)
 comes                          (1 veces)
 commitment                     (1 veces)
 complete                       (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 coverage                       (2 veces)
 death                          (1 veces)
@@ -49,7 +48,6 @@ metro                          (1 veces)
 mind                           (1 veces)
 more                           (1 veces)
 much                           (1 veces)
-nbsp                           (3 veces)
 needs                          (1 veces)
 no-obligation                  (1 veces)
 of                             (4 veces)

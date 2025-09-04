@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 241_clean.txt
-Total de palabras únicas: 385
-Total de palabras: 915
+Total de palabras únicas: 383
+Total de palabras: 913
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -82,7 +82,6 @@ contract                       (1 veces)
 contracts                      (1 veces)
 contrast                       (1 veces)
 contrasts                      (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 countries                      (1 veces)
 critical                       (1 veces)
@@ -216,7 +215,6 @@ monopoly                       (1 veces)
 music                          (1 veces)
 myth                           (1 veces)
 mythologies                    (1 veces)
-nbsp                           (1 veces)
 necessary                      (1 veces)
 new                            (2 veces)
 next                           (1 veces)

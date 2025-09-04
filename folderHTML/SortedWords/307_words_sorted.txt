@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 307_clean.txt
-Total de palabras únicas: 1299
-Total de palabras: 4346
+Total de palabras únicas: 1297
+Total de palabras: 4344
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -259,7 +259,6 @@ contrasts                      (1 veces)
 contributions                  (1 veces)
 controversial                  (1 veces)
 conveys                        (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corrupt                        (2 veces)
 cosmic                         (1 veces)
@@ -772,7 +771,6 @@ narrative                      (1 veces)
 narrator                       (2 veces)
 narrow                         (3 veces)
 nature                         (15 veces)
-nbsp                           (1 veces)
 neo-classical                  (1 veces)
 neoclassical                   (2 veces)
 new                            (2 veces)

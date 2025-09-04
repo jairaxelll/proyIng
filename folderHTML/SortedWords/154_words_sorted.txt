@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 154_clean.txt
-Total de palabras únicas: 476
-Total de palabras: 1232
+Total de palabras únicas: 475
+Total de palabras: 1210
 --------------------------------------------------
 
 access                         (2 veces)
@@ -16,7 +16,6 @@ agriculture                    (2 veces)
 air                            (1 veces)
 allen                          (1 veces)
 also                           (4 veces)
-amp                            (22 veces)
 an                             (3 veces)
 analysis                       (2 veces)
 and                            (49 veces)

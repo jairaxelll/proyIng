@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 134_clean.txt
-Total de palabras únicas: 60
-Total de palabras: 96
+Total de palabras únicas: 57
+Total de palabras: 83
 --------------------------------------------------
 
 aascpa                         (1 veces)
@@ -20,7 +20,6 @@ client                         (1 veces)
 com                            (1 veces)
 composite                      (1 veces)
 composites                     (2 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 determined                     (1 veces)
 disclosure                     (1 veces)
@@ -40,14 +39,12 @@ is                             (1 veces)
 list                           (2 veces)
 management                     (2 veces)
 mandate                        (2 veces)
-nbsp                           (10 veces)
 of                             (5 veces)
 on                             (1 veces)
 overview                       (1 veces)
 performance                    (1 veces)
 quarterly                      (2 veces)
 quick                          (1 veces)
-quot                           (2 veces)
 quote                          (1 veces)
 reader                         (1 veces)
 report                         (1 veces)

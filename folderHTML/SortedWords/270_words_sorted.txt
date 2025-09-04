@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 270_clean.txt
-Total de palabras únicas: 448
-Total de palabras: 946
+Total de palabras únicas: 446
+Total de palabras: 944
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -95,7 +95,6 @@ consensus                      (1 veces)
 consumer                       (1 veces)
 convalescent                   (1 veces)
 coping                         (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 county                         (1 veces)
 crisis                         (1 veces)
@@ -250,7 +249,6 @@ mt                             (2 veces)
 multiple                       (1 veces)
 music                          (1 veces)
 mutual                         (1 veces)
-nbsp                           (1 veces)
 need                           (2 veces)
 new                            (3 veces)
 next                           (1 veces)

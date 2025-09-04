@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 284_clean.txt
-Total de palabras únicas: 623
-Total de palabras: 1498
+Total de palabras únicas: 621
+Total de palabras: 1496
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -134,7 +134,6 @@ constitutional                 (1 veces)
 contends                       (1 veces)
 context                        (1 veces)
 controversy                    (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 correct                        (1 veces)
 cotton                         (1 veces)
@@ -370,7 +369,6 @@ mythology                      (1 veces)
 n0n-european                   (1 veces)
 nation                         (1 veces)
 natural                        (1 veces)
-nbsp                           (1 veces)
 negro                          (1 veces)
 new                            (2 veces)
 newly                          (1 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 164_clean.txt
-Total de palabras únicas: 248
-Total de palabras: 526
+Total de palabras únicas: 247
+Total de palabras: 524
 --------------------------------------------------
 
 about                          (1 veces)
@@ -136,7 +136,6 @@ modern                         (1 veces)
 more                           (1 veces)
 most                           (2 veces)
 multi-functional               (1 veces)
-nbsp                           (2 veces)
 needs                          (2 veces)
 netware                        (1 veces)
 network                        (2 veces)

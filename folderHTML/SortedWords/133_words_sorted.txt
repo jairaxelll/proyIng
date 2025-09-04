@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 133_clean.txt
-Total de palabras únicas: 327
-Total de palabras: 845
+Total de palabras únicas: 323
+Total de palabras: 838
 --------------------------------------------------
 
 aboriginal                     (2 veces)
@@ -18,7 +18,6 @@ alternative                    (1 veces)
 america                        (1 veces)
 american                       (3 veces)
 amnesty                        (1 veces)
-amp                            (5 veces)
 and                            (31 veces)
 anne                           (1 veces)
 annotated                      (1 veces)
@@ -82,7 +81,6 @@ consumer                       (1 veces)
 contents                       (1 veces)
 contracts                      (1 veces)
 coordinator                    (1 veces)
-copy                           (1 veces)
 copyright                      (8 veces)
 cornell                        (4 veces)
 corporation                    (1 veces)
@@ -187,7 +185,7 @@ law-related                    (1 veces)
 laws                           (2 veces)
 lawyers                        (1 veces)
 legal                          (4 veces)
-legislation                    (1 veces)
+legislation                    (2 veces)
 let                            (1 veces)
 liberties                      (1 veces)
 library                        (14 veces)
@@ -245,8 +243,6 @@ property                       (9 veces)
 provided                       (1 veces)
 public                         (2 veces)
 quick                          (1 veces)
-quot                           (1 veces)
-quotlegislation                (1 veces)
 radio-television               (1 veces)
 real                           (1 veces)
 recruiters                     (1 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 271_clean.txt
-Total de palabras únicas: 329
-Total de palabras: 615
+Total de palabras únicas: 327
+Total de palabras: 613
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -78,7 +78,6 @@ considerations                 (1 veces)
 consumer                       (1 veces)
 continuing                     (1 veces)
 contributing                   (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 covers                         (1 veces)
 criminality                    (1 veces)
@@ -196,7 +195,6 @@ multi-infarct                  (2 veces)
 multiple                       (1 veces)
 music                          (1 veces)
 nature                         (1 veces)
-nbsp                           (1 veces)
 nervosa                        (4 veces)
 next                           (1 veces)
 not                            (1 veces)

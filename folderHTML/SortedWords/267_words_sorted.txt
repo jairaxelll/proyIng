@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 267_clean.txt
-Total de palabras únicas: 677
-Total de palabras: 1822
+Total de palabras únicas: 675
+Total de palabras: 1820
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -143,7 +143,6 @@ continuing                     (1 veces)
 contribute                     (1 veces)
 controlling                    (4 veces)
 controversy                    (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 corporate                      (1 veces)
 cost                           (4 veces)
@@ -394,7 +393,6 @@ music                          (1 veces)
 must                           (1 veces)
 nation                         (1 veces)
 national                       (6 veces)
-nbsp                           (1 veces)
 need                           (3 veces)
 needed                         (1 veces)
 neighborhood                   (1 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 302_clean.txt
-Total de palabras únicas: 292
-Total de palabras: 524
+Total de palabras únicas: 290
+Total de palabras: 522
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -63,7 +63,6 @@ considerations                 (1 veces)
 considered                     (1 veces)
 considering                    (1 veces)
 considers                      (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 cost                           (1 veces)
 costs                          (2 veces)
@@ -160,7 +159,6 @@ micro1                         (1 veces)
 middle-eastern                 (1 veces)
 multi-ethnic                   (1 veces)
 music                          (1 veces)
-nbsp                           (1 veces)
 necessary                      (3 veces)
 necessities                    (1 veces)
 neighborhood                   (1 veces)

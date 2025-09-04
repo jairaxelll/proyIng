@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 393_clean.txt
-Total de palabras únicas: 954
-Total de palabras: 4132
+Total de palabras únicas: 953
+Total de palabras: 4130
 --------------------------------------------------
 
 ability                        (1 veces)
@@ -45,7 +45,6 @@ always                         (3 veces)
 american                       (1 veces)
 amount                         (12 veces)
 amounts                        (1 veces)
-amp                            (1 veces)
 an                             (44 veces)
 and                            (61 veces)
 annually                       (1 veces)
@@ -199,7 +198,7 @@ convenient                     (1 veces)
 convinces                      (1 veces)
 cope                           (1 veces)
 copies                         (3 veces)
-copy                           (3 veces)
+copy                           (2 veces)
 copying                        (2 veces)
 copyright                      (1 veces)
 corporationall                 (1 veces)

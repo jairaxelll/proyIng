@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 200_clean.txt
-Total de palabras únicas: 57
-Total de palabras: 76
+Total de palabras únicas: 55
+Total de palabras: 72
 --------------------------------------------------
 
 accounts                       (1 veces)
@@ -14,7 +14,6 @@ capital                        (1 veces)
 common                         (1 veces)
 companies                      (1 veces)
 consider                       (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 criteria                       (1 veces)
 current                        (1 veces)
@@ -38,7 +37,6 @@ may                            (1 veces)
 medium                         (1 veces)
 meet                           (1 veces)
 metro                          (1 veces)
-nbsp                           (3 veces)
 objective                      (1 veces)
 of                             (3 veces)
 option                         (1 veces)

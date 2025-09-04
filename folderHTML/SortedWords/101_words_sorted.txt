@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 101_clean.txt
-Total de palabras únicas: 651
-Total de palabras: 1911
+Total de palabras únicas: 650
+Total de palabras: 1910
 --------------------------------------------------
 
 about                          (1 veces)
@@ -124,7 +124,6 @@ contract                       (1 veces)
 controller                     (3 veces)
 controllers                    (1 veces)
 conventional                   (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 cord                           (1 veces)
 cords                          (1 veces)

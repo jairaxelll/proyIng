@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 037_clean.txt
-Total de palabras únicas: 719
-Total de palabras: 2094
+Total de palabras únicas: 718
+Total de palabras: 2093
 --------------------------------------------------
 
 ability                        (2 veces)
@@ -141,7 +141,6 @@ controlled                     (1 veces)
 controller                     (7 veces)
 conveyors                      (1 veces)
 cope                           (1 veces)
-copy                           (1 veces)
 copying                        (1 veces)
 copyright                      (1 veces)
 core                           (1 veces)

@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 329_clean.txt
-Total de palabras únicas: 484
-Total de palabras: 1024
+Total de palabras únicas: 482
+Total de palabras: 1022
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -96,7 +96,6 @@ contemporary                   (4 veces)
 continuing                     (1 veces)
 contributions                  (1 veces)
 control                        (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 counter                        (1 veces)
 created                        (1 veces)
@@ -283,7 +282,6 @@ music                          (1 veces)
 mysticism                      (1 veces)
 natural                        (2 veces)
 nature                         (2 veces)
-nbsp                           (1 veces)
 negative                       (2 veces)
 new                            (1 veces)
 next                           (1 veces)

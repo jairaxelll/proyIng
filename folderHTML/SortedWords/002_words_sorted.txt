@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 002_clean.txt
-Total de palabras únicas: 1085
-Total de palabras: 3385
+Total de palabras únicas: 1084
+Total de palabras: 3377
 --------------------------------------------------
 
 a1                             (3 veces)
@@ -821,7 +821,6 @@ purposes                       (1 veces)
 putting                        (1 veces)
 quality                        (2 veces)
 questions                      (3 veces)
-quot                           (8 veces)
 r-ut                           (1 veces)
 rapidly                        (1 veces)
 realize                        (1 veces)

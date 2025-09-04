@@ -1,7 +1,7 @@
 === PALABRAS ORDENADAS ALFABÉTICAMENTE ===
 Archivo fuente: 250_clean.txt
-Total de palabras únicas: 545
-Total de palabras: 1309
+Total de palabras únicas: 543
+Total de palabras: 1307
 --------------------------------------------------
 
 a1-termpaper                   (2 veces)
@@ -103,7 +103,6 @@ consummated                    (1 veces)
 contends                       (1 veces)
 content                        (1 veces)
 control                        (1 veces)
-copy                           (1 veces)
 copyright                      (1 veces)
 correlation                    (3 veces)
 counseling                     (16 veces)
@@ -302,7 +301,6 @@ mof                            (1 veces)
 motor                          (1 veces)
 multiple                       (2 veces)
 music                          (1 veces)
-nbsp                           (1 veces)
 need                           (1 veces)
 never                          (1 veces)
 new                            (1 veces)
