@@ -1,0 +1,20 @@
+=== ACTIVIDAD 6: REPORTE DE CREACIÓN DE DICCIONARIO ===
+Fecha: 2025-09-27 08:57:22
+Directorio de entrada: Files
+Directorio de salida: output
+
+Archivos procesados:
+----------------------------------------------------------------------
+simple.html                              0.000213s
+medium.html                              0.000192s
+hard.html                                0.000149s
+002.html                                 0.002121s
+
+=== ARCHIVOS PROCESADOS ===
+c:\cs13309\files\simple.html 0.00
+c:\cs13309\files\medium.html 0.00
+c:\cs13309\files\hard.html 0.00
+c:\cs13309\files\002.html 0.00
+
+tiempo total en crear el nuevo archivo: 0.00 segundos
+tiempo total de ejecucion del programa: 0.01 segundos
