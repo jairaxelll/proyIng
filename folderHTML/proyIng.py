@@ -658,6 +658,315 @@ def test_single_file():
                     print(f"  {line.strip()}")
                     word_count += 1
 
+
+                    import os
+import time
+import hashlib
+from collections import defaultdict
+
+def actividad8(folder_path):
+    """
+    Actividad 8:
+    Genera archivos 'diccionario_hash.txt', 'posting.txt' y 'a8_<matricula>.txt' (log de tiempos).
+    Usa una hash table para almacenar los tokens.
+    """
+
+    matricula = "123456"  # 🔁 <-- Replace with your actual student ID
+
+    # --- Step 1: Preparar estructuras de datos ---
+    token_data = defaultdict(lambda: defaultdict(int))  # {token: {archivo: frecuencia}}
+    hash_table = {}                                     # {hash_index: (token, num_docs, posting_pos)}
+    colisiones = 0
+    posting_data = []                                   # [(archivo, frecuencia)]
+
+    # --- Step 2: Leer archivos y contar tiempos individuales ---
+    start_total = time.time()
+    log_lines = []
+
+    for filename in os.listdir(folder_path):
+        if not filename.endswith(".html"):
+            continue
+
+        filepath = os.path.join(folder_path, filename)
+        start_file = time.time()
+
+        with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+            text = f.read().lower()
+
+        # Tokenización básica
+        tokens = [word.strip(".,!?;:()[]{}\"'") for word in text.split()]
+        for token in tokens:
+            if token:
+                token_data[token][filename] += 1
+
+        end_file = time.time()
+        log_lines.append(f"Archivo: {filename} -> Tiempo: {end_file - start_file:.4f} segundos")
+
+    # --- Step 3: Crear archivo posting y calcular posiciones ---
+    pos_in_posting = 0
+    posting_file = "posting.txt"
+
+    with open(posting_file, "w", encoding="utf-8") as post:
+        for token, docs in token_data.items():
+            # Guardar cada (archivo, frecuencia)
+            for archivo, frecuencia in docs.items():
+                post.write(f"{archivo}\t{frecuencia}\n")
+                posting_data.append((archivo, frecuencia))
+
+            # Calcular hash del token (tabla hash)
+            hash_index = int(hashlib.sha1(token.encode()).hexdigest(), 16) % 101  # tamaño 101 recomendado (número primo)
+            num_docs = len(docs)
+
+            # Manejo de colisiones
+            if hash_index in hash_table:
+                colisiones += 1
+                while hash_index in hash_table:  # linear probing
+                    hash_index = (hash_index + 1) % 101
+
+            hash_table[hash_index] = (token, num_docs, pos_in_posting)
+            pos_in_posting += num_docs  # avanzar según el número de documentos
+
+    # --- Step 4: Crear archivo diccionario hash (ASCII legible) ---
+    with open("diccionario_hash.txt", "w", encoding="utf-8") as dic:
+        dic.write("PosiciónHash\tToken\tNumDocs\tPosPosting\n")
+        for i in range(101):
+            if i in hash_table:
+                token, num_docs, pos = hash_table[i]
+                dic.write(f"{i}\t{token}\t{num_docs}\t{pos}\n")
+            else:
+                dic.write(f"{i}\t-\t0\t-1\n")
+
+        dic.write(f"\nNúmero total de colisiones: {colisiones}\n")
+
+    # --- Step 5: Crear archivo log (medición de tiempos) ---
+    end_total = time.time()
+    total_time = end_total - start_total
+
+    log_file = f"a8_{matricula}.txt"
+    with open(log_file, "w", encoding="utf-8") as log:
+        log.write("== LOG DE TIEMPOS ==\n")
+        log.write("\n".join(log_lines))
+        log.write(f"\n\nTiempo total de procesamiento: {total_time:.4f} segundos\n")
+        log.write(f"Número total de colisiones: {colisiones}\n")
+
+    print("✅ Archivos generados exitosamente:")
+    print("- diccionario_hash.txt")
+    print("- posting.txt")
+    print(f"- {log_file}")
+
+                    
+def actividad7():
+    import os
+    import re
+    from collections import defaultdict, Counter
+
+    base_dir = os.getcwd()
+    token_dir = os.path.join(base_dir, "tokenized")  # folder with tokenized files
+    output_dir = os.path.join(base_dir, "Diccionario_Posting")
+    os.makedirs(output_dir, exist_ok=True)
+
+    dict_file = os.path.join(output_dir, "Diccionario.txt")
+    post_file = os.path.join(output_dir, "Posting.txt")
+    report_file = os.path.join(output_dir, "a7.txt")
+
+    with open(report_file, "w", encoding="utf-8") as log:
+        log.write("Actividad 7: Creación del Diccionario y Archivo Posting\n\n")
+
+        if not os.path.exists(token_dir):
+            log.write(f"No se encontró la carpeta de tokens: {token_dir}\n")
+            return
+
+        log.write(f"Usando carpeta de tokens: {token_dir}\n")
+
+        # Step 1: Collect all words per document
+        word_docs = defaultdict(lambda: defaultdict(int))  # {token: {file: freq}}
+        files = [f for f in os.listdir(token_dir) if f.endswith(".txt")]
+
+        for file in files:
+            file_path = os.path.join(token_dir, file)
+            with open(file_path, "r", encoding="utf-8") as f:
+                text = f.read().lower()
+                tokens = re.findall(r'\b\w+\b', text)
+                counts = Counter(tokens)
+                for token, freq in counts.items():
+                    word_docs[token][file] = freq
+
+        log.write(f"Archivos procesados: {len(files)}\n")
+        log.write(f"Tokens únicos encontrados: {len(word_docs)}\n\n")
+
+        # Step 2: Build posting and dictionary
+        posting_lines = []
+        dict_lines = []
+        position = 0  # initial posting position
+
+        for token in sorted(word_docs.keys()):
+            docs = word_docs[token]
+            num_docs = len(docs)
+
+            # Add to dictionary file
+            dict_lines.append(f"{token}\t{num_docs}\t{position}\n")
+
+            # Add to posting file
+            for doc, freq in docs.items():
+                posting_lines.append(f"{doc}\t{freq}\n")
+
+            # Update posting position for next token
+            position += num_docs
+
+        # Step 3: Write dictionary and posting files
+        with open(dict_file, "w", encoding="utf-8") as df:
+            df.write("Token\tN°Documentos\tPosiciónPrimerRegistro\n")
+            df.writelines(dict_lines)
+
+        with open(post_file, "w", encoding="utf-8") as pf:
+            pf.write("Archivo\tFrecuencia\n")
+            pf.writelines(posting_lines)
+
+        log.write(f"Diccionario generado: {dict_file}\n")
+        log.write(f"Archivo Posting generado: {post_file}\n")
+        log.write("Proceso completado correctamente.\n")
+
+
+    def actividad9(folder_path, stoplist_path="stoplist.txt"):
+        """
+        Actividad 9:
+        Refinar el diccionario con una stop list, eliminar palabras de baja frecuencia
+        y tokens de una sola letra o dígito. 
+        Incluye medición de tiempos y reporte de factores del sistema.
+        """
+
+        matricula = "123456"  # 🔁 Reemplaza con tu matrícula
+
+        # --- Step 1: Factores externos e internos del sistema ---
+        factores_externos = [
+            "Disponibilidad del hardware y tiempo de ejecución (puede afectar el rendimiento).",
+            "Tamaño y calidad de los archivos HTML procesados (impacta la cantidad de tokens).",
+            "Uso de técnicas hash y colisiones (afectan la eficiencia de acceso y almacenamiento)."
+        ]
+
+        calidad_interna = [
+            "Eficiencia del algoritmo de tokenización.",
+            "Modularidad del código y reutilización de funciones.",
+            "Precisión del filtrado de palabras y stop list."
+        ]
+
+        historias_usuario = [
+            "Como desarrollador, quiero aplicar una lista de stop words para que el diccionario sea más relevante.",
+            "Como usuario, quiero eliminar palabras poco frecuentes para reducir el tamaño del diccionario final.",
+            "Como analista, quiero medir el tiempo de procesamiento para evaluar el rendimiento del sistema."
+        ]
+
+        # --- Step 2: Cargar stop list ---
+        stop_words = set()
+        if os.path.exists(stoplist_path):
+            with open(stoplist_path, 'r', encoding='utf-8') as stopf:
+                for line in stopf:
+                    stop_words.add(line.strip().lower())
+
+        # --- Step 3: Procesar archivos y crear conteos ---
+        token_data = defaultdict(lambda: defaultdict(int))
+        start_total = time.time()
+        log_lines = []
+
+        for filename in os.listdir(folder_path):
+            if not filename.endswith(".html"):
+                continue
+
+            filepath = os.path.join(folder_path, filename)
+            start_file = time.time()
+
+            with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+                text = f.read().lower()
+
+            # Tokenización básica
+            tokens = [word.strip(".,!?;:()[]{}\"'") for word in text.split()]
+            for token in tokens:
+                if token and token not in stop_words:
+                    token_data[token][filename] += 1
+
+            end_file = time.time()
+            log_lines.append(f"Archivo: {filename} -> Tiempo: {end_file - start_file:.4f} segundos")
+
+        # --- Step 4: Filtros de refinamiento ---
+        # a) Eliminar tokens de una sola letra o dígito
+        # b) Eliminar tokens de baja frecuencia total
+        refined_tokens = {}
+        for token, docs in token_data.items():
+            total_freq = sum(docs.values())
+            if len(token) <= 1:
+                continue
+            if total_freq < 3:  # 🔁 criterio: frecuencia mínima 3 (ajústalo a gusto)
+                continue
+            refined_tokens[token] = docs
+
+        # --- Step 5: Crear archivo posting y diccionario hash ---
+        hash_table = {}
+        posting_data = []
+        posting_pos = 0
+        colisiones = 0
+        table_size = 101  # tamaño primo óptimo
+
+        with open("posting_a9.txt", "w", encoding="utf-8") as post:
+            for token, docs in refined_tokens.items():
+                # Guardar en posting
+                for archivo, freq in docs.items():
+                    post.write(f"{archivo}\t{freq}\n")
+                    posting_data.append((archivo, freq))
+
+                num_docs = len(docs)
+                hash_index = int(hashlib.sha1(token.encode()).hexdigest(), 16) % table_size
+
+                # Manejo de colisiones (linear probing)
+                if hash_index in hash_table:
+                    colisiones += 1
+                    while hash_index in hash_table:
+                        hash_index = (hash_index + 1) % table_size
+
+                hash_table[hash_index] = (token, num_docs, posting_pos)
+                posting_pos += num_docs
+
+        # --- Step 6: Generar diccionario refinado ---
+        with open("diccionario_refinado.txt", "w", encoding="utf-8") as dic:
+            dic.write("PosHash\tToken\tNumDocs\tPosPosting\n")
+            for i in range(table_size):
+                if i in hash_table:
+                    token, num_docs, pos = hash_table[i]
+                    dic.write(f"{i}\t{token}\t{num_docs}\t{pos}\n")
+                else:
+                    dic.write(f"{i}\t-\t0\t-1\n")
+
+            dic.write(f"\nNúmero total de colisiones: {colisiones}\n")
+
+        # --- Step 7: Crear log de tiempo y documentación técnica ---
+        end_total = time.time()
+        total_time = end_total - start_total
+        log_file = f"a9_{matricula}.txt"
+
+        with open(log_file, "w", encoding="utf-8") as log:
+            log.write("== LOG DE TIEMPOS Y REFINAMIENTO ==\n\n")
+            for line in log_lines:
+                log.write(line + "\n")
+            log.write(f"\nTiempo total de procesamiento: {total_time:.4f} segundos\n")
+            log.write(f"Número total de colisiones: {colisiones}\n")
+            log.write(f"Número total de tokens refinados: {len(refined_tokens)}\n")
+
+            log.write("\n== Factores externos del sistema ==\n")
+            for f in factores_externos:
+                log.write(f"- {f}\n")
+
+            log.write("\n== Factores de calidad interna ==\n")
+            for q in calidad_interna:
+                log.write(f"- {q}\n")
+
+            log.write("\n== Historias de usuario ==\n")
+            for h in historias_usuario:
+                log.write(f"- {h}\n")
+
+        print("✅ Archivos generados:")
+        print("- posting_a9.txt")
+        print("- diccionario_refinado.txt")
+        print(f"- {log_file}")
+
 def main():
     """Main function to handle command line arguments."""
     parser = argparse.ArgumentParser(description='Tokenizador de archivos HTML')

@@ -1,14 +1,14 @@
 === ACTIVIDAD 5: REPORTE DE TOKENIZACIÓN DE ARCHIVOS ESPECÍFICOS ===
-Fecha: 2025-09-27 08:57:22
+Fecha: 2025-09-29 19:25:40
 Directorio de entrada: Files
 Directorio de salida: output
 
 Archivos procesados:
 ----------------------------------------------------------------------
-simple.html                              0.001019s      27 palabras
-medium.html                              0.004000s      51 palabras
-hard.html                                0.001136s      24 palabras
-002.html                                 0.004174s    1084 palabras
+simple.html                              0.001256s      27 palabras
+medium.html                              0.001334s      51 palabras
+hard.html                                0.001029s      24 palabras
+002.html                                 0.006085s    1084 palabras
 
-tiempo total en crear el nuevo archivo: 0.00 segundos
+tiempo total en crear el nuevo archivo: 0.01 segundos
 tiempo total de ejecucion: 0.05 segundos
