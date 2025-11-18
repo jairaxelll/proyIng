@@ -1,0 +1,27 @@
+=== PALABRAS ORDENADAS ALFABÉTICAMENTE ===
+Archivo fuente: 455_clean.txt
+Total de palabras únicas: 21
+Total de palabras: 23
+--------------------------------------------------
+
+argelia                        (1 veces)
+chile                          (1 veces)
+de                             (2 veces)
+del                            (1 veces)
+en                             (1 veces)
+estadounidense                 (1 veces)
+está                           (1 veces)
+exploración                    (1 veces)
+golfo                          (1 veces)
+la                             (1 veces)
+maxus                          (2 veces)
+méxico                         (1 veces)
+otras                          (1 veces)
+participaciones                (1 veces)
+perú                           (1 veces)
+realizando                     (1 veces)
+región                         (1 veces)
+también                        (1 veces)
+tareas                         (1 veces)
+túnez                          (1 veces)
+ypf                            (1 veces)

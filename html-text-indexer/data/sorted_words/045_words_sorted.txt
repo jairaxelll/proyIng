@@ -1,0 +1,8 @@
+=== PALABRAS ORDENADAS ALFABÉTICAMENTE ===
+Archivo fuente: 045_clean.txt
+Total de palabras únicas: 2
+Total de palabras: 2
+--------------------------------------------------
+
+frames                         (1 veces)
+three                          (1 veces)

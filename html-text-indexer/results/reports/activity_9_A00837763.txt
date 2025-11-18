@@ -1,0 +1,37 @@
+=== ACTIVIDAD 9: REPORTE DE REFINAMIENTO ===
+Fecha: 2025-11-17 18:37:02
+Matrícula: A00837763
+
+Archivos procesados:
+----------------------------------------------------------------------
+c:\cs13309\files\002.html 0.00
+c:\cs13309\files\hard.html 0.00
+c:\cs13309\files\medium.html 0.00
+c:\cs13309\files\simple.html 0.00
+
+tiempo total en crear el nuevo archivo: 0.00 segundos
+tiempo total de ejecucion: 0.28 segundos
+
+=== ESTADÍSTICAS DE REFINAMIENTO ===
+Tokens originales (con stop list): 1128
+Tokens refinados: 241
+Tokens removidos por stop list: 58
+Tokens removidos por longitud/dígitos: 0
+Tokens removidos por baja frecuencia: 887
+Número total de colisiones: 181
+Factor de carga: 241/487 (49.49%)
+
+== Factores externos del sistema ==
+- Disponibilidad del hardware y tiempo de ejecución (puede afectar el rendimiento).
+- Tamaño y calidad de los archivos HTML procesados (impacta la cantidad de tokens).
+- Uso de técnicas hash y colisiones (afectan la eficiencia de acceso y almacenamiento).
+
+== Factores de calidad interna ==
+- Eficiencia del algoritmo de tokenización.
+- Modularidad del código y reutilización de funciones.
+- Precisión del filtrado de palabras y stop list.
+
+== Historias de usuario ==
+- Como desarrollador, quiero aplicar una lista de stop words para que el diccionario sea más relevante.
+- Como usuario, quiero eliminar palabras poco frecuentes para reducir el tamaño del diccionario final.
+- Como analista, quiero medir el tiempo de procesamiento para evaluar el rendimiento del sistema.

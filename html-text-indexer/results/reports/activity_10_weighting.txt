@@ -1,0 +1,39 @@
+=== ACTIVIDAD 10: REPORTE DE PESO DE TOKENS (TF.IDF) ===
+Fecha: 2025-11-17 18:37:02
+Directorio base: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\results
+
+=== PASO 1: CALCULANDO TOTAL DE TOKENS POR DOCUMENTO ===
+----------------------------------------------------------------------
+002.html                                     3377 tokens  0.000589s
+hard.html                                      25 tokens  0.000618s
+medium.html                                    61 tokens  0.000350s
+simple.html                                    35 tokens  0.000370s
+
+Total documentos procesados: 4
+
+=== PASO 2: CALCULANDO PESOS TF.IDF ===
+----------------------------------------------------------------------
+Total registros procesados: 0
+Tiempo calculando pesos: 0.022861 segundos
+
+=== PASO 3: ESCRIBIENDO ARCHIVOS CON COLUMNAS DE TAMAÑO FIJO ===
+----------------------------------------------------------------------
+Archivo diccionario: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\results\dictionary_posting\a10_Diccionario_Weighted.txt
+Archivo posting: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\results\dictionary_posting\a10_Posting_Weighted.txt
+Tamaño columna diccionario: 20 bytes
+Tamaño columna posting: 10 bytes
+Tiempo escribiendo archivos: 0.001120 segundos
+
+=== ESTADÍSTICAS ===
+Total tokens únicos: 0
+Total registros en posting: 0
+Peso promedio: 0.0000
+Peso máximo: 0.0000
+Peso mínimo: 0.0000
+
+=== TIEMPOS ===
+Tiempo calculando pesos: 0.022861 segundos
+Tiempo escribiendo archivos: 0.001120 segundos
+Tiempo total de ejecución: 0.108339 segundos
+
+Proceso completado correctamente.

@@ -1,0 +1,14 @@
+=== ACTIVIDAD 5: REPORTE DE TOKENIZACIÓN DE ARCHIVOS ESPECÍFICOS ===
+Fecha: 2025-11-17 18:37:00
+Directorio de entrada: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\data\html_sources
+Directorio de salida: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\results
+
+Archivos procesados:
+----------------------------------------------------------------------
+simple.html                              0.000907s      27 palabras
+medium.html                              0.001165s      51 palabras
+hard.html                                0.000929s      24 palabras
+002.html                                 0.010005s    1084 palabras
+
+tiempo total en crear el nuevo archivo: 0.01 segundos
+tiempo total de ejecucion: 0.17 segundos

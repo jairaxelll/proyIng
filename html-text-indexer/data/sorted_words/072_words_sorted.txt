@@ -1,0 +1,26 @@
+=== PALABRAS ORDENADAS ALFABÉTICAMENTE ===
+Archivo fuente: 072_clean.txt
+Total de palabras únicas: 20
+Total de palabras: 59
+--------------------------------------------------
+
+bruce                          (1 veces)
+chapman                        (1 veces)
+gov                            (1 veces)
+home                           (1 veces)
+imaging                        (1 veces)
+jpl                            (1 veces)
+mission                        (2 veces)
+nasa                           (1 veces)
+oct                            (3 veces)
+october                        (6 veces)
+page                           (1 veces)
+radar                          (1 veces)
+report                         (7 veces)
+september                      (1 veces)
+shuttle                        (3 veces)
+sir-c                          (5 veces)
+srl-2                          (5 veces)
+status                         (12 veces)
+updated                        (1 veces)
+x-sar                          (5 veces)

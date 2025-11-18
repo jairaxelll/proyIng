@@ -1,0 +1,27 @@
+=== PALABRAS ORDENADAS ALFABÉTICAMENTE ===
+Archivo fuente: 444_clean.txt
+Total de palabras únicas: 21
+Total de palabras: 423
+--------------------------------------------------
+
+archives                       (1 veces)
+com                            (4 veces)
+digest                         (1 veces)
+directory26-dec-96             (1 veces)
+discussion                     (1 veces)
+fax                            (1 veces)
+groups                         (1 veces)
+inc                            (1 veces)
+infowar                        (4 veces)
+interpact                      (1 veces)
+modifiedsizedescription        (1 veces)
+namelast                       (1 veces)
+parent                         (1 veces)
+parnas                         (1 veces)
+plain                          (100 veces)
+risks                          (1 veces)
+risks-17                       (100 veces)
+text                           (100 veces)
+txt27-jul-96                   (100 veces)
+voice                          (1 veces)
+webwarrior                     (1 veces)

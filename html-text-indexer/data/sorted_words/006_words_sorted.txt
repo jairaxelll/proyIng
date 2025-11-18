@@ -1,0 +1,35 @@
+=== PALABRAS ORDENADAS ALFABÉTICAMENTE ===
+Archivo fuente: 006_clean.txt
+Total de palabras únicas: 29
+Total de palabras: 37
+--------------------------------------------------
+
+academy                        (1 veces)
+at                             (1 veces)
+ave                            (1 veces)
+battle                         (3 veces)
+battlecr                       (1 veces)
+capital                        (1 veces)
+creek                          (3 veces)
+fraternity                     (1 veces)
+gray                           (1 veces)
+htm                            (1 veces)
+iserv                          (1 veces)
+janice                         (1 veces)
+jgray                          (1 veces)
+mail                           (1 veces)
+meet                           (1 veces)
+mi                             (2 veces)
+minister                       (1 veces)
+mrs                            (1 veces)
+ne                             (1 veces)
+neri                           (2 veces)
+net                            (1 veces)
+parish                         (1 veces)
+philip                         (2 veces)
+prayer                         (1 veces)
+room                           (1 veces)
+sfo                            (1 veces)
+st                             (2 veces)
+street                         (1 veces)
+sunday                         (1 veces)
