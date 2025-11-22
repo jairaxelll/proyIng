@@ -233,6 +233,11 @@ class HTMLTextIndexerGUI:
         self.notebook.add(self.batch_frame, text="Batch Processing")
         self.create_batch_tab()
         
+        # Tab 4: Search (Activity 12)
+        self.search_frame = ttk.Frame(self.notebook, padding="20")
+        self.notebook.add(self.search_frame, text="Search (Activity 12)")
+        self.create_search_tab()
+        
         # Console/Log area with modern styling
         console_container = tk.Frame(main_frame, bg=self.colors['bg_primary'])
         console_container.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), pady=(0, 10))
@@ -344,6 +349,7 @@ class HTMLTextIndexerGUI:
             ("Activity 9: Refine Dictionary", "Remove stop words and filter tokens", self.run_activity9),
             ("Activity 10: Weight Tokens", "Calculate TF.IDF weights for tokens", self.run_activity10),
             ("Activity 11: Document Index", "Create document index with unique IDs", self.run_activity11),
+            ("Activity 12: Search Dictionary", "Search for words in dictionary and posting files", self.run_activity12),
         ]
         
         # Create a canvas with scrollbar for activities
@@ -516,6 +522,7 @@ Changes will be applied when you run activities.
             "Activity 9: Refine Dictionary",
             "Activity 10: Weight Tokens",
             "Activity 11: Document Index",
+            "Activity 12: Search Dictionary",
         ]
         
         checkbox_frame = ttk.Frame(self.batch_frame)
@@ -768,6 +775,153 @@ Changes will be applied when you run activities.
         
         thread = threading.Thread(target=batch_runner, daemon=True)
         thread.start()
+    
+    def create_search_tab(self):
+        """Create the search tab for Activity 12"""
+        # Header
+        header_label = ttk.Label(
+            self.search_frame,
+            text="Search in Dictionary (Activity 12)",
+            style='Header.TLabel',
+            font=('Segoe UI', 14, 'bold')
+        )
+        header_label.grid(row=0, column=0, columnspan=2, sticky=tk.W, pady=(0, 10))
+        
+        # Description
+        desc_label = ttk.Label(
+            self.search_frame,
+            text="Enter a word to search in the dictionary and posting files. The word will be converted to lowercase to match the dictionary format.",
+            style='Info.TLabel',
+            wraplength=700
+        )
+        desc_label.grid(row=1, column=0, columnspan=2, sticky=tk.W, pady=(0, 20))
+        
+        # Search options frame
+        options_frame = ttk.LabelFrame(self.search_frame, text="Search Options", padding="15")
+        options_frame.grid(row=2, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 15))
+        
+        # Dictionary version selection
+        self.dict_version_var = tk.StringVar(value="no_stoplist")
+        ttk.Radiobutton(
+            options_frame,
+            text="Full dictionary (without stoplist - Activity 8)",
+            variable=self.dict_version_var,
+            value="no_stoplist"
+        ).grid(row=0, column=0, sticky=tk.W, pady=5)
+        
+        ttk.Radiobutton(
+            options_frame,
+            text="Filtered dictionary (with stoplist - Activity 9)",
+            variable=self.dict_version_var,
+            value="with_stoplist"
+        ).grid(row=1, column=0, sticky=tk.W, pady=5)
+        
+        # Search input frame
+        search_input_frame = ttk.LabelFrame(self.search_frame, text="Search", padding="15")
+        search_input_frame.grid(row=3, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 15))
+        search_input_frame.columnconfigure(1, weight=1)
+        
+        ttk.Label(search_input_frame, text="Word to search:", style='Header.TLabel').grid(
+            row=0, column=0, sticky=tk.W, padx=(0, 10)
+        )
+        
+        self.search_entry = ttk.Entry(search_input_frame, width=40, font=('Segoe UI', 11))
+        self.search_entry.grid(row=0, column=1, sticky=(tk.W, tk.E), padx=(0, 10))
+        self.search_entry.bind('<Return>', lambda e: self.perform_search())
+        
+        self.search_btn = ttk.Button(
+            search_input_frame,
+            text="Search",
+            command=self.perform_search,
+            style='Run.TButton'
+        )
+        self.search_btn.grid(row=0, column=2)
+        
+        # Results frame
+        results_frame = ttk.LabelFrame(self.search_frame, text="Search Results", padding="15")
+        results_frame.grid(row=4, column=0, columnspan=2, sticky=(tk.W, tk.E, tk.N, tk.S), pady=(0, 10))
+        results_frame.columnconfigure(0, weight=1)
+        results_frame.rowconfigure(1, weight=1)
+        self.search_frame.rowconfigure(4, weight=1)
+        self.search_frame.columnconfigure(0, weight=1)
+        
+        # Results header
+        self.results_header = ttk.Label(
+            results_frame,
+            text="Enter a word and click 'Search' to find documents",
+            style='Info.TLabel'
+        )
+        self.results_header.grid(row=0, column=0, sticky=tk.W, pady=(0, 10))
+        
+        # Results listbox with scrollbar
+        listbox_frame = tk.Frame(results_frame, bg=self.colors['bg_secondary'])
+        listbox_frame.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        listbox_frame.columnconfigure(0, weight=1)
+        listbox_frame.rowconfigure(0, weight=1)
+        
+        scrollbar_results = ttk.Scrollbar(listbox_frame)
+        scrollbar_results.grid(row=0, column=1, sticky=(tk.N, tk.S))
+        
+        self.results_listbox = tk.Listbox(
+            listbox_frame,
+            font=('Consolas', 11),
+            bg=self.colors['bg_secondary'],
+            fg=self.colors['text_primary'],
+            selectbackground=self.colors['accent'],
+            selectforeground=self.colors['text_light'],
+            yscrollcommand=scrollbar_results.set,
+            borderwidth=1,
+            relief='solid',
+            highlightthickness=0
+        )
+        self.results_listbox.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        scrollbar_results.config(command=self.results_listbox.yview)
+    
+    def perform_search(self):
+        """Perform the search and display results"""
+        word = self.search_entry.get().strip()
+        
+        if not word:
+            messagebox.showwarning("Empty Search", "Please enter a word to search.")
+            return
+        
+        # Determine which dictionary to use
+        use_stoplist = (self.dict_version_var.get() == "with_stoplist")
+        
+        # Perform search
+        try:
+            documents = main_module.search_word(word, str(self.results_path), use_stoplist)
+            
+            # Clear previous results
+            self.results_listbox.delete(0, tk.END)
+            
+            if documents:
+                # Update header
+                dict_type = "filtered (with stoplist)" if use_stoplist else "full (without stoplist)"
+                self.results_header.config(
+                    text=f"Found '{word}' in {len(documents)} document(s) using {dict_type} dictionary:"
+                )
+                
+                # Add results
+                for i, doc in enumerate(documents, 1):
+                    self.results_listbox.insert(tk.END, f"{i}. {doc}")
+                
+                self.log_message(f"Search for '{word}': Found in {len(documents)} document(s)", "success")
+            else:
+                self.results_header.config(
+                    text=f"Word '{word}' not found in the dictionary"
+                )
+                self.log_message(f"Search for '{word}': Not found", "stdout")
+                
+        except Exception as e:
+            error_msg = f"Error during search: {str(e)}"
+            self.log_message(error_msg, "error")
+            messagebox.showerror("Search Error", error_msg)
+    
+    def run_activity12(self):
+        """Open the search tab"""
+        self.notebook.select(3)  # Switch to search tab (index 3)
+        self.search_entry.focus()
 
 
 def main():

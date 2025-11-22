@@ -848,6 +848,109 @@ def hash_function(key, size):
         hash_value = ((hash_value << 5) + hash_value) + ord(char)
     return hash_value % size
 
+def search_word(word, output_dir="results", use_stoplist=False):
+    """
+    Actividad 12: Buscar una palabra en el diccionario y posting.
+    
+    Args:
+        word: Palabra a buscar
+        output_dir: Directorio donde están los archivos de resultados
+        use_stoplist: Si True, usa los archivos de actividad 9 (con stoplist),
+                     si False, usa los archivos de actividad 8 (sin stoplist)
+    
+    Returns:
+        Lista de documentos que contienen la palabra, o lista vacía si no se encuentra
+    """
+    from pathlib import Path
+    import re
+    
+    # Convertir palabra a minúsculas para coincidir con el diccionario
+    word = word.lower().strip()
+    
+    if not word:
+        return []
+    
+    base_dir = Path(output_dir)
+    HASH_TABLE_SIZE = 20000
+    EMPTY_SLOT_INDICATOR = "vacio"
+    
+    # Seleccionar archivos según si se usa stoplist o no
+    if use_stoplist:
+        dict_file = base_dir / "a9_diccionario_refinado.txt"
+        posting_file = base_dir / "a9_posting.txt"
+    else:
+        dict_file = base_dir / "a8_diccionario_hash.txt"
+        posting_file = base_dir / "a8_posting.txt"
+    
+    # Verificar que los archivos existan
+    if not dict_file.exists():
+        print(f"Error: No se encontró el archivo de diccionario: {dict_file}")
+        return []
+    
+    if not posting_file.exists():
+        print(f"Error: No se encontró el archivo de posting: {posting_file}")
+        return []
+    
+    # Calcular hash de la palabra
+    hash_index = hash_function(word, HASH_TABLE_SIZE)
+    
+    # Paso 1: Construir índice completo del diccionario
+    # Mapeo: token -> (num_docs, posting_offset)
+    token_info = {}  # {token: num_docs}
+    all_tokens = []  # Lista de todos los tokens en orden alfabético
+    
+    with open(dict_file, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            
+            # Parsear línea del diccionario
+            # Formato: Posición Hash: X, Token: Y, Frecuencia: Z, Archivos: W, Posición Posting: P
+            match = re.search(r'Posición Hash: \d+, Token: ([^,]+), Frecuencia: \d+, Archivos: (\d+), Posición Posting: -?\d+', line)
+            if match:
+                token, archivos = match.groups()
+                token = token.strip()
+                archivos = int(archivos)
+                
+                if token != EMPTY_SLOT_INDICATOR and archivos > 0:
+                    if token not in token_info:
+                        token_info[token] = archivos
+                        all_tokens.append(token)
+    
+    # Ordenar tokens alfabéticamente
+    all_tokens.sort()
+    
+    # Verificar si el token existe
+    if word not in token_info:
+        return []
+    
+    # Paso 2: Calcular el offset en el posting
+    # El posting está ordenado alfabéticamente por token
+    posting_offset = 0
+    for token in all_tokens:
+        if token == word:
+            break
+        posting_offset += token_info[token]
+    
+    # Paso 3: Leer los documentos del posting
+    num_docs = token_info[word]
+    documents = []
+    
+    with open(posting_file, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
+        # Leer las líneas correspondientes a nuestro token
+        for i in range(posting_offset, min(posting_offset + num_docs, len(lines))):
+            line = lines[i].strip()
+            if line:
+                parts = line.split(';')
+                if len(parts) >= 1:
+                    doc_name = parts[0].strip()
+                    if doc_name and doc_name not in documents:  # Evitar duplicados
+                        documents.append(doc_name)
+    
+    return sorted(documents) if documents else []
+
 def actividad8(output_dir="results"):
     """
     Actividad 8:
