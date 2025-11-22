@@ -1,1 +1,5 @@
 ID   Documento                                         
+1         C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\data\html_sources\002.html
+2         simple.h                                                              
+3         medium.h                                                              
+4         hard.htm                                                              

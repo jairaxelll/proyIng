@@ -1,13 +1,13 @@
 === ACTIVIDAD 7: REPORTE DE CREACIÓN DE DICCIONARIO Y POSTING ===
-Fecha: 2025-11-17 18:37:01
+Fecha: 2025-11-21 19:25:28
 Directorio de tokens: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\results\tokenized
 
 Archivos tokenizados procesados:
 ----------------------------------------------------------------------
-002_tokens.txt                           0.001250s
-hard_tokens.txt                          0.000363s
-medium_tokens.txt                        0.000797s
-simple_tokens.txt                        0.000358s
+002_tokens.txt                           0.001123s
+hard_tokens.txt                          0.000331s
+medium_tokens.txt                        0.000357s
+simple_tokens.txt                        0.000352s
 
 Total archivos tokenizados procesados: 4
 Total tokens únicos encontrados: 1129
@@ -19,7 +19,7 @@ Posting: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\results\di
 === ESTADÍSTICAS ===
 Total tokens únicos en diccionario: 1129
 Total registros en posting: 1186
-Tiempo creando diccionario y posting: 0.004307 segundos
-Tiempo total de ejecución: 0.120306 segundos
+Tiempo creando diccionario y posting: 0.003824 segundos
+Tiempo total de ejecución: 0.047388 segundos
 
 Proceso completado correctamente.

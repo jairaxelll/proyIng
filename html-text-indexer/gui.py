@@ -40,8 +40,30 @@ class TextRedirector(io.StringIO):
 class HTMLTextIndexerGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("HTML Text Indexer")
-        self.root.geometry("1000x700")
+        self.root.title("HTML Text Indexer - Professional Edition")
+        self.root.geometry("1200x800")
+        self.root.minsize(1000, 600)
+        
+        # Modern color scheme
+        self.colors = {
+            'bg_primary': '#f5f7fa',
+            'bg_secondary': '#ffffff',
+            'bg_dark': '#2c3e50',
+            'bg_console': '#1a1a1a',
+            'accent': '#4a90e2',
+            'accent_hover': '#357abd',
+            'success': '#2ecc71',
+            'warning': '#f39c12',
+            'danger': '#e74c3c',
+            'text_primary': '#2c3e50',
+            'text_secondary': '#6c757d',
+            'text_light': '#ffffff',
+            'border': '#e1e8ed',
+            'card_shadow': '#e8ecf0',
+        }
+        
+        # Set background color
+        self.root.configure(bg=self.colors['bg_primary'])
         
         # Get script directory for default paths
         self.script_dir = Path(__file__).parent
@@ -59,97 +81,254 @@ class HTMLTextIndexerGUI:
         self.create_widgets()
         
     def setup_style(self):
-        """Configure the UI style"""
+        """Configure the UI style with modern design"""
         style = ttk.Style()
         style.theme_use('clam')
         
-        # Configure colors
-        style.configure('Title.TLabel', font=('Arial', 16, 'bold'), foreground='#2c3e50')
-        style.configure('Header.TLabel', font=('Arial', 11, 'bold'), foreground='#34495e')
-        style.configure('Info.TLabel', font=('Arial', 9), foreground='#7f8c8d')
-        style.configure('Run.TButton', font=('Arial', 10, 'bold'))
+        # Configure modern colors and fonts
+        style.configure('Title.TLabel', 
+                       font=('Segoe UI', 20, 'bold'), 
+                       foreground=self.colors['text_primary'],
+                       background=self.colors['bg_primary'])
+        
+        style.configure('Header.TLabel', 
+                       font=('Segoe UI', 11, 'bold'), 
+                       foreground=self.colors['text_primary'],
+                       background=self.colors['bg_primary'])
+        
+        style.configure('Info.TLabel', 
+                       font=('Segoe UI', 9), 
+                       foreground=self.colors['text_secondary'],
+                       background=self.colors['bg_primary'])
+        
+        style.configure('Run.TButton', 
+                       font=('Segoe UI', 10, 'bold'),
+                       padding=(15, 8))
+        
+        # Modern button styles
+        style.configure('TButton',
+                       font=('Segoe UI', 10),
+                       padding=(12, 8),
+                       relief='flat',
+                       borderwidth=0)
+        
+        style.map('TButton',
+                 background=[('active', self.colors['accent']),
+                           ('!active', self.colors['bg_secondary'])],
+                 foreground=[('active', self.colors['text_light']),
+                            ('!active', self.colors['text_primary'])],
+                 bordercolor=[('active', self.colors['accent']),
+                            ('!active', self.colors['border'])],
+                 focuscolor=[('!focus', 'none')])
+        
+        style.map('Run.TButton',
+                 background=[('active', self.colors['accent_hover']),
+                           ('!active', self.colors['accent'])],
+                 foreground=[('active', self.colors['text_light']),
+                            ('!active', self.colors['text_light'])],
+                 bordercolor=[('active', self.colors['accent_hover']),
+                            ('!active', self.colors['accent'])],
+                 focuscolor=[('!focus', 'none')])
+        
+        # Notebook style
+        style.configure('TNotebook',
+                       background=self.colors['bg_primary'],
+                       borderwidth=0)
+        
+        style.configure('TNotebook.Tab',
+                       font=('Segoe UI', 11),
+                       padding=(24, 12),
+                       background=self.colors['bg_secondary'],
+                       foreground=self.colors['text_primary'],
+                       borderwidth=0)
+        
+        style.map('TNotebook.Tab',
+                 background=[('selected', self.colors['accent']),
+                           ('!selected', self.colors['bg_secondary'])],
+                 foreground=[('selected', self.colors['text_light']),
+                           ('!selected', self.colors['text_primary'])],
+                 expand=[('selected', [1, 1, 1, 0])])
+        
+        # LabelFrame style
+        style.configure('TLabelframe',
+                       background=self.colors['bg_secondary'],
+                       borderwidth=1,
+                       relief='solid',
+                       bordercolor=self.colors['border'])
+        
+        style.configure('TLabelframe.Label',
+                       font=('Segoe UI', 10, 'bold'),
+                       foreground=self.colors['accent'],
+                       background=self.colors['bg_secondary'])
+        
+        # Entry style
+        style.configure('TEntry',
+                       fieldbackground=self.colors['bg_secondary'],
+                       borderwidth=1,
+                       relief='solid',
+                       bordercolor=self.colors['border'],
+                       padding=5)
+        
+        # Scrollbar style
+        style.configure('TScrollbar',
+                       background=self.colors['bg_secondary'],
+                       troughcolor=self.colors['bg_primary'],
+                       borderwidth=0,
+                       arrowcolor=self.colors['text_secondary'],
+                       darkcolor=self.colors['border'],
+                       lightcolor=self.colors['border'])
         
     def create_widgets(self):
-        """Create all UI widgets"""
+        """Create all UI widgets with modern design"""
+        # Header frame with modern design
+        header_frame = tk.Frame(self.root, bg=self.colors['accent'], height=90)
+        header_frame.pack(fill=tk.X, padx=0, pady=0)
+        header_frame.pack_propagate(False)
+        
+        # Title in header
+        title_label = tk.Label(
+            header_frame, 
+            text="HTML Text Indexer", 
+            font=('Segoe UI', 24, 'bold'),
+            bg=self.colors['accent'],
+            fg=self.colors['text_light'],
+            pady=20
+        )
+        title_label.pack()
+        
+        subtitle_label = tk.Label(
+            header_frame,
+            text="Professional Text Processing & Indexing System",
+            font=('Segoe UI', 11),
+            bg=self.colors['accent'],
+            fg=self.colors['text_light']
+        )
+        subtitle_label.pack(pady=(0, 20))
+        
         # Main container with padding
-        main_frame = ttk.Frame(self.root, padding="10")
-        main_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        main_frame = ttk.Frame(self.root, padding="20")
+        main_frame.pack(fill=tk.BOTH, expand=True)
         
         # Configure grid weights
-        self.root.columnconfigure(0, weight=1)
-        self.root.rowconfigure(0, weight=1)
         main_frame.columnconfigure(0, weight=1)
-        main_frame.rowconfigure(2, weight=1)
-        
-        # Title
-        title_label = ttk.Label(main_frame, text="HTML Text Indexer", style='Title.TLabel')
-        title_label.grid(row=0, column=0, pady=(0, 10), sticky=tk.W)
+        main_frame.rowconfigure(1, weight=1)
         
         # Create notebook for tabs
         self.notebook = ttk.Notebook(main_frame)
-        self.notebook.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), pady=(0, 10))
+        self.notebook.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), pady=(0, 15))
+        main_frame.rowconfigure(0, weight=1)
         
         # Tab 1: Activities
-        self.activities_frame = ttk.Frame(self.notebook, padding="10")
+        self.activities_frame = ttk.Frame(self.notebook, padding="20")
         self.notebook.add(self.activities_frame, text="Activities")
         self.create_activities_tab()
         
         # Tab 2: Configuration
-        self.config_frame = ttk.Frame(self.notebook, padding="10")
+        self.config_frame = ttk.Frame(self.notebook, padding="20")
         self.notebook.add(self.config_frame, text="Configuration")
         self.create_config_tab()
         
         # Tab 3: Batch Processing
-        self.batch_frame = ttk.Frame(self.notebook, padding="10")
+        self.batch_frame = ttk.Frame(self.notebook, padding="20")
         self.notebook.add(self.batch_frame, text="Batch Processing")
         self.create_batch_tab()
         
-        # Console/Log area
-        console_label = ttk.Label(main_frame, text="Console Output:", style='Header.TLabel')
-        console_label.grid(row=2, column=0, sticky=tk.W, pady=(10, 5))
+        # Console/Log area with modern styling
+        console_container = tk.Frame(main_frame, bg=self.colors['bg_primary'])
+        console_container.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), pady=(0, 10))
+        console_container.columnconfigure(0, weight=1)
+        console_container.rowconfigure(1, weight=1)
+        main_frame.rowconfigure(1, weight=2)
         
-        # Create console with scrollbar
-        console_frame = ttk.Frame(main_frame)
-        console_frame.grid(row=3, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), pady=(0, 10))
+        console_header = tk.Frame(console_container, bg=self.colors['accent'], height=40)
+        console_header.grid(row=0, column=0, sticky=(tk.W, tk.E))
+        console_header.pack_propagate(False)
+        
+        console_label = tk.Label(
+            console_header,
+            text="Console Output",
+            font=('Segoe UI', 10, 'bold'),
+            bg=self.colors['accent'],
+            fg=self.colors['text_light'],
+            padx=10
+        )
+        console_label.pack(side=tk.LEFT, pady=7)
+        
+        # Create console with modern dark theme
+        console_frame = tk.Frame(console_container, bg=self.colors['bg_console'])
+        console_frame.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
         console_frame.columnconfigure(0, weight=1)
         console_frame.rowconfigure(0, weight=1)
-        main_frame.rowconfigure(3, weight=2)
         
         self.console = scrolledtext.ScrolledText(
             console_frame, 
-            height=15, 
+            height=12, 
             state='disabled',
-            bg='#2c3e50',
-            fg='#ecf0f1',
-            font=('Consolas', 9),
-            wrap=tk.WORD
+            bg=self.colors['bg_console'],
+            fg='#e0e0e0',
+            font=('Consolas', 10),
+            wrap=tk.WORD,
+            insertbackground='#ffffff',
+            selectbackground=self.colors['accent'],
+            selectforeground='#ffffff',
+            borderwidth=0,
+            highlightthickness=0,
+            padx=12,
+            pady=12
         )
         self.console.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        
+        # Configure text tags for colored output
+        self.console.tag_config("stdout", foreground='#e0e0e0')
+        self.console.tag_config("stderr", foreground='#ff6b6b')
+        self.console.tag_config("success", foreground='#51cf66')
+        self.console.tag_config("error", foreground='#ff6b6b')
         
         # Redirect stdout to console
         sys.stdout = TextRedirector(self.console, "stdout")
         sys.stderr = TextRedirector(self.console, "stderr")
         
-        # Control buttons at bottom
-        control_frame = ttk.Frame(main_frame)
-        control_frame.grid(row=4, column=0, sticky=(tk.W, tk.E))
+        # Control buttons at bottom with modern styling
+        control_frame = tk.Frame(main_frame, bg=self.colors['bg_primary'])
+        control_frame.grid(row=2, column=0, sticky=(tk.W, tk.E))
         
-        self.clear_btn = ttk.Button(control_frame, text="Clear Console", command=self.clear_console)
+        # Left side buttons
+        left_buttons = tk.Frame(control_frame, bg=self.colors['bg_primary'])
+        left_buttons.pack(side=tk.LEFT)
+        
+        self.clear_btn = ttk.Button(left_buttons, text="Clear Console", command=self.clear_console)
         self.clear_btn.pack(side=tk.LEFT, padx=5)
         
-        self.run_all_btn = ttk.Button(control_frame, text="Run All Activities (1-11)", command=self.run_all_activities, style='Run.TButton')
+        self.run_all_btn = ttk.Button(left_buttons, text="Run All (1-11)", command=self.run_all_activities, style='Run.TButton')
         self.run_all_btn.pack(side=tk.LEFT, padx=5)
         
-        self.clean_btn = ttk.Button(control_frame, text="Clean Folders", command=self.run_clean_folders)
+        self.clean_btn = ttk.Button(left_buttons, text="Clean Folders", command=self.run_clean_folders)
         self.clean_btn.pack(side=tk.LEFT, padx=5)
         
-        self.status_label = ttk.Label(control_frame, text="Ready", foreground='green')
-        self.status_label.pack(side=tk.RIGHT, padx=5)
+        # Right side status
+        right_status = tk.Frame(control_frame, bg=self.colors['bg_primary'])
+        right_status.pack(side=tk.RIGHT)
         
-        # Welcome message
-        self.log_message("Welcome to HTML Text Indexer!")
-        self.log_message(f"Project directory: {self.script_dir}")
-        self.log_message("Select an activity from the tabs above to begin.\n")
+        self.status_indicator = tk.Frame(right_status, bg=self.colors['success'], width=12, height=12, relief='flat')
+        self.status_indicator.pack(side=tk.LEFT, padx=(0, 8), pady=3)
+        
+        self.status_label = tk.Label(
+            right_status,
+            text="Ready",
+            font=('Segoe UI', 9, 'bold'),
+            bg=self.colors['bg_primary'],
+            fg=self.colors['success']
+        )
+        self.status_label.pack(side=tk.LEFT, padx=5)
+        
+        # Welcome message with styling
+        self.console.config(state='normal')
+        self.console.insert(tk.END, "=" * 70 + "\n", "stdout")
+        self.console.insert(tk.END, " " * 20 + "Welcome to HTML Text Indexer!" + " " * 20 + "\n", "success")
+        self.console.insert(tk.END, "=" * 70 + "\n", "stdout")
+        self.console.insert(tk.END, f"Project directory: {self.script_dir}\n", "stdout")
+        self.console.insert(tk.END, "Select an activity from the tabs above to begin.\n\n", "stdout")
+        self.console.config(state='disabled')
         
     def create_activities_tab(self):
         """Create the activities tab with individual activity buttons"""
@@ -162,15 +341,15 @@ class HTMLTextIndexerGUI:
             ("Activity 6: Build Dictionary", "Create dictionary with document frequency", self.run_activity6),
             ("Activity 7: Dictionary & Posting", "Generate dictionary and posting lists", self.run_activity7),
             ("Activity 8: Hash Table Dictionary", "Build hash table-based dictionary", self.run_activity8),
-            ("Activity 9: Refine Dictionary", "Remove stop words and low-frequency terms", self.run_activity9),
+            ("Activity 9: Refine Dictionary", "Remove stop words and filter tokens", self.run_activity9),
             ("Activity 10: Weight Tokens", "Calculate TF.IDF weights for tokens", self.run_activity10),
             ("Activity 11: Document Index", "Create document index with unique IDs", self.run_activity11),
         ]
         
         # Create a canvas with scrollbar for activities
-        canvas = tk.Canvas(self.activities_frame, highlightthickness=0)
+        canvas = tk.Canvas(self.activities_frame, highlightthickness=0, bg=self.colors['bg_primary'])
         scrollbar = ttk.Scrollbar(self.activities_frame, orient="vertical", command=canvas.yview)
-        scrollable_frame = ttk.Frame(canvas)
+        scrollable_frame = tk.Frame(canvas, bg=self.colors['bg_primary'])
         
         scrollable_frame.bind(
             "<Configure>",
@@ -178,18 +357,70 @@ class HTMLTextIndexerGUI:
         )
         
         canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
-        canvas.configure(yscrollcommand=scrollbar.set)
+        canvas.configure(yscrollcommand=scrollbar.set, bg=self.colors['bg_primary'])
         
-        # Add activities
+        # Add activities with modern card design
         for i, (title, description, command) in enumerate(activities):
-            frame = ttk.LabelFrame(scrollable_frame, text=title, padding="10")
-            frame.grid(row=i, column=0, sticky=(tk.W, tk.E), pady=5, padx=5)
+            # Create card frame with modern shadow effect
+            card_frame = tk.Frame(
+                scrollable_frame,
+                bg=self.colors['bg_secondary'],
+                relief='flat',
+                borderwidth=0,
+                highlightbackground=self.colors['card_shadow'],
+                highlightthickness=1
+            )
+            card_frame.grid(row=i, column=0, sticky=(tk.W, tk.E), pady=6, padx=8)
+            card_frame.columnconfigure(1, weight=1)
             
-            desc_label = ttk.Label(frame, text=description, style='Info.TLabel')
-            desc_label.pack(anchor=tk.W, pady=(0, 5))
+            # Activity number badge with modern design
+            badge = tk.Label(
+                card_frame,
+                text=str(i+1),
+                font=('Segoe UI', 13, 'bold'),
+                bg=self.colors['accent'],
+                fg=self.colors['text_light'],
+                width=3,
+                height=1,
+                padx=8,
+                relief='flat'
+            )
+            badge.grid(row=0, column=0, rowspan=2, padx=18, pady=18, sticky='n')
             
-            btn = ttk.Button(frame, text=f"Run Activity {i+1}", command=command, style='Run.TButton')
-            btn.pack(anchor=tk.E)
+            # Title and description
+            content_frame = tk.Frame(card_frame, bg=self.colors['bg_secondary'])
+            content_frame.grid(row=0, column=1, sticky=(tk.W, tk.E), padx=(0, 15), pady=15)
+            content_frame.columnconfigure(0, weight=1)
+            
+            title_label = tk.Label(
+                content_frame,
+                text=title,
+                font=('Segoe UI', 12, 'bold'),
+                bg=self.colors['bg_secondary'],
+                fg=self.colors['text_primary'],
+                anchor='w'
+            )
+            title_label.grid(row=0, column=0, sticky=tk.W, pady=(0, 6))
+            
+            desc_label = tk.Label(
+                content_frame,
+                text=description,
+                font=('Segoe UI', 10),
+                bg=self.colors['bg_secondary'],
+                fg=self.colors['text_secondary'],
+                anchor='w',
+                wraplength=600
+            )
+            desc_label.grid(row=1, column=0, sticky=tk.W)
+            
+            # Run button
+            btn = ttk.Button(
+                card_frame,
+                text="Run",
+                command=command,
+                style='Run.TButton'
+            )
+            btn.grid(row=0, column=2, rowspan=2, padx=15, pady=15, sticky='e')
         
         canvas.pack(side="left", fill="both", expand=True)
         scrollbar.pack(side="right", fill="y")
@@ -354,11 +585,12 @@ Changes will be applied when you run activities.
         for i, var in enumerate(self.batch_vars):
             var.set(i >= 4)
     
-    def log_message(self, message):
-        """Add a message to the console"""
+    def log_message(self, message, tag="stdout"):
+        """Add a message to the console with optional tag for styling"""
         timestamp = datetime.now().strftime("%H:%M:%S")
         self.console.config(state='normal')
-        self.console.insert(tk.END, f"[{timestamp}] {message}\n")
+        self.console.insert(tk.END, f"[{timestamp}] ", "stdout")
+        self.console.insert(tk.END, f"{message}\n", tag)
         self.console.see(tk.END)
         self.console.config(state='disabled')
         
@@ -372,9 +604,11 @@ Changes will be applied when you run activities.
         """Update UI based on running state"""
         self.is_running = running
         if running:
-            self.status_label.config(text="Running...", foreground='orange')
+            self.status_indicator.config(bg=self.colors['warning'])
+            self.status_label.config(text="Running...", foreground=self.colors['warning'])
         else:
-            self.status_label.config(text="Ready", foreground='green')
+            self.status_indicator.config(bg=self.colors['success'])
+            self.status_label.config(text="Ready", foreground=self.colors['success'])
     
     def run_in_thread(self, func, *args):
         """Run a function in a separate thread"""
@@ -386,9 +620,9 @@ Changes will be applied when you run activities.
             try:
                 self.set_running(True)
                 func(*args)
-                self.log_message("✓ Activity completed successfully!\n")
+                self.log_message("Activity completed successfully!", "success")
             except Exception as e:
-                self.log_message(f"✗ Error: {str(e)}\n")
+                self.log_message(f"Error: {str(e)}", "error")
                 messagebox.showerror("Error", f"An error occurred:\n{str(e)}")
             finally:
                 self.set_running(False)
@@ -476,12 +710,12 @@ Changes will be applied when you run activities.
                     self.log_message(f"{'='*60}\n")
                     activity_func()
                 
-                self.log_message("\n" + "="*60)
-                self.log_message("✓ All activities (1-11) completed successfully!")
-                self.log_message("="*60 + "\n")
+                self.log_message("\n" + "="*60, "stdout")
+                self.log_message("All activities (1-11) completed successfully!", "success")
+                self.log_message("="*60 + "\n", "stdout")
                 
             except Exception as e:
-                self.log_message(f"\n✗ Error running all activities: {str(e)}\n")
+                self.log_message(f"\nError running all activities: {str(e)}", "error")
                 messagebox.showerror("Error", f"Error running all activities:\n{str(e)}")
             finally:
                 self.set_running(False)
@@ -522,12 +756,12 @@ Changes will be applied when you run activities.
                     self.log_message(f"{'='*60}\n")
                     activity_funcs[i]()
                 
-                self.log_message("\n" + "="*60)
-                self.log_message("✓ All selected activities completed successfully!")
-                self.log_message("="*60 + "\n")
+                self.log_message("\n" + "="*60, "stdout")
+                self.log_message("All selected activities completed successfully!", "success")
+                self.log_message("="*60 + "\n", "stdout")
                 
             except Exception as e:
-                self.log_message(f"\n✗ Batch processing failed: {str(e)}\n")
+                self.log_message(f"\nBatch processing failed: {str(e)}", "error")
                 messagebox.showerror("Batch Error", f"Batch processing failed:\n{str(e)}")
             finally:
                 self.set_running(False)

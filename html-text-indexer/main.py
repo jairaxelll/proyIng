@@ -511,14 +511,13 @@ def actividad6(input_dir, output_dir):
     
     dictionary_path = output_path / 'a6_dictionary.txt'
     with open(dictionary_path, 'w', encoding='utf-8') as f:
-        # Write header
-        f.write("Token|Repeticiones|# de archivos con ese token\n")
+        # No header - format: token;count;num_files
         # Sort tokens alphabetically
         for token in sorted(token_data.keys(), key=lambda x: x.lower()):
             data = token_data[token]
             file_count = len(data['files'])
-            # Format: token|repeteciones|#dearchivosconesetoken
-            f.write(f"{token}|{data['count']}|{file_count}\n")
+            # Format: token;count;num_files
+            f.write(f"{token};{data['count']};{file_count}\n")
     
     dictionary_end = time.time()
     dictionary_time = dictionary_end - dictionary_start
@@ -789,13 +788,13 @@ def actividad7(output_dir="results"):
         # Calculate total repetitions (sum of frequencies across all documents)
         total_repetitions = sum(docs.values())
 
-        # Add to dictionary: token|repeteciones|#dearchivosconesetoken
-        dict_lines.append(f"{token}|{total_repetitions}|{num_docs}\n")
+        # Add to dictionary: token;repetitions;num_docs
+        dict_lines.append(f"{token};{total_repetitions};{num_docs}\n")
 
         # Add to posting: Archivo, Frecuencia (sorted by filename)
         for doc in sorted(docs.keys()):
             freq = docs[doc]
-            posting_lines.append(f"{doc}\t{freq}\n")
+            posting_lines.append(f"{doc};{freq}\n")
 
         # Update posting position for next token
         position += num_docs
@@ -807,7 +806,7 @@ def actividad7(output_dir="results"):
 
     # Step 4: Write posting file
     with open(post_file, "w", encoding="utf-8") as pf:
-        pf.write("Archivo\tFrecuencia\n")
+        # No header - format: archivo.html;frecuencia
         pf.writelines(posting_lines)
 
     posting_end = time.time()
@@ -842,6 +841,13 @@ def actividad7(output_dir="results"):
     print(f"Tiempo total: {total_program_time:.6f} segundos")
 
 
+def hash_function(key, size):
+    """Implementa una versión simple de la función hash DJB2."""
+    hash_value = 5381
+    for char in key:
+        hash_value = ((hash_value << 5) + hash_value) + ord(char)
+    return hash_value % size
+
 def actividad8(output_dir="results"):
     """
     Actividad 8:
@@ -850,95 +856,72 @@ def actividad8(output_dir="results"):
     """
     import os
     import time
-    import hashlib
     from collections import defaultdict
     from pathlib import Path
 
-    matricula = "2878113"  
+    matricula = "2878113"
+    HASH_TABLE_SIZE = 20000
+    EMPTY_SLOT_INDICATOR = "vacio"
+    EMPTY_POSTING_POSITION = -1
+    
     print("=== EJECUTANDO ACTIVIDAD 8: DICCIONARIO CON HASH TABLE ===")
 
     base_dir = Path(output_dir)
-    token_dir = base_dir / "tokenized"
+    folder_path = Path(FOLDER)
     
-    if not token_dir.exists():
-        print(f"Error: El directorio tokenized {token_dir} no existe")
-        print("Ejecuta primero actividad5() para generar los archivos tokenizados.")
+    if not folder_path.exists():
+        print(f"Error: El directorio {FOLDER} no existe")
         return
 
     # --- Step 1: Preparar estructuras de datos ---
     token_data = defaultdict(lambda: defaultdict(int))  # {token: {archivo: frecuencia}}
-    hash_table = {}                                     # {hash_index: (token, num_docs, posting_pos)}
+    hash_table = [[] for _ in range(HASH_TABLE_SIZE)]  # Lista de listas para chaining
     colisiones = 0
     posting_data = []                                   # [(archivo, frecuencia)]
 
-    # --- Step 2: Leer archivos tokenizados y contar tiempos individuales ---
+    # --- Step 2: Leer archivos HTML y contar tiempos individuales ---
     start_total = time.time()
-    log_lines = []
-    
-    log_lines.append("=== ACTIVIDAD 8: REPORTE DE HASH TABLE ===")
-    log_lines.append(f"Fecha: {time.strftime('%Y-%m-%d %H:%M:%S')}")
-    log_lines.append(f"Matrícula: {matricula}")
-    log_lines.append("")
-    log_lines.append("Archivos procesados:")
-    log_lines.append("-" * 70)
+    file_durations = []
 
-    token_files = list(token_dir.glob("*_tokens.txt"))
+    html_files = sorted(folder_path.glob('*.html'))
     
-    if not token_files:
-        print("No se encontraron archivos tokenizados")
+    if not html_files:
+        print("No se encontraron archivos HTML")
         return
 
-    for token_file in token_files:
+    for html_file in html_files:
         start_file = time.time()
-        
-        # Extract original filename (remove _tokens.txt suffix and add .html)
-        original_filename = token_file.stem.replace('_tokens', '') + '.html'
+        filename = html_file.name
         
         try:
-            with open(token_file, 'r', encoding='utf-8') as f:
-                for line in f:
-                    line = line.strip()
-                    if not line:
-                        continue
-                    
-                    # Parse "token count" format
-                    parts = line.split(' ', 1)
-                    if len(parts) == 2:
-                        token, count_str = parts
-                        try:
-                            count = int(count_str)
-                            token_data[token][original_filename] = count
-                        except ValueError:
-                            continue
+            # Read HTML file
+            content = open_file(html_file)
+            if content.startswith("Failed"):
+                print(f"Error: {content}")
+                continue
+            
+            # Clean HTML tags
+            clean_content = re.sub(r'<[^>]+>', '', content)
+            
+            # Extract and process words
+            words = process_words(clean_content)
+            
+            # Count token frequencies per file
+            for word in words:
+                token_data[word][filename] += 1
+                
         except Exception as e:
-            print(f"Error leyendo {token_file.name}: {e}")
+            print(f"Error procesando {filename}: {e}")
             continue
 
         end_file = time.time()
-        log_lines.append(f"c:\\cs13309\\files\\{original_filename} {end_file - start_file:.2f}")
-        print(f"Procesado: {original_filename} en {end_file - start_file:.4f} segundos")
+        duration = end_file - start_file
+        file_durations.append((filename, duration))
+        print(f"Procesado: {filename} en {duration:.4f} segundos")
 
     posting_start = time.time()
     
-    pos_in_posting = 0
     posting_file = base_dir / "a8_posting.txt"
-    
-    # Calculate optimal table size (prime number, ~2x the number of tokens)
-    def next_prime(n):
-        """Find the next prime number >= n"""
-        def is_prime(num):
-            if num < 2:
-                return False
-            for i in range(2, int(num**0.5) + 1):
-                if num % i == 0:
-                    return False
-            return True
-        
-        while not is_prime(n):
-            n += 1
-        return n
-    
-    table_size = next_prime(len(token_data) * 2)  # Dynamic table size
 
     with open(posting_file, "w", encoding="utf-8") as post:
         # Sort tokens alphabetically for consistent ordering
@@ -946,33 +929,23 @@ def actividad8(output_dir="results"):
         
         for token in sorted_tokens:
             docs = token_data[token]
+            num_docs = len(docs)
+            total_freq = sum(docs.values())
             
             for archivo in sorted(docs.keys()): 
                 frecuencia = docs[archivo]
-                post.write(f"{archivo}\t{frecuencia}\n")
+                post.write(f"{archivo};{frecuencia}\n")
                 posting_data.append((archivo, frecuencia))
 
-            # Calcular hash del token (tabla hash)
-            hash_index = int(hashlib.sha1(token.encode()).hexdigest(), 16) % table_size
-            num_docs = len(docs)
-            original_hash = hash_index
-
-            # Manejo de colisiones con linear probing
-            collision_count = 0
-            while hash_index in hash_table:
-                colisiones += 1
-                collision_count += 1
-                hash_index = (hash_index + 1) % table_size
-                
-                # Prevent infinite loop in case table is full
-                if collision_count >= table_size:
-                    print(f"ERROR: Hash table llena para token '{token}'")
-                    break
-
-            if collision_count < table_size:
-                hash_table[hash_index] = (token, num_docs, pos_in_posting)
+            # Calcular hash del token usando DJB2
+            hash_index = hash_function(token, HASH_TABLE_SIZE)
             
-            pos_in_posting += num_docs  # avanzar según el número de documentos
+            # Manejo de colisiones con chaining (listas de listas)
+            if hash_table[hash_index]:
+                colisiones += 1
+            
+            # Almacenar en la lista de ese índice
+            hash_table[hash_index].append((token, total_freq, num_docs, hash_index))
 
     posting_end = time.time()
     posting_time = posting_end - posting_start
@@ -982,22 +955,14 @@ def actividad8(output_dir="results"):
     
     dict_file = base_dir / "a8_diccionario_hash.txt"
     with open(dict_file, "w", encoding="utf-8") as dic:
-        dic.write("PosiciónHash\tToken\tNumDocs\tPosPosting\n")
-        dic.write("-" * 70 + "\n")
-        
         occupied_slots = 0
-        for i in range(table_size):
-            if i in hash_table:
-                token, num_docs, pos = hash_table[i]
-                dic.write(f"{i}\t{token}\t{num_docs}\t{pos}\n")
-                occupied_slots += 1
+        for i, slot in enumerate(hash_table):
+            if not slot:
+                dic.write(f"Posición Hash: {i}, Token: {EMPTY_SLOT_INDICATOR}, Frecuencia: 0, Archivos: 0, Posición Posting: {EMPTY_POSTING_POSITION}\n")
             else:
-                dic.write(f"{i}\t-\t0\t-1\n")
-
-        dic.write("\n" + "=" * 70 + "\n")
-        dic.write(f"Número total de colisiones: {colisiones}\n")
-        dic.write(f"Slots ocupados: {occupied_slots}/{table_size}\n")
-        dic.write(f"Factor de carga: {occupied_slots/table_size:.2%}\n")
+                occupied_slots += 1
+                for token, freq, num_files, pos in slot:
+                    dic.write(f"Posición Hash: {i}, Token: {token}, Frecuencia: {freq}, Archivos: {num_files}, Posición Posting: {pos}\n")
     
     dict_end = time.time()
     dict_time = dict_end - dict_start
@@ -1006,15 +971,10 @@ def actividad8(output_dir="results"):
     end_total = time.time()
     total_time = end_total - start_total
 
-    log_lines.extend([
-        "",
-        f"tiempo total en crear el nuevo archivo: {posting_time + dict_time:.2f} segundos",
-        f"tiempo total de ejecucion: {total_time:.2f} segundos"
-    ])
-
-    log_file = base_dir / "reports" / f"activity_8_{matricula}.txt"
+    log_file = base_dir / f"a8_{matricula}.txt"
     with open(log_file, "w", encoding="utf-8") as log:
-        log.write('\n'.join(log_lines))
+        for filename, duration in file_durations:
+            log.write(f"{filename}           {duration:.4f} \n")
 
     print(f"\n Archivos generados exitosamente:")
     print(f"- {dict_file}")
@@ -1023,25 +983,27 @@ def actividad8(output_dir="results"):
     print(f"\nEstadísticas:")
     print(f"- Total tokens únicos: {len(token_data)}")
     print(f"- Total colisiones: {colisiones}")
-    print(f"- Factor de carga: {len(hash_table)}/{table_size} ({len(hash_table)/table_size:.2%})")
+    occupied = sum(1 for slot in hash_table if slot)
+    print(f"- Slots ocupados: {occupied}/{HASH_TABLE_SIZE} ({occupied/HASH_TABLE_SIZE:.2%})")
     print(f"- Tiempo total: {total_time:.4f} segundos")
 
                     
 
-def actividad9(output_dir="results", stoplist_path="stoplist.txt", min_frequency=3):
+def actividad9(output_dir="results", stoplist_path="stoplist.txt"):
     """
     Actividad 9:
-    Refinar el diccionario con una stop list, eliminar palabras de baja frecuencia
-    y tokens de una sola letra o dígito. 
+    Refinar el diccionario con una stop list y eliminar tokens de una sola letra o dígito. 
     Incluye medición de tiempos y reporte de factores del sistema.
     """
     import os
     import time
-    import hashlib
     from collections import defaultdict
     from pathlib import Path
 
-    matricula = "A00837763"  # 🔁 Reemplaza con tu matrícula
+    matricula = "A00837763"
+    HASH_TABLE_SIZE = 20000
+    EMPTY_SLOT_INDICATOR = "vacio"
+    EMPTY_POSTING_POSITION = -1
 
     print("=== EJECUTANDO ACTIVIDAD 9: REFINAMIENTO DEL DICCIONARIO ===")
 
@@ -1060,7 +1022,7 @@ def actividad9(output_dir="results", stoplist_path="stoplist.txt", min_frequency
 
     historias_usuario = [
         "Como desarrollador, quiero aplicar una lista de stop words para que el diccionario sea más relevante.",
-        "Como usuario, quiero eliminar palabras poco frecuentes para reducir el tamaño del diccionario final.",
+        "Como usuario, quiero eliminar tokens de una sola letra o solo dígitos para mejorar la calidad del diccionario.",
         "Como analista, quiero medir el tiempo de procesamiento para evaluar el rendimiento del sistema."
     ]
 
@@ -1148,13 +1110,9 @@ def actividad9(output_dir="results", stoplist_path="stoplist.txt", min_frequency
     
     refined_tokens = {}
     tokens_removed_single_char = 0
-    tokens_removed_low_freq = 0
     tokens_removed_stoplist = tokens_before_filter - len(token_data)
     
     for token, docs in token_data.items():
-        # Calcular frecuencia total
-        total_freq = sum(docs.values())
-        
         # Filtro 1: Eliminar tokens de una sola letra o dígito
         if len(token) <= 1:
             tokens_removed_single_char += 1
@@ -1165,42 +1123,18 @@ def actividad9(output_dir="results", stoplist_path="stoplist.txt", min_frequency
             tokens_removed_single_char += 1
             continue
         
-        # Filtro 3: Eliminar tokens de baja frecuencia
-        if total_freq < min_frequency:
-            tokens_removed_low_freq += 1
-            continue
-        
         refined_tokens[token] = docs
 
     print(f"Tokens antes del filtrado: {len(token_data)}")
     print(f"Tokens después del filtrado: {len(refined_tokens)}")
     print(f"Removidos por stop list: {tokens_removed_stoplist}")
     print(f"Removidos por longitud/dígitos: {tokens_removed_single_char}")
-    print(f"Removidos por baja frecuencia: {tokens_removed_low_freq}")
 
     # --- Step 6: Crear archivo posting refinado ---
     posting_start = time.time()
     
-    hash_table = {}
-    posting_pos = 0
+    hash_table = [[] for _ in range(HASH_TABLE_SIZE)]  # Lista de listas para chaining
     colisiones = 0
-    
-    # Calculate optimal table size (prime number, ~2x the number of tokens)
-    def next_prime(n):
-        """Find the next prime number >= n"""
-        def is_prime(num):
-            if num < 2:
-                return False
-            for i in range(2, int(num**0.5) + 1):
-                if num % i == 0:
-                    return False
-            return True
-        
-        while not is_prime(n):
-            n += 1
-        return n
-    
-    table_size = next_prime(len(refined_tokens) * 2)  # Dynamic table size
 
     posting_file = base_dir / "a9_posting.txt"
     
@@ -1210,32 +1144,23 @@ def actividad9(output_dir="results", stoplist_path="stoplist.txt", min_frequency
         
         for token in sorted_tokens:
             docs = refined_tokens[token]
+            num_docs = len(docs)
+            total_freq = sum(docs.values())
             
             # Guardar en posting (ordenado por archivo)
             for archivo in sorted(docs.keys()):
                 freq = docs[archivo]
-                post.write(f"{archivo}\t{freq}\n")
+                post.write(f"{archivo};{freq}\n")
 
-            num_docs = len(docs)
+            # Calcular hash del token usando DJB2
+            hash_index = hash_function(token, HASH_TABLE_SIZE)
             
-            # Calcular hash del token
-            hash_index = int(hashlib.sha1(token.encode()).hexdigest(), 16) % table_size
-
-            # Manejo de colisiones (linear probing)
-            collision_count = 0
-            while hash_index in hash_table:
+            # Manejo de colisiones con chaining (listas de listas)
+            if hash_table[hash_index]:
                 colisiones += 1
-                collision_count += 1
-                hash_index = (hash_index + 1) % table_size
-                
-                if collision_count >= table_size:
-                    print(f"ERROR: Hash table llena para token '{token}'")
-                    break
-
-            if collision_count < table_size:
-                hash_table[hash_index] = (token, num_docs, posting_pos)
             
-            posting_pos += num_docs
+            # Almacenar en la lista de ese índice
+            hash_table[hash_index].append((token, total_freq, num_docs, hash_index))
 
     posting_end = time.time()
     posting_time = posting_end - posting_start
@@ -1246,28 +1171,23 @@ def actividad9(output_dir="results", stoplist_path="stoplist.txt", min_frequency
     dict_file = base_dir / "a9_diccionario_refinado.txt"
     
     with open(dict_file, "w", encoding="utf-8") as dic:
-        dic.write("PosHash\tToken\tNumDocs\tPosPosting\n")
-        dic.write("-" * 70 + "\n")
-        
         occupied_slots = 0
-        for i in range(table_size):
-            if i in hash_table:
-                token, num_docs, pos = hash_table[i]
-                dic.write(f"{i}\t{token}\t{num_docs}\t{pos}\n")
-                occupied_slots += 1
+        for i, slot in enumerate(hash_table):
+            if not slot:
+                dic.write(f"Posición Hash: {i}, Token: {EMPTY_SLOT_INDICATOR}, Frecuencia: 0, Archivos: 0, Posición Posting: {EMPTY_POSTING_POSITION}\n")
             else:
-                dic.write(f"{i}\t-\t0\t-1\n")
-
-        dic.write("\n" + "=" * 70 + "\n")
-        dic.write(f"Número total de colisiones: {colisiones}\n")
-        dic.write(f"Slots ocupados: {occupied_slots}/{table_size}\n")
-        dic.write(f"Factor de carga: {occupied_slots/table_size:.2%}\n")
+                occupied_slots += 1
+                for token, freq, num_files, pos in slot:
+                    dic.write(f"Posición Hash: {i}, Token: {token}, Frecuencia: {freq}, Archivos: {num_files}, Posición Posting: {pos}\n")
+        
         dic.write("\n=== ESTADÍSTICAS DE FILTRADO ===\n")
         dic.write(f"Tokens originales: {tokens_before_filter}\n")
         dic.write(f"Removidos por stop list: {tokens_removed_stoplist}\n")
         dic.write(f"Removidos por longitud/dígitos: {tokens_removed_single_char}\n")
-        dic.write(f"Removidos por baja frecuencia (< {min_frequency}): {tokens_removed_low_freq}\n")
         dic.write(f"Tokens finales: {len(refined_tokens)}\n")
+        dic.write(f"Número total de colisiones: {colisiones}\n")
+        dic.write(f"Slots ocupados: {occupied_slots}/{HASH_TABLE_SIZE}\n")
+        dic.write(f"Factor de carga: {occupied_slots/HASH_TABLE_SIZE:.2%}\n")
     
     dict_end = time.time()
     dict_time = dict_end - dict_start
@@ -1286,9 +1206,8 @@ def actividad9(output_dir="results", stoplist_path="stoplist.txt", min_frequency
         f"Tokens refinados: {len(refined_tokens)}",
         f"Tokens removidos por stop list: {tokens_removed_stoplist}",
         f"Tokens removidos por longitud/dígitos: {tokens_removed_single_char}",
-        f"Tokens removidos por baja frecuencia: {tokens_removed_low_freq}",
         f"Número total de colisiones: {colisiones}",
-        f"Factor de carga: {len(hash_table)}/{table_size} ({len(hash_table)/table_size:.2%})"
+        f"Slots ocupados: {sum(1 for slot in hash_table if slot)}/{HASH_TABLE_SIZE}"
     ])
 
     log_file = base_dir / "reports" / f"activity_9_{matricula}.txt"
@@ -1415,6 +1334,12 @@ def actividad10(output_dir="results"):
     
     log_lines.append("")
     log_lines.append(f"Total documentos procesados: {len(doc_total_tokens)}")
+    if doc_total_tokens:
+        log_lines.append("Archivos en doc_total_tokens:")
+        for filename, total in list(doc_total_tokens.items())[:5]:  # Show first 5
+            log_lines.append(f"  {filename}: {total} tokens")
+        if len(doc_total_tokens) > 5:
+            log_lines.append(f"  ... y {len(doc_total_tokens) - 5} más")
     log_lines.append("")
     
     # Step 2: Read dictionary and posting, then calculate weights
@@ -1424,44 +1349,60 @@ def actividad10(output_dir="results"):
     weight_start = time.time()
     
     # Read dictionary to get token order and positions
-    token_list = []  # List of (token, num_docs, position)
+    token_list = []  # List of (token, repetitions, num_docs)
     with open(dict_file, 'r', encoding='utf-8') as f:
-        next(f)  # Skip header
+        # No header in dictionary file from actividad7
         for line in f:
             line = line.strip()
             if not line:
                 continue
-            parts = line.split('\t')
+            # Dictionary format from actividad7: token;repetitions;num_docs
+            parts = line.split(';')
             if len(parts) >= 3:
                 token = parts[0]
-                num_docs = int(parts[1])
-                position = int(parts[2])
-                token_list.append((token, num_docs, position))
+                repetitions = int(parts[1])
+                num_docs = int(parts[2])
+                token_list.append((token, repetitions, num_docs))
     
     # Read posting file and calculate weights
     posting_data = []  # List of (token, filename, frequency, weight)
     posting_index = 0
     
     with open(post_file, 'r', encoding='utf-8') as f:
-        next(f)  # Skip header
+        # No header in posting file - format: archivo.html;frecuencia
         
-        for token, num_docs, position in token_list:
+        for token, repetitions, num_docs in token_list:
             # Read num_docs entries for this token
             for _ in range(num_docs):
                 line = f.readline().strip()
                 if not line:
                     break
                 
-                parts = line.split('\t')
+                parts = line.split(';')
                 if len(parts) >= 2:
                     filename = parts[0]
                     frequency = int(parts[1])
                     
                     # Calculate weight: tf.idf = (frequency * 100) / total_tokens_in_doc
-                    total_tokens_in_doc = doc_total_tokens.get(filename, 1)
+                    total_tokens_in_doc = doc_total_tokens.get(filename)
+                    if total_tokens_in_doc is None:
+                        # If filename not found, try to find it (case-insensitive or without extension)
+                        found = False
+                        for key in doc_total_tokens.keys():
+                            if key.lower() == filename.lower() or key == filename:
+                                total_tokens_in_doc = doc_total_tokens[key]
+                                found = True
+                                break
+                        if not found:
+                            # Log warning and use a default (but this shouldn't happen)
+                            log_lines.append(f"WARNING: No se encontró total_tokens para {filename}, usando 1")
+                            total_tokens_in_doc = 1
+                    
                     if total_tokens_in_doc == 0:
                         total_tokens_in_doc = 1  # Avoid division by zero
                     
+                    # Calculate weight: (frequency * 100) / total_tokens_in_doc
+                    # This gives a percentage-like value (0-100 range typically)
                     weight = (frequency * 100) / total_tokens_in_doc
                     
                     posting_data.append((token, filename, frequency, weight))
@@ -1489,7 +1430,7 @@ def actividad10(output_dir="results"):
     weighted_dict_lines = []
     weighted_dict_lines.append(f"{'Token':<15}{'N°Docs':<5}\n")  # Header
     
-    for token, num_docs, position in token_list:
+    for token, repetitions, num_docs in token_list:
         # Format: Token (15 chars) + N°Docs (5 chars) = 20 bytes
         token_short = token[:15] if len(token) > 15 else token
         line = f"{token_short:<15}{num_docs:<5}\n"
@@ -1500,7 +1441,7 @@ def actividad10(output_dir="results"):
     
     # Write weighted posting file
     weighted_posting_lines = []
-    weighted_posting_lines.append(f"{'Archivo':<8}{'Peso':<2}\n")  # Header (10 bytes)
+    weighted_posting_lines.append(f"{'Archivo':<8}{' P':>2}\n")  # Header (10 bytes): 8 chars filename, 2 chars weight (right-aligned, " P" for Peso)
     
     # Group posting data by token (maintain order)
     posting_by_token = defaultdict(list)
@@ -1508,14 +1449,19 @@ def actividad10(output_dir="results"):
         posting_by_token[token].append((filename, freq, weight))
     
     # Write in token order
-    for token, num_docs, position in token_list:
+    for token, repetitions, num_docs in token_list:
         if token in posting_by_token:
             for filename, freq, weight in sorted(posting_by_token[token]):
                 # Format: Archivo (8 chars) + Peso (2 chars) = 10 bytes
-                # Truncate filename if too long, format weight as integer percentage
-                weight_int = min(99, int(round(weight)))  # Cap at 99 for 2-digit display
-                filename_short = filename[:8] if len(filename) > 8 else filename
-                line = f"{filename_short:<8}{weight_int:<2}\n"
+                # Formula: tf.idf = (frequency * 100) / total_tokens_in_doc
+                # Scale by 100 to preserve precision: converts 0.03→3, 0.33→33, 8.0→99 (capped)
+                # This preserves the relative differences between weights
+                weight_scaled = weight * 100
+                weight_int = min(99, max(0, int(round(weight_scaled))))  # Cap at 99 for 2-digit display
+                # Ensure filename is exactly 8 characters: truncate if longer, pad with spaces if shorter
+                filename_short = (filename[:8] if len(filename) >= 8 else filename).ljust(8)
+                # Format: exactly 8 chars for filename, exactly 2 chars for weight (right-aligned)
+                line = f"{filename_short}{weight_int:>2}\n"  # No space between, exact widths
                 weighted_posting_lines.append(line)
     
     with open(weighted_post_file, 'w', encoding='utf-8') as f:
@@ -1542,13 +1488,31 @@ def actividad10(output_dir="results"):
     max_weight = max(weight for _, _, _, weight in posting_data) if posting_data else 0
     min_weight = min(weight for _, _, _, weight in posting_data) if posting_data else 0
     
+    # Count weights that round to 0 vs non-zero
+    weights_rounded_to_zero = sum(1 for _, _, _, w in posting_data if int(round(w * 100)) == 0)
+    weights_non_zero = total_tokens_weighted - weights_rounded_to_zero
+    
+    # Count files in posting
+    files_in_posting = {}
+    for _, filename, _, _ in posting_data:
+        files_in_posting[filename] = files_in_posting.get(filename, 0) + 1
+    
+    # Sample some weights for debugging
+    sample_weights = [w for _, _, _, w in posting_data[:10]] if posting_data else []
+    
     log_lines.extend([
         "=== ESTADÍSTICAS ===",
         f"Total tokens únicos: {unique_tokens}",
         f"Total registros en posting: {total_tokens_weighted}",
-        f"Peso promedio: {avg_weight:.4f}",
-        f"Peso máximo: {max_weight:.4f}",
-        f"Peso mínimo: {min_weight:.4f}",
+        f"Peso promedio: {avg_weight:.6f}",
+        f"Peso máximo: {max_weight:.6f}",
+        f"Peso mínimo: {min_weight:.6f}",
+        f"Pesos que se redondean a 0: {weights_rounded_to_zero}",
+        f"Pesos no-cero (redondeados): {weights_non_zero}",
+        f"Total documentos procesados para total_tokens: {len(doc_total_tokens)}",
+        f"Archivos en posting: {len(files_in_posting)}",
+        f"Distribución de archivos: {dict(sorted(files_in_posting.items(), key=lambda x: x[1], reverse=True))}",
+        f"Muestra de primeros 10 pesos calculados: {[f'{w:.4f}' for w in sample_weights]}",
         "",
         "=== TIEMPOS ===",
         f"Tiempo calculando pesos: {weight_time:.6f} segundos",
@@ -1668,8 +1632,8 @@ def actividad11(output_dir="results"):
                 else:
                     continue
             else:
-                # Regular format: "Archivo\tFrecuencia"
-                parts = line.split('\t')
+                # Regular format: "Archivo;Frecuencia"
+                parts = line.split(';')
                 if len(parts) >= 1:
                     filename = parts[0].strip()
                 else:
@@ -1734,19 +1698,22 @@ def actividad11(output_dir="results"):
     posting_start = time.time()
     
     # Read dictionary
-    token_list = []  # List of (token, num_docs, position)
+    token_list = []  # List of (token, repetitions, num_docs)
     with open(dict_file, 'r', encoding='utf-8') as f:
-        next(f)  # Skip header
+        # No header in dictionary file from actividad7 - format: token;repetitions;num_docs
+        position = 0
         for line in f:
             line = line.strip()
             if not line:
                 continue
-            parts = line.split('\t')
+            parts = line.split(';')
             if len(parts) >= 3:
                 token = parts[0]
-                num_docs = int(parts[1])
-                position = int(parts[2])
-                token_list.append((token, num_docs, position))
+                repetitions = int(parts[1])
+                num_docs = int(parts[2])
+                token_list.append((token, repetitions, num_docs))
+                # Position is cumulative based on num_docs
+                position += num_docs
     
     # Read posting and create indexed version
     indexed_posting_data = []  # List of (token, doc_id, weight/frequency)
@@ -1773,8 +1740,8 @@ def actividad11(output_dir="results"):
                     else:
                         continue
                 else:
-                    # Regular format: "Archivo\tFrecuencia"
-                    parts = line.split('\t')
+                    # Regular format: "Archivo;Frecuencia"
+                    parts = line.split(';')
                     if len(parts) >= 2:
                         filename = parts[0].strip()
                         weight = int(parts[1])  # Using frequency as weight
@@ -1833,7 +1800,7 @@ def actividad11(output_dir="results"):
     indexed_dict_lines.append(f"{'Token':<15}{'N°Docs':<5}\n")  # Header (20 bytes)
     
     position = 0
-    for token, num_docs, old_position in token_list:
+    for token, repetitions, num_docs in token_list:
         # Format: Token (15 chars) + N°Docs (5 chars) = 20 bytes
         token_short = token[:15] if len(token) > 15 else token
         line = f"{token_short:<15}{num_docs:<5}\n"

@@ -1,23 +1,23 @@
 === ACTIVIDAD 11: REPORTE DE ÍNDICE DE DOCUMENTOS ===
-Fecha: 2025-11-17 18:37:02
+Fecha: 2025-11-21 19:27:03
 Directorio base: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\results
 
 Usando archivo de posting con pesos: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\results\dictionary_posting\a10_Posting_Weighted.txt
 === PASO 1: CREANDO ÍNDICE DE DOCUMENTOS ===
 ----------------------------------------------------------------------
-Total documentos únicos encontrados: 0
-Tiempo creando índice: 0.008813 segundos
+Total documentos únicos encontrados: 4
+Tiempo creando índice: 0.011252 segundos
 
 === PASO 2: ESCRIBIENDO ARCHIVO DE DOCUMENTOS ===
 ----------------------------------------------------------------------
 Archivo de documentos creado: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\results\dictionary_posting\a11_Documentos.txt
-Total documentos: 0
-Tiempo escribiendo archivo: 0.000839 segundos
+Total documentos: 4
+Tiempo escribiendo archivo: 0.000966 segundos
 
 === PASO 3: CREANDO POSTING Y DICCIONARIO INDEXADOS ===
 ----------------------------------------------------------------------
-Total registros procesados: 0
-Tiempo procesando posting: 0.000674 segundos
+Total registros procesados: 1186
+Tiempo procesando posting: 0.003181 segundos
 
 === PASO 4: ESCRIBIENDO ARCHIVOS INDEXADOS ===
 ----------------------------------------------------------------------
@@ -26,18 +26,18 @@ Archivo posting indexado: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-i
 Archivo diccionario indexado: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\results\dictionary_posting\a11_Diccionario_Indexed.txt
 Tamaño columna posting: 10 bytes
 Tamaño columna diccionario: 20 bytes
-Tiempo escribiendo archivos: 0.001038 segundos
+Tiempo escribiendo archivos: 0.004566 segundos
 
 === ESTADÍSTICAS ===
-Total documentos únicos: 0
-Total tokens únicos: 0
-Total registros en posting: 0
+Total documentos únicos: 4
+Total tokens únicos: 1129
+Total registros en posting: 1186
 
 === TIEMPOS ===
-Tiempo creando índice: 0.008813 segundos
-Tiempo escribiendo documentos: 0.000839 segundos
-Tiempo procesando posting: 0.000674 segundos
-Tiempo escribiendo archivos indexados: 0.001038 segundos
-Tiempo total de ejecución: 0.044455 segundos
+Tiempo creando índice: 0.011252 segundos
+Tiempo escribiendo documentos: 0.000966 segundos
+Tiempo procesando posting: 0.003181 segundos
+Tiempo escribiendo archivos indexados: 0.004566 segundos
+Tiempo total de ejecución: 0.029918 segundos
 
 Proceso completado correctamente.

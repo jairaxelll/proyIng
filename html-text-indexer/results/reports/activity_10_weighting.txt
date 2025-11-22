@@ -1,20 +1,25 @@
 === ACTIVIDAD 10: REPORTE DE PESO DE TOKENS (TF.IDF) ===
-Fecha: 2025-11-17 18:37:02
+Fecha: 2025-11-21 19:27:03
 Directorio base: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\results
 
 === PASO 1: CALCULANDO TOTAL DE TOKENS POR DOCUMENTO ===
 ----------------------------------------------------------------------
-002.html                                     3377 tokens  0.000589s
-hard.html                                      25 tokens  0.000618s
-medium.html                                    61 tokens  0.000350s
-simple.html                                    35 tokens  0.000370s
+002.html                                     3377 tokens  0.000572s
+hard.html                                      25 tokens  0.000333s
+medium.html                                    61 tokens  0.000338s
+simple.html                                    35 tokens  0.000201s
 
 Total documentos procesados: 4
+Archivos en doc_total_tokens:
+  002.html: 3377 tokens
+  hard.html: 25 tokens
+  medium.html: 61 tokens
+  simple.html: 35 tokens
 
 === PASO 2: CALCULANDO PESOS TF.IDF ===
 ----------------------------------------------------------------------
-Total registros procesados: 0
-Tiempo calculando pesos: 0.022861 segundos
+Total registros procesados: 1186
+Tiempo calculando pesos: 0.022084 segundos
 
 === PASO 3: ESCRIBIENDO ARCHIVOS CON COLUMNAS DE TAMAÑO FIJO ===
 ----------------------------------------------------------------------
@@ -22,18 +27,24 @@ Archivo diccionario: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexe
 Archivo posting: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\results\dictionary_posting\a10_Posting_Weighted.txt
 Tamaño columna diccionario: 20 bytes
 Tamaño columna posting: 10 bytes
-Tiempo escribiendo archivos: 0.001120 segundos
+Tiempo escribiendo archivos: 0.004116 segundos
 
 === ESTADÍSTICAS ===
-Total tokens únicos: 0
-Total registros en posting: 0
-Peso promedio: 0.0000
-Peso máximo: 0.0000
-Peso mínimo: 0.0000
+Total tokens únicos: 1129
+Total registros en posting: 1186
+Peso promedio: 0.337268
+Peso máximo: 8.000000
+Peso mínimo: 0.029612
+Pesos que se redondean a 0: 0
+Pesos no-cero (redondeados): 1186
+Total documentos procesados para total_tokens: 4
+Archivos en posting: 4
+Distribución de archivos: {'002.html': 1084, 'medium.html': 51, 'simple.html': 27, 'hard.html': 24}
+Muestra de primeros 10 pesos calculados: ['0.0888', '0.0296', '0.0296', '0.0296', '0.0296', '0.0296', '0.0296', '0.0296', '0.0296', '0.0296']
 
 === TIEMPOS ===
-Tiempo calculando pesos: 0.022861 segundos
-Tiempo escribiendo archivos: 0.001120 segundos
-Tiempo total de ejecución: 0.108339 segundos
+Tiempo calculando pesos: 0.022084 segundos
+Tiempo escribiendo archivos: 0.004116 segundos
+Tiempo total de ejecución: 0.063299 segundos
 
 Proceso completado correctamente.
