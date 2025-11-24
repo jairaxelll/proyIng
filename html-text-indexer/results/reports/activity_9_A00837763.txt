@@ -1,5 +1,5 @@
 === ACTIVIDAD 9: REPORTE DE REFINAMIENTO ===
-Fecha: 2025-11-21 19:27:03
+Fecha: 2025-11-21 20:02:11
 Matrícula: A00837763
 
 Archivos procesados:
@@ -9,8 +9,8 @@ c:\cs13309\files\hard.html 0.00
 c:\cs13309\files\medium.html 0.00
 c:\cs13309\files\simple.html 0.00
 
-tiempo total en crear el nuevo archivo: 0.03 segundos
-tiempo total de ejecucion: 0.11 segundos
+tiempo total en crear el nuevo archivo: 0.04 segundos
+tiempo total de ejecucion: 0.65 segundos
 
 === ESTADÍSTICAS DE REFINAMIENTO ===
 Tokens originales (con stop list): 1128

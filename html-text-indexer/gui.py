@@ -1,16 +1,21 @@
 """
 HTML Text Indexer - Graphical User Interface
 A modern GUI for the HTML text processing and indexing system
+Using CustomTkinter for a beautiful, modern interface
 """
 
-import tkinter as tk
-from tkinter import ttk, scrolledtext, filedialog, messagebox
+import customtkinter as ctk
+from tkinter import filedialog, messagebox
 from pathlib import Path
 import threading
 import sys
 import io
 from datetime import datetime
 import importlib.util
+
+# Set appearance mode and color theme
+ctk.set_appearance_mode("dark")  # "light" or "dark"
+ctk.set_default_color_theme("blue")  # "blue", "green", "dark-blue"
 
 # Import the activities from main.py
 spec = importlib.util.spec_from_file_location("main", Path(__file__).parent / "main.py")
@@ -27,10 +32,10 @@ class TextRedirector(io.StringIO):
         self.tag = tag
 
     def write(self, str_text):
-        self.widget.config(state='normal')
-        self.widget.insert(tk.END, str_text, (self.tag,))
-        self.widget.see(tk.END)
-        self.widget.config(state='disabled')
+        self.widget.configure(state='normal')
+        self.widget.insert("end", str_text)
+        self.widget.see("end")
+        self.widget.configure(state='disabled')
         self.widget.update_idletasks()
     
     def flush(self):
@@ -41,29 +46,8 @@ class HTMLTextIndexerGUI:
     def __init__(self, root):
         self.root = root
         self.root.title("HTML Text Indexer - Professional Edition")
-        self.root.geometry("1200x800")
-        self.root.minsize(1000, 600)
-        
-        # Modern color scheme
-        self.colors = {
-            'bg_primary': '#f5f7fa',
-            'bg_secondary': '#ffffff',
-            'bg_dark': '#2c3e50',
-            'bg_console': '#1a1a1a',
-            'accent': '#4a90e2',
-            'accent_hover': '#357abd',
-            'success': '#2ecc71',
-            'warning': '#f39c12',
-            'danger': '#e74c3c',
-            'text_primary': '#2c3e50',
-            'text_secondary': '#6c757d',
-            'text_light': '#ffffff',
-            'border': '#e1e8ed',
-            'card_shadow': '#e8ecf0',
-        }
-        
-        # Set background color
-        self.root.configure(bg=self.colors['bg_primary'])
+        self.root.geometry("1400x900")
+        self.root.minsize(1200, 700)
         
         # Get script directory for default paths
         self.script_dir = Path(__file__).parent
@@ -74,266 +58,153 @@ class HTMLTextIndexerGUI:
         # Track running status
         self.is_running = False
         
-        # Configure style
-        self.setup_style()
-        
         # Create UI
         self.create_widgets()
         
-    def setup_style(self):
-        """Configure the UI style with modern design"""
-        style = ttk.Style()
-        style.theme_use('clam')
-        
-        # Configure modern colors and fonts
-        style.configure('Title.TLabel', 
-                       font=('Segoe UI', 20, 'bold'), 
-                       foreground=self.colors['text_primary'],
-                       background=self.colors['bg_primary'])
-        
-        style.configure('Header.TLabel', 
-                       font=('Segoe UI', 11, 'bold'), 
-                       foreground=self.colors['text_primary'],
-                       background=self.colors['bg_primary'])
-        
-        style.configure('Info.TLabel', 
-                       font=('Segoe UI', 9), 
-                       foreground=self.colors['text_secondary'],
-                       background=self.colors['bg_primary'])
-        
-        style.configure('Run.TButton', 
-                       font=('Segoe UI', 10, 'bold'),
-                       padding=(15, 8))
-        
-        # Modern button styles
-        style.configure('TButton',
-                       font=('Segoe UI', 10),
-                       padding=(12, 8),
-                       relief='flat',
-                       borderwidth=0)
-        
-        style.map('TButton',
-                 background=[('active', self.colors['accent']),
-                           ('!active', self.colors['bg_secondary'])],
-                 foreground=[('active', self.colors['text_light']),
-                            ('!active', self.colors['text_primary'])],
-                 bordercolor=[('active', self.colors['accent']),
-                            ('!active', self.colors['border'])],
-                 focuscolor=[('!focus', 'none')])
-        
-        style.map('Run.TButton',
-                 background=[('active', self.colors['accent_hover']),
-                           ('!active', self.colors['accent'])],
-                 foreground=[('active', self.colors['text_light']),
-                            ('!active', self.colors['text_light'])],
-                 bordercolor=[('active', self.colors['accent_hover']),
-                            ('!active', self.colors['accent'])],
-                 focuscolor=[('!focus', 'none')])
-        
-        # Notebook style
-        style.configure('TNotebook',
-                       background=self.colors['bg_primary'],
-                       borderwidth=0)
-        
-        style.configure('TNotebook.Tab',
-                       font=('Segoe UI', 11),
-                       padding=(24, 12),
-                       background=self.colors['bg_secondary'],
-                       foreground=self.colors['text_primary'],
-                       borderwidth=0)
-        
-        style.map('TNotebook.Tab',
-                 background=[('selected', self.colors['accent']),
-                           ('!selected', self.colors['bg_secondary'])],
-                 foreground=[('selected', self.colors['text_light']),
-                           ('!selected', self.colors['text_primary'])],
-                 expand=[('selected', [1, 1, 1, 0])])
-        
-        # LabelFrame style
-        style.configure('TLabelframe',
-                       background=self.colors['bg_secondary'],
-                       borderwidth=1,
-                       relief='solid',
-                       bordercolor=self.colors['border'])
-        
-        style.configure('TLabelframe.Label',
-                       font=('Segoe UI', 10, 'bold'),
-                       foreground=self.colors['accent'],
-                       background=self.colors['bg_secondary'])
-        
-        # Entry style
-        style.configure('TEntry',
-                       fieldbackground=self.colors['bg_secondary'],
-                       borderwidth=1,
-                       relief='solid',
-                       bordercolor=self.colors['border'],
-                       padding=5)
-        
-        # Scrollbar style
-        style.configure('TScrollbar',
-                       background=self.colors['bg_secondary'],
-                       troughcolor=self.colors['bg_primary'],
-                       borderwidth=0,
-                       arrowcolor=self.colors['text_secondary'],
-                       darkcolor=self.colors['border'],
-                       lightcolor=self.colors['border'])
-        
     def create_widgets(self):
-        """Create all UI widgets with modern design"""
-        # Header frame with modern design
-        header_frame = tk.Frame(self.root, bg=self.colors['accent'], height=90)
-        header_frame.pack(fill=tk.X, padx=0, pady=0)
+        """Create all UI widgets with modern CustomTkinter design"""
+        # Main container
+        main_container = ctk.CTkFrame(self.root, fg_color="transparent")
+        main_container.pack(fill="both", expand=True, padx=10, pady=10)
+        
+        # Header frame
+        header_frame = ctk.CTkFrame(main_container, height=100, corner_radius=15)
+        header_frame.pack(fill="x", pady=(0, 15))
         header_frame.pack_propagate(False)
         
         # Title in header
-        title_label = tk.Label(
+        title_label = ctk.CTkLabel(
             header_frame, 
-            text="HTML Text Indexer", 
-            font=('Segoe UI', 24, 'bold'),
-            bg=self.colors['accent'],
-            fg=self.colors['text_light'],
-            pady=20
+            text="HTML Text Indexer",
+            font=ctk.CTkFont(size=32, weight="bold")
         )
-        title_label.pack()
+        title_label.pack(pady=(15, 5))
         
-        subtitle_label = tk.Label(
+        subtitle_label = ctk.CTkLabel(
             header_frame,
             text="Professional Text Processing & Indexing System",
-            font=('Segoe UI', 11),
-            bg=self.colors['accent'],
-            fg=self.colors['text_light']
+            font=ctk.CTkFont(size=14),
+            text_color="gray"
         )
-        subtitle_label.pack(pady=(0, 20))
+        subtitle_label.pack(pady=(0, 15))
         
-        # Main container with padding
-        main_frame = ttk.Frame(self.root, padding="20")
-        main_frame.pack(fill=tk.BOTH, expand=True)
-        
-        # Configure grid weights
-        main_frame.columnconfigure(0, weight=1)
-        main_frame.rowconfigure(1, weight=1)
-        
-        # Create notebook for tabs
-        self.notebook = ttk.Notebook(main_frame)
-        self.notebook.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), pady=(0, 15))
-        main_frame.rowconfigure(0, weight=1)
+        # Create tabview for tabs
+        self.tabview = ctk.CTkTabview(main_container, corner_radius=15)
+        self.tabview.pack(fill="both", expand=True, pady=(0, 15))
         
         # Tab 1: Activities
-        self.activities_frame = ttk.Frame(self.notebook, padding="20")
-        self.notebook.add(self.activities_frame, text="Activities")
+        self.tabview.add("Activities")
         self.create_activities_tab()
         
         # Tab 2: Configuration
-        self.config_frame = ttk.Frame(self.notebook, padding="20")
-        self.notebook.add(self.config_frame, text="Configuration")
+        self.tabview.add("Configuration")
         self.create_config_tab()
         
         # Tab 3: Batch Processing
-        self.batch_frame = ttk.Frame(self.notebook, padding="20")
-        self.notebook.add(self.batch_frame, text="Batch Processing")
+        self.tabview.add("Batch Processing")
         self.create_batch_tab()
         
         # Tab 4: Search (Activity 12)
-        self.search_frame = ttk.Frame(self.notebook, padding="20")
-        self.notebook.add(self.search_frame, text="Search (Activity 12)")
+        self.tabview.add("Search (Activity 12)")
         self.create_search_tab()
         
-        # Console/Log area with modern styling
-        console_container = tk.Frame(main_frame, bg=self.colors['bg_primary'])
-        console_container.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), pady=(0, 10))
-        console_container.columnconfigure(0, weight=1)
-        console_container.rowconfigure(1, weight=1)
-        main_frame.rowconfigure(1, weight=2)
+        # Console/Log area
+        console_frame = ctk.CTkFrame(main_container, corner_radius=15)
+        console_frame.pack(fill="both", expand=True, pady=(0, 10))
         
-        console_header = tk.Frame(console_container, bg=self.colors['accent'], height=40)
-        console_header.grid(row=0, column=0, sticky=(tk.W, tk.E))
-        console_header.pack_propagate(False)
+        # Console header
+        console_header = ctk.CTkFrame(console_frame, height=40, corner_radius=0, fg_color=("gray70", "gray30"))
+        console_header.pack(fill="x", pady=(0, 0))
         
-        console_label = tk.Label(
+        console_label = ctk.CTkLabel(
             console_header,
             text="Console Output",
-            font=('Segoe UI', 10, 'bold'),
-            bg=self.colors['accent'],
-            fg=self.colors['text_light'],
-            padx=10
+            font=ctk.CTkFont(size=14, weight="bold")
         )
-        console_label.pack(side=tk.LEFT, pady=7)
+        console_label.pack(side="left", padx=15, pady=10)
         
-        # Create console with modern dark theme
-        console_frame = tk.Frame(console_container, bg=self.colors['bg_console'])
-        console_frame.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
-        console_frame.columnconfigure(0, weight=1)
-        console_frame.rowconfigure(0, weight=1)
-        
-        self.console = scrolledtext.ScrolledText(
-            console_frame, 
-            height=12, 
-            state='disabled',
-            bg=self.colors['bg_console'],
-            fg='#e0e0e0',
-            font=('Consolas', 10),
-            wrap=tk.WORD,
-            insertbackground='#ffffff',
-            selectbackground=self.colors['accent'],
-            selectforeground='#ffffff',
-            borderwidth=0,
-            highlightthickness=0,
-            padx=12,
-            pady=12
+        # Console textbox
+        self.console = ctk.CTkTextbox(
+            console_frame,
+            font=ctk.CTkFont(family="Consolas", size=11),
+            corner_radius=0,
+            fg_color=("gray90", "gray17")
         )
-        self.console.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        self.console.pack(fill="both", expand=True, padx=0, pady=0)
         
-        # Configure text tags for colored output
-        self.console.tag_config("stdout", foreground='#e0e0e0')
-        self.console.tag_config("stderr", foreground='#ff6b6b')
-        self.console.tag_config("success", foreground='#51cf66')
-        self.console.tag_config("error", foreground='#ff6b6b')
+        # Configure text tags for colored output (CTkTextbox uses different approach)
+        # We'll use text color changes via insert with tags
         
         # Redirect stdout to console
         sys.stdout = TextRedirector(self.console, "stdout")
         sys.stderr = TextRedirector(self.console, "stderr")
         
-        # Control buttons at bottom with modern styling
-        control_frame = tk.Frame(main_frame, bg=self.colors['bg_primary'])
-        control_frame.grid(row=2, column=0, sticky=(tk.W, tk.E))
+        # Control buttons at bottom
+        control_frame = ctk.CTkFrame(main_container, fg_color="transparent")
+        control_frame.pack(fill="x", pady=(0, 0))
         
         # Left side buttons
-        left_buttons = tk.Frame(control_frame, bg=self.colors['bg_primary'])
-        left_buttons.pack(side=tk.LEFT)
+        left_buttons = ctk.CTkFrame(control_frame, fg_color="transparent")
+        left_buttons.pack(side="left")
         
-        self.clear_btn = ttk.Button(left_buttons, text="Clear Console", command=self.clear_console)
-        self.clear_btn.pack(side=tk.LEFT, padx=5)
+        self.clear_btn = ctk.CTkButton(
+            left_buttons, 
+            text="Clear Console", 
+            command=self.clear_console,
+            width=120,
+            corner_radius=8
+        )
+        self.clear_btn.pack(side="left", padx=5)
         
-        self.run_all_btn = ttk.Button(left_buttons, text="Run All (1-11)", command=self.run_all_activities, style='Run.TButton')
-        self.run_all_btn.pack(side=tk.LEFT, padx=5)
+        self.run_all_btn = ctk.CTkButton(
+            left_buttons, 
+            text="Run All (1-11)", 
+            command=self.run_all_activities,
+            width=140,
+            corner_radius=8,
+            fg_color=("gray75", "gray25"),
+            hover_color=("gray70", "gray30")
+        )
+        self.run_all_btn.pack(side="left", padx=5)
         
-        self.clean_btn = ttk.Button(left_buttons, text="Clean Folders", command=self.run_clean_folders)
-        self.clean_btn.pack(side=tk.LEFT, padx=5)
+        self.clean_btn = ctk.CTkButton(
+            left_buttons, 
+            text="Clean Folders", 
+            command=self.run_clean_folders,
+            width=120,
+            corner_radius=8
+        )
+        self.clean_btn.pack(side="left", padx=5)
         
         # Right side status
-        right_status = tk.Frame(control_frame, bg=self.colors['bg_primary'])
-        right_status.pack(side=tk.RIGHT)
+        right_status = ctk.CTkFrame(control_frame, fg_color="transparent")
+        right_status.pack(side="right")
         
-        self.status_indicator = tk.Frame(right_status, bg=self.colors['success'], width=12, height=12, relief='flat')
-        self.status_indicator.pack(side=tk.LEFT, padx=(0, 8), pady=3)
+        self.status_indicator = ctk.CTkFrame(
+            right_status, 
+            width=12, 
+            height=12, 
+            corner_radius=6,
+            fg_color="#2ecc71"
+        )
+        self.status_indicator.pack(side="left", padx=(0, 8), pady=3)
         
-        self.status_label = tk.Label(
+        self.status_label = ctk.CTkLabel(
             right_status,
             text="Ready",
-            font=('Segoe UI', 9, 'bold'),
-            bg=self.colors['bg_primary'],
-            fg=self.colors['success']
+            font=ctk.CTkFont(size=12, weight="bold"),
+            text_color="#2ecc71"
         )
-        self.status_label.pack(side=tk.LEFT, padx=5)
+        self.status_label.pack(side="left", padx=5)
         
-        # Welcome message with styling
-        self.console.config(state='normal')
-        self.console.insert(tk.END, "=" * 70 + "\n", "stdout")
-        self.console.insert(tk.END, " " * 20 + "Welcome to HTML Text Indexer!" + " " * 20 + "\n", "success")
-        self.console.insert(tk.END, "=" * 70 + "\n", "stdout")
-        self.console.insert(tk.END, f"Project directory: {self.script_dir}\n", "stdout")
-        self.console.insert(tk.END, "Select an activity from the tabs above to begin.\n\n", "stdout")
-        self.console.config(state='disabled')
+        # Welcome message
+        self.console.configure(state='normal')
+        self.console.insert("end", "=" * 70 + "\n")
+        self.console.insert("end", " " * 20 + "Welcome to HTML Text Indexer!" + " " * 20 + "\n")
+        self.console.insert("end", "=" * 70 + "\n")
+        self.console.insert("end", f"Project directory: {self.script_dir}\n")
+        self.console.insert("end", "Select an activity from the tabs above to begin.\n\n")
+        self.console.configure(state='disabled')
         
     def create_activities_tab(self):
         """Create the activities tab with individual activity buttons"""
@@ -352,161 +223,205 @@ class HTMLTextIndexerGUI:
             ("Activity 12: Search Dictionary", "Search for words in dictionary and posting files", self.run_activity12),
         ]
         
-        # Create a canvas with scrollbar for activities
-        canvas = tk.Canvas(self.activities_frame, highlightthickness=0, bg=self.colors['bg_primary'])
-        scrollbar = ttk.Scrollbar(self.activities_frame, orient="vertical", command=canvas.yview)
-        scrollable_frame = tk.Frame(canvas, bg=self.colors['bg_primary'])
-        
-        scrollable_frame.bind(
-            "<Configure>",
-            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
-        )
-        
-        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
-        canvas.configure(yscrollcommand=scrollbar.set, bg=self.colors['bg_primary'])
+        # Scrollable frame for activities
+        scrollable_frame = ctk.CTkScrollableFrame(self.tabview.tab("Activities"), corner_radius=0)
+        scrollable_frame.pack(fill="both", expand=True, padx=10, pady=10)
         
         # Add activities with modern card design
         for i, (title, description, command) in enumerate(activities):
-            # Create card frame with modern shadow effect
-            card_frame = tk.Frame(
+            # Create card frame
+            card_frame = ctk.CTkFrame(
                 scrollable_frame,
-                bg=self.colors['bg_secondary'],
-                relief='flat',
-                borderwidth=0,
-                highlightbackground=self.colors['card_shadow'],
-                highlightthickness=1
+                corner_radius=12,
+                border_width=1,
+                border_color=("gray80", "gray30")
             )
-            card_frame.grid(row=i, column=0, sticky=(tk.W, tk.E), pady=6, padx=8)
-            card_frame.columnconfigure(1, weight=1)
+            card_frame.pack(fill="x", pady=8, padx=5)
             
-            # Activity number badge with modern design
-            badge = tk.Label(
-                card_frame,
-                text=str(i+1),
-                font=('Segoe UI', 13, 'bold'),
-                bg=self.colors['accent'],
-                fg=self.colors['text_light'],
-                width=3,
-                height=1,
-                padx=8,
-                relief='flat'
+            # Inner frame for content
+            content_frame = ctk.CTkFrame(card_frame, fg_color="transparent")
+            content_frame.pack(fill="both", expand=True, padx=15, pady=15)
+            
+            # Activity number badge
+            badge_frame = ctk.CTkFrame(
+                content_frame,
+                width=50,
+                height=50,
+                corner_radius=25,
+                fg_color=("#3B82F6", "#1E40AF")
             )
-            badge.grid(row=0, column=0, rowspan=2, padx=18, pady=18, sticky='n')
+            badge_frame.pack(side="left", padx=(0, 15))
+            badge_frame.pack_propagate(False)
+            
+            badge_label = ctk.CTkLabel(
+                badge_frame,
+                text=str(i+1),
+                font=ctk.CTkFont(size=18, weight="bold")
+            )
+            badge_label.pack(expand=True)
             
             # Title and description
-            content_frame = tk.Frame(card_frame, bg=self.colors['bg_secondary'])
-            content_frame.grid(row=0, column=1, sticky=(tk.W, tk.E), padx=(0, 15), pady=15)
-            content_frame.columnconfigure(0, weight=1)
+            text_frame = ctk.CTkFrame(content_frame, fg_color="transparent")
+            text_frame.pack(side="left", fill="both", expand=True, padx=(0, 15))
             
-            title_label = tk.Label(
-                content_frame,
+            title_label = ctk.CTkLabel(
+                text_frame,
                 text=title,
-                font=('Segoe UI', 12, 'bold'),
-                bg=self.colors['bg_secondary'],
-                fg=self.colors['text_primary'],
-                anchor='w'
+                font=ctk.CTkFont(size=16, weight="bold"),
+                anchor="w"
             )
-            title_label.grid(row=0, column=0, sticky=tk.W, pady=(0, 6))
+            title_label.pack(anchor="w", pady=(0, 5))
             
-            desc_label = tk.Label(
-                content_frame,
+            desc_label = ctk.CTkLabel(
+                text_frame,
                 text=description,
-                font=('Segoe UI', 10),
-                bg=self.colors['bg_secondary'],
-                fg=self.colors['text_secondary'],
-                anchor='w',
-                wraplength=600
+                font=ctk.CTkFont(size=13),
+                text_color="gray",
+                anchor="w",
+                justify="left"
             )
-            desc_label.grid(row=1, column=0, sticky=tk.W)
+            desc_label.pack(anchor="w")
             
             # Run button
-            btn = ttk.Button(
-                card_frame,
+            btn = ctk.CTkButton(
+                content_frame,
                 text="Run",
                 command=command,
-                style='Run.TButton'
+                width=100,
+                height=35,
+                corner_radius=8,
+                fg_color=("#3B82F6", "#1E40AF"),
+                hover_color=("#2563EB", "#1E3A8A")
             )
-            btn.grid(row=0, column=2, rowspan=2, padx=15, pady=15, sticky='e')
-        
-        canvas.pack(side="left", fill="both", expand=True)
-        scrollbar.pack(side="right", fill="y")
+            btn.pack(side="right", padx=(10, 0))
         
     def create_config_tab(self):
         """Create the configuration tab"""
+        config_scroll = ctk.CTkScrollableFrame(self.tabview.tab("Configuration"), corner_radius=0)
+        config_scroll.pack(fill="both", expand=True, padx=10, pady=10)
+        
         # HTML Sources path
-        ttk.Label(self.config_frame, text="HTML Sources Directory:", style='Header.TLabel').grid(
-            row=0, column=0, sticky=tk.W, pady=(0, 5)
+        ctk.CTkLabel(
+            config_scroll, 
+            text="HTML Sources Directory:",
+            font=ctk.CTkFont(size=14, weight="bold")
+        ).pack(anchor="w", pady=(10, 5))
+        
+        html_frame = ctk.CTkFrame(config_scroll, fg_color="transparent")
+        html_frame.pack(fill="x", pady=(0, 15))
+        
+        self.html_path_var = ctk.StringVar(value=str(self.html_sources_path))
+        html_entry = ctk.CTkEntry(
+            html_frame, 
+            textvariable=self.html_path_var, 
+            width=500,
+            height=35,
+            corner_radius=8
         )
+        html_entry.pack(side="left", fill="x", expand=True, padx=(0, 10))
         
-        html_frame = ttk.Frame(self.config_frame)
-        html_frame.grid(row=1, column=0, sticky=(tk.W, tk.E), pady=(0, 15))
-        html_frame.columnconfigure(0, weight=1)
-        
-        self.html_path_var = tk.StringVar(value=str(self.html_sources_path))
-        html_entry = ttk.Entry(html_frame, textvariable=self.html_path_var, width=60)
-        html_entry.grid(row=0, column=0, sticky=(tk.W, tk.E), padx=(0, 5))
-        
-        html_browse = ttk.Button(html_frame, text="Browse...", command=self.browse_html_dir)
-        html_browse.grid(row=0, column=1)
+        html_browse = ctk.CTkButton(
+            html_frame, 
+            text="Browse...", 
+            command=self.browse_html_dir,
+            width=100,
+            corner_radius=8
+        )
+        html_browse.pack(side="right")
         
         # Results path
-        ttk.Label(self.config_frame, text="Results Directory:", style='Header.TLabel').grid(
-            row=2, column=0, sticky=tk.W, pady=(0, 5)
+        ctk.CTkLabel(
+            config_scroll, 
+            text="Results Directory:",
+            font=ctk.CTkFont(size=14, weight="bold")
+        ).pack(anchor="w", pady=(10, 5))
+        
+        results_frame = ctk.CTkFrame(config_scroll, fg_color="transparent")
+        results_frame.pack(fill="x", pady=(0, 15))
+        
+        self.results_path_var = ctk.StringVar(value=str(self.results_path))
+        results_entry = ctk.CTkEntry(
+            results_frame, 
+            textvariable=self.results_path_var, 
+            width=500,
+            height=35,
+            corner_radius=8
         )
+        results_entry.pack(side="left", fill="x", expand=True, padx=(0, 10))
         
-        results_frame = ttk.Frame(self.config_frame)
-        results_frame.grid(row=3, column=0, sticky=(tk.W, tk.E), pady=(0, 15))
-        results_frame.columnconfigure(0, weight=1)
-        
-        self.results_path_var = tk.StringVar(value=str(self.results_path))
-        results_entry = ttk.Entry(results_frame, textvariable=self.results_path_var, width=60)
-        results_entry.grid(row=0, column=0, sticky=(tk.W, tk.E), padx=(0, 5))
-        
-        results_browse = ttk.Button(results_frame, text="Browse...", command=self.browse_results_dir)
-        results_browse.grid(row=0, column=1)
+        results_browse = ctk.CTkButton(
+            results_frame, 
+            text="Browse...", 
+            command=self.browse_results_dir,
+            width=100,
+            corner_radius=8
+        )
+        results_browse.pack(side="right")
         
         # Stoplist path
-        ttk.Label(self.config_frame, text="Stoplist File:", style='Header.TLabel').grid(
-            row=4, column=0, sticky=tk.W, pady=(0, 5)
+        ctk.CTkLabel(
+            config_scroll, 
+            text="Stoplist File:",
+            font=ctk.CTkFont(size=14, weight="bold")
+        ).pack(anchor="w", pady=(10, 5))
+        
+        stoplist_frame = ctk.CTkFrame(config_scroll, fg_color="transparent")
+        stoplist_frame.pack(fill="x", pady=(0, 15))
+        
+        self.stoplist_path_var = ctk.StringVar(value=str(self.stoplist_path))
+        stoplist_entry = ctk.CTkEntry(
+            stoplist_frame, 
+            textvariable=self.stoplist_path_var, 
+            width=500,
+            height=35,
+            corner_radius=8
         )
+        stoplist_entry.pack(side="left", fill="x", expand=True, padx=(0, 10))
         
-        stoplist_frame = ttk.Frame(self.config_frame)
-        stoplist_frame.grid(row=5, column=0, sticky=(tk.W, tk.E), pady=(0, 15))
-        stoplist_frame.columnconfigure(0, weight=1)
-        
-        self.stoplist_path_var = tk.StringVar(value=str(self.stoplist_path))
-        stoplist_entry = ttk.Entry(stoplist_frame, textvariable=self.stoplist_path_var, width=60)
-        stoplist_entry.grid(row=0, column=0, sticky=(tk.W, tk.E), padx=(0, 5))
-        
-        stoplist_browse = ttk.Button(stoplist_frame, text="Browse...", command=self.browse_stoplist)
-        stoplist_browse.grid(row=0, column=1)
+        stoplist_browse = ctk.CTkButton(
+            stoplist_frame, 
+            text="Browse...", 
+            command=self.browse_stoplist,
+            width=100,
+            corner_radius=8
+        )
+        stoplist_browse.pack(side="right")
         
         # Info
-        info_text = """
-Configuration Notes:
+        info_text = """Configuration Notes:
 • HTML Sources: Directory containing the HTML files to process
 • Results: Directory where all output files and reports will be saved
 • Stoplist: Text file containing stop words (one per line) for filtering
 
-Changes will be applied when you run activities.
-        """
-        info_label = ttk.Label(self.config_frame, text=info_text, style='Info.TLabel', justify=tk.LEFT)
-        info_label.grid(row=6, column=0, sticky=tk.W, pady=(10, 0))
+Changes will be applied when you run activities."""
+        
+        info_label = ctk.CTkLabel(
+            config_scroll, 
+            text=info_text, 
+            font=ctk.CTkFont(size=12),
+            text_color="gray",
+            justify="left",
+            anchor="w"
+        )
+        info_label.pack(anchor="w", pady=(20, 10))
         
     def create_batch_tab(self):
         """Create the batch processing tab"""
-        ttk.Label(
-            self.batch_frame, 
-            text="Run Multiple Activities", 
-            style='Header.TLabel'
-        ).grid(row=0, column=0, sticky=tk.W, pady=(0, 10))
+        batch_scroll = ctk.CTkScrollableFrame(self.tabview.tab("Batch Processing"), corner_radius=0)
+        batch_scroll.pack(fill="both", expand=True, padx=10, pady=10)
         
-        info_label = ttk.Label(
-            self.batch_frame,
+        ctk.CTkLabel(
+            batch_scroll, 
+            text="Run Multiple Activities",
+            font=ctk.CTkFont(size=18, weight="bold")
+        ).pack(anchor="w", pady=(10, 5))
+        
+        ctk.CTkLabel(
+            batch_scroll,
             text="Select which activities to run in sequence:",
-            style='Info.TLabel'
-        )
-        info_label.grid(row=1, column=0, sticky=tk.W, pady=(0, 10))
+            font=ctk.CTkFont(size=13),
+            text_color="gray"
+        ).pack(anchor="w", pady=(0, 15))
         
         # Checkboxes for activities
         self.batch_vars = []
@@ -525,32 +440,69 @@ Changes will be applied when you run activities.
             "Activity 12: Search Dictionary",
         ]
         
-        checkbox_frame = ttk.Frame(self.batch_frame)
-        checkbox_frame.grid(row=2, column=0, sticky=(tk.W, tk.E), pady=(0, 15))
+        checkbox_frame = ctk.CTkFrame(batch_scroll, fg_color="transparent")
+        checkbox_frame.pack(fill="x", pady=(0, 15))
         
         for i, activity in enumerate(batch_activities):
-            var = tk.BooleanVar(value=False)
+            var = ctk.BooleanVar(value=False)
             self.batch_vars.append(var)
-            cb = ttk.Checkbutton(checkbox_frame, text=activity, variable=var)
-            cb.grid(row=i, column=0, sticky=tk.W, pady=2)
+            cb = ctk.CTkCheckBox(
+                checkbox_frame, 
+                text=activity, 
+                variable=var,
+                font=ctk.CTkFont(size=13)
+            )
+            cb.pack(anchor="w", pady=5)
         
         # Preset buttons
-        preset_frame = ttk.Frame(self.batch_frame)
-        preset_frame.grid(row=3, column=0, sticky=tk.W, pady=(0, 15))
+        preset_frame = ctk.CTkFrame(batch_scroll, fg_color="transparent")
+        preset_frame.pack(fill="x", pady=(0, 15))
         
-        ttk.Button(preset_frame, text="Select All", command=self.select_all_activities).pack(side=tk.LEFT, padx=5)
-        ttk.Button(preset_frame, text="Deselect All", command=self.deselect_all_activities).pack(side=tk.LEFT, padx=5)
-        ttk.Button(preset_frame, text="Basic (1-4)", command=self.select_basic_activities).pack(side=tk.LEFT, padx=5)
-        ttk.Button(preset_frame, text="Advanced (5-9)", command=self.select_advanced_activities).pack(side=tk.LEFT, padx=5)
+        ctk.CTkButton(
+            preset_frame, 
+            text="Select All", 
+            command=self.select_all_activities,
+            width=120,
+            corner_radius=8
+        ).pack(side="left", padx=5)
+        
+        ctk.CTkButton(
+            preset_frame, 
+            text="Deselect All", 
+            command=self.deselect_all_activities,
+            width=120,
+            corner_radius=8
+        ).pack(side="left", padx=5)
+        
+        ctk.CTkButton(
+            preset_frame, 
+            text="Basic (1-4)", 
+            command=self.select_basic_activities,
+            width=120,
+            corner_radius=8
+        ).pack(side="left", padx=5)
+        
+        ctk.CTkButton(
+            preset_frame, 
+            text="Advanced (5-9)", 
+            command=self.select_advanced_activities,
+            width=120,
+            corner_radius=8
+        ).pack(side="left", padx=5)
         
         # Run button
-        self.run_batch_btn = ttk.Button(
-            self.batch_frame,
+        self.run_batch_btn = ctk.CTkButton(
+            batch_scroll,
             text="Run Selected Activities",
             command=self.run_batch_activities,
-            style='Run.TButton'
+            width=200,
+            height=40,
+            corner_radius=8,
+            fg_color=("#3B82F6", "#1E40AF"),
+            hover_color=("#2563EB", "#1E3A8A"),
+            font=ctk.CTkFont(size=14, weight="bold")
         )
-        self.run_batch_btn.grid(row=4, column=0, pady=10)
+        self.run_batch_btn.pack(pady=20)
         
     def browse_html_dir(self):
         """Browse for HTML sources directory"""
@@ -595,27 +547,26 @@ Changes will be applied when you run activities.
     def log_message(self, message, tag="stdout"):
         """Add a message to the console with optional tag for styling"""
         timestamp = datetime.now().strftime("%H:%M:%S")
-        self.console.config(state='normal')
-        self.console.insert(tk.END, f"[{timestamp}] ", "stdout")
-        self.console.insert(tk.END, f"{message}\n", tag)
-        self.console.see(tk.END)
-        self.console.config(state='disabled')
+        self.console.configure(state='normal')
+        self.console.insert("end", f"[{timestamp}] {message}\n")
+        self.console.see("end")
+        self.console.configure(state='disabled')
         
     def clear_console(self):
         """Clear the console"""
-        self.console.config(state='normal')
-        self.console.delete(1.0, tk.END)
-        self.console.config(state='disabled')
+        self.console.configure(state='normal')
+        self.console.delete("1.0", "end")
+        self.console.configure(state='disabled')
         
     def set_running(self, running):
         """Update UI based on running state"""
         self.is_running = running
         if running:
-            self.status_indicator.config(bg=self.colors['warning'])
-            self.status_label.config(text="Running...", foreground=self.colors['warning'])
+            self.status_indicator.configure(fg_color="#f39c12")
+            self.status_label.configure(text="Running...", text_color="#f39c12")
         else:
-            self.status_indicator.config(bg=self.colors['success'])
-            self.status_label.config(text="Ready", foreground=self.colors['success'])
+            self.status_indicator.configure(fg_color="#2ecc71")
+            self.status_label.configure(text="Ready", text_color="#2ecc71")
     
     def run_in_thread(self, func, *args):
         """Run a function in a separate thread"""
@@ -627,9 +578,9 @@ Changes will be applied when you run activities.
             try:
                 self.set_running(True)
                 func(*args)
-                self.log_message("Activity completed successfully!", "success")
+                self.log_message("Activity completed successfully!")
             except Exception as e:
-                self.log_message(f"Error: {str(e)}", "error")
+                self.log_message(f"Error: {str(e)}")
                 messagebox.showerror("Error", f"An error occurred:\n{str(e)}")
             finally:
                 self.set_running(False)
@@ -717,12 +668,12 @@ Changes will be applied when you run activities.
                     self.log_message(f"{'='*60}\n")
                     activity_func()
                 
-                self.log_message("\n" + "="*60, "stdout")
-                self.log_message("All activities (1-11) completed successfully!", "success")
-                self.log_message("="*60 + "\n", "stdout")
+                self.log_message("\n" + "="*60)
+                self.log_message("All activities (1-11) completed successfully!")
+                self.log_message("="*60 + "\n")
                 
             except Exception as e:
-                self.log_message(f"\nError running all activities: {str(e)}", "error")
+                self.log_message(f"\nError running all activities: {str(e)}")
                 messagebox.showerror("Error", f"Error running all activities:\n{str(e)}")
             finally:
                 self.set_running(False)
@@ -763,12 +714,12 @@ Changes will be applied when you run activities.
                     self.log_message(f"{'='*60}\n")
                     activity_funcs[i]()
                 
-                self.log_message("\n" + "="*60, "stdout")
-                self.log_message("All selected activities completed successfully!", "success")
-                self.log_message("="*60 + "\n", "stdout")
+                self.log_message("\n" + "="*60)
+                self.log_message("All selected activities completed successfully!")
+                self.log_message("="*60 + "\n")
                 
             except Exception as e:
-                self.log_message(f"\nBatch processing failed: {str(e)}", "error")
+                self.log_message(f"\nBatch processing failed: {str(e)}")
                 messagebox.showerror("Batch Error", f"Batch processing failed:\n{str(e)}")
             finally:
                 self.set_running(False)
@@ -778,104 +729,132 @@ Changes will be applied when you run activities.
     
     def create_search_tab(self):
         """Create the search tab for Activity 12"""
+        search_scroll = ctk.CTkScrollableFrame(self.tabview.tab("Search (Activity 12)"), corner_radius=0)
+        search_scroll.pack(fill="both", expand=True, padx=10, pady=10)
+        
         # Header
-        header_label = ttk.Label(
-            self.search_frame,
+        header_label = ctk.CTkLabel(
+            search_scroll,
             text="Search in Dictionary (Activity 12)",
-            style='Header.TLabel',
-            font=('Segoe UI', 14, 'bold')
+            font=ctk.CTkFont(size=20, weight="bold")
         )
-        header_label.grid(row=0, column=0, columnspan=2, sticky=tk.W, pady=(0, 10))
+        header_label.pack(anchor="w", pady=(10, 10))
         
         # Description
-        desc_label = ttk.Label(
-            self.search_frame,
+        desc_label = ctk.CTkLabel(
+            search_scroll,
             text="Enter a word to search in the dictionary and posting files. The word will be converted to lowercase to match the dictionary format.",
-            style='Info.TLabel',
-            wraplength=700
+            font=ctk.CTkFont(size=13),
+            text_color="gray",
+            justify="left",
+            anchor="w",
+            wraplength=800
         )
-        desc_label.grid(row=1, column=0, columnspan=2, sticky=tk.W, pady=(0, 20))
+        desc_label.pack(anchor="w", pady=(0, 20))
         
         # Search options frame
-        options_frame = ttk.LabelFrame(self.search_frame, text="Search Options", padding="15")
-        options_frame.grid(row=2, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 15))
+        options_frame = ctk.CTkFrame(search_scroll, corner_radius=12)
+        options_frame.pack(fill="x", pady=(0, 15), padx=5)
+        
+        ctk.CTkLabel(
+            options_frame,
+            text="Search Options",
+            font=ctk.CTkFont(size=14, weight="bold")
+        ).pack(anchor="w", padx=15, pady=(15, 10))
         
         # Dictionary version selection
-        self.dict_version_var = tk.StringVar(value="no_stoplist")
-        ttk.Radiobutton(
-            options_frame,
+        self.dict_version_var = ctk.StringVar(value="no_stoplist")
+        
+        radio_frame = ctk.CTkFrame(options_frame, fg_color="transparent")
+        radio_frame.pack(fill="x", padx=15, pady=(0, 15))
+        
+        ctk.CTkRadioButton(
+            radio_frame,
             text="Full dictionary (without stoplist - Activity 8)",
             variable=self.dict_version_var,
-            value="no_stoplist"
-        ).grid(row=0, column=0, sticky=tk.W, pady=5)
+            value="no_stoplist",
+            font=ctk.CTkFont(size=13)
+        ).pack(anchor="w", pady=5)
         
-        ttk.Radiobutton(
-            options_frame,
+        ctk.CTkRadioButton(
+            radio_frame,
             text="Filtered dictionary (with stoplist - Activity 9)",
             variable=self.dict_version_var,
-            value="with_stoplist"
-        ).grid(row=1, column=0, sticky=tk.W, pady=5)
+            value="with_stoplist",
+            font=ctk.CTkFont(size=13)
+        ).pack(anchor="w", pady=5)
         
         # Search input frame
-        search_input_frame = ttk.LabelFrame(self.search_frame, text="Search", padding="15")
-        search_input_frame.grid(row=3, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 15))
-        search_input_frame.columnconfigure(1, weight=1)
+        search_input_frame = ctk.CTkFrame(search_scroll, corner_radius=12)
+        search_input_frame.pack(fill="x", pady=(0, 15), padx=5)
         
-        ttk.Label(search_input_frame, text="Word to search:", style='Header.TLabel').grid(
-            row=0, column=0, sticky=tk.W, padx=(0, 10)
-        )
-        
-        self.search_entry = ttk.Entry(search_input_frame, width=40, font=('Segoe UI', 11))
-        self.search_entry.grid(row=0, column=1, sticky=(tk.W, tk.E), padx=(0, 10))
-        self.search_entry.bind('<Return>', lambda e: self.perform_search())
-        
-        self.search_btn = ttk.Button(
+        ctk.CTkLabel(
             search_input_frame,
             text="Search",
-            command=self.perform_search,
-            style='Run.TButton'
+            font=ctk.CTkFont(size=14, weight="bold")
+        ).pack(anchor="w", padx=15, pady=(15, 10))
+        
+        input_inner_frame = ctk.CTkFrame(search_input_frame, fg_color="transparent")
+        input_inner_frame.pack(fill="x", padx=15, pady=(0, 15))
+        
+        ctk.CTkLabel(
+            input_inner_frame, 
+            text="Word to search:",
+            font=ctk.CTkFont(size=13, weight="bold")
+        ).pack(side="left", padx=(0, 10))
+        
+        self.search_entry = ctk.CTkEntry(
+            input_inner_frame, 
+            width=400,
+            height=35,
+            corner_radius=8,
+            font=ctk.CTkFont(size=13)
         )
-        self.search_btn.grid(row=0, column=2)
+        self.search_entry.pack(side="left", fill="x", expand=True, padx=(0, 10))
+        self.search_entry.bind('<Return>', lambda e: self.perform_search())
+        
+        self.search_btn = ctk.CTkButton(
+            input_inner_frame,
+            text="Search",
+            command=self.perform_search,
+            width=120,
+            height=35,
+            corner_radius=8,
+            fg_color=("#3B82F6", "#1E40AF"),
+            hover_color=("#2563EB", "#1E3A8A"),
+            font=ctk.CTkFont(size=13, weight="bold")
+        )
+        self.search_btn.pack(side="right")
         
         # Results frame
-        results_frame = ttk.LabelFrame(self.search_frame, text="Search Results", padding="15")
-        results_frame.grid(row=4, column=0, columnspan=2, sticky=(tk.W, tk.E, tk.N, tk.S), pady=(0, 10))
-        results_frame.columnconfigure(0, weight=1)
-        results_frame.rowconfigure(1, weight=1)
-        self.search_frame.rowconfigure(4, weight=1)
-        self.search_frame.columnconfigure(0, weight=1)
+        results_frame = ctk.CTkFrame(search_scroll, corner_radius=12)
+        results_frame.pack(fill="both", expand=True, pady=(0, 10), padx=5)
+        
+        ctk.CTkLabel(
+            results_frame,
+            text="Search Results",
+            font=ctk.CTkFont(size=14, weight="bold")
+        ).pack(anchor="w", padx=15, pady=(15, 10))
         
         # Results header
-        self.results_header = ttk.Label(
+        self.results_header = ctk.CTkLabel(
             results_frame,
             text="Enter a word and click 'Search' to find documents",
-            style='Info.TLabel'
+            font=ctk.CTkFont(size=12),
+            text_color="gray"
         )
-        self.results_header.grid(row=0, column=0, sticky=tk.W, pady=(0, 10))
+        self.results_header.pack(anchor="w", padx=15, pady=(0, 10))
         
-        # Results listbox with scrollbar
-        listbox_frame = tk.Frame(results_frame, bg=self.colors['bg_secondary'])
-        listbox_frame.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
-        listbox_frame.columnconfigure(0, weight=1)
-        listbox_frame.rowconfigure(0, weight=1)
-        
-        scrollbar_results = ttk.Scrollbar(listbox_frame)
-        scrollbar_results.grid(row=0, column=1, sticky=(tk.N, tk.S))
-        
-        self.results_listbox = tk.Listbox(
-            listbox_frame,
-            font=('Consolas', 11),
-            bg=self.colors['bg_secondary'],
-            fg=self.colors['text_primary'],
-            selectbackground=self.colors['accent'],
-            selectforeground=self.colors['text_light'],
-            yscrollcommand=scrollbar_results.set,
-            borderwidth=1,
-            relief='solid',
-            highlightthickness=0
+        # Results textbox (scrollable)
+        self.results_textbox = ctk.CTkTextbox(
+            results_frame,
+            font=ctk.CTkFont(family="Consolas", size=14),
+            corner_radius=8,
+            height=400,
+            fg_color=("gray90", "gray20")
         )
-        self.results_listbox.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
-        scrollbar_results.config(command=self.results_listbox.yview)
+        self.results_textbox.pack(fill="both", expand=True, padx=15, pady=(0, 15))
+        self.results_textbox.configure(state='disabled')  # Start disabled
     
     def perform_search(self):
         """Perform the search and display results"""
@@ -893,44 +872,63 @@ Changes will be applied when you run activities.
             documents = main_module.search_word(word, str(self.results_path), use_stoplist)
             
             # Clear previous results
-            self.results_listbox.delete(0, tk.END)
+            self.results_textbox.configure(state='normal')
+            self.results_textbox.delete("1.0", "end")
             
             if documents:
                 # Update header
                 dict_type = "filtered (with stoplist)" if use_stoplist else "full (without stoplist)"
-                self.results_header.config(
+                self.results_header.configure(
                     text=f"Found '{word}' in {len(documents)} document(s) using {dict_type} dictionary:"
                 )
                 
-                # Add results
+                # Add results with better formatting
+                results_text = ""
                 for i, doc in enumerate(documents, 1):
-                    self.results_listbox.insert(tk.END, f"{i}. {doc}")
+                    results_text += f"{i}. {doc}\n"
                 
-                self.log_message(f"Search for '{word}': Found in {len(documents)} document(s)", "success")
+                # Insert results
+                self.results_textbox.insert("1.0", results_text)
+                self.results_textbox.see("1.0")  # Scroll to top
+                self.results_textbox.update_idletasks()  # Force update
+                
+                # Also log the documents found in console
+                self.log_message(f"Search for '{word}': Found in {len(documents)} document(s)")
+                self.log_message("Documents found:")
+                for i, doc in enumerate(documents, 1):
+                    self.log_message(f"  {i}. {doc}")
             else:
-                self.results_header.config(
+                self.results_header.configure(
                     text=f"Word '{word}' not found in the dictionary"
                 )
-                self.log_message(f"Search for '{word}': Not found", "stdout")
+                # Show message in textbox too
+                self.results_textbox.insert("1.0", f"No documents found containing '{word}'.\n\nPlease try:\n- Checking the spelling\n- Using a different dictionary (with/without stoplist)\n- Searching for a different word")
+                self.log_message(f"Search for '{word}': Not found")
+            
+            # Ensure textbox is updated and visible
+            self.results_textbox.configure(state='disabled')
+            self.results_textbox.update_idletasks()
+            self.root.update_idletasks()
                 
         except Exception as e:
             error_msg = f"Error during search: {str(e)}"
-            self.log_message(error_msg, "error")
+            self.log_message(error_msg)
+            import traceback
+            self.log_message(traceback.format_exc())
             messagebox.showerror("Search Error", error_msg)
     
     def run_activity12(self):
         """Open the search tab"""
-        self.notebook.select(3)  # Switch to search tab (index 3)
+        self.tabview.set("Search (Activity 12)")
         self.search_entry.focus()
 
 
 def main():
     """Launch the GUI"""
-    root = tk.Tk()
+    root = ctk.CTk()
     app = HTMLTextIndexerGUI(root)
     root.mainloop()
 
 
 if __name__ == "__main__":
     main()
-

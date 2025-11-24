@@ -1,13 +1,13 @@
 === ACTIVIDAD 10: REPORTE DE PESO DE TOKENS (TF.IDF) ===
-Fecha: 2025-11-21 19:27:03
+Fecha: 2025-11-21 20:02:12
 Directorio base: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\results
 
 === PASO 1: CALCULANDO TOTAL DE TOKENS POR DOCUMENTO ===
 ----------------------------------------------------------------------
-002.html                                     3377 tokens  0.000572s
-hard.html                                      25 tokens  0.000333s
-medium.html                                    61 tokens  0.000338s
-simple.html                                    35 tokens  0.000201s
+002.html                                     3377 tokens  0.001056s
+hard.html                                      25 tokens  0.000356s
+medium.html                                    61 tokens  0.000416s
+simple.html                                    35 tokens  0.000330s
 
 Total documentos procesados: 4
 Archivos en doc_total_tokens:
@@ -19,7 +19,7 @@ Archivos en doc_total_tokens:
 === PASO 2: CALCULANDO PESOS TF.IDF ===
 ----------------------------------------------------------------------
 Total registros procesados: 1186
-Tiempo calculando pesos: 0.022084 segundos
+Tiempo calculando pesos: 0.034895 segundos
 
 === PASO 3: ESCRIBIENDO ARCHIVOS CON COLUMNAS DE TAMAÑO FIJO ===
 ----------------------------------------------------------------------
@@ -27,7 +27,7 @@ Archivo diccionario: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexe
 Archivo posting: C:\Users\jairm\OneDrive\Documentos\proyIng\html-text-indexer\results\dictionary_posting\a10_Posting_Weighted.txt
 Tamaño columna diccionario: 20 bytes
 Tamaño columna posting: 10 bytes
-Tiempo escribiendo archivos: 0.004116 segundos
+Tiempo escribiendo archivos: 0.006579 segundos
 
 === ESTADÍSTICAS ===
 Total tokens únicos: 1129
@@ -43,8 +43,8 @@ Distribución de archivos: {'002.html': 1084, 'medium.html': 51, 'simple.html': 
 Muestra de primeros 10 pesos calculados: ['0.0888', '0.0296', '0.0296', '0.0296', '0.0296', '0.0296', '0.0296', '0.0296', '0.0296', '0.0296']
 
 === TIEMPOS ===
-Tiempo calculando pesos: 0.022084 segundos
-Tiempo escribiendo archivos: 0.004116 segundos
-Tiempo total de ejecución: 0.063299 segundos
+Tiempo calculando pesos: 0.034895 segundos
+Tiempo escribiendo archivos: 0.006579 segundos
+Tiempo total de ejecución: 0.324479 segundos
 
 Proceso completado correctamente.
