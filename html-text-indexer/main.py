@@ -210,7 +210,7 @@ def process_words(text):
 def extract_and_sort_words(clean_filename):
     start_time = time.time()
     
-    clean_file_path = Path('data/extracted_text') / clean_filename
+    clean_file_path = Path('data/extracted_text') / clean_filenamepp
     
     if not clean_file_path.exists():
         print(f"El archivo limpio {clean_filename} no existe")

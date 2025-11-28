@@ -784,6 +784,45 @@ Changes will be applied when you run activities."""
             font=ctk.CTkFont(size=13)
         ).pack(anchor="w", pady=5)
         
+        # Results limit selection
+        limit_frame = ctk.CTkFrame(options_frame, fg_color="transparent")
+        limit_frame.pack(fill="x", padx=15, pady=(0, 15))
+        
+        ctk.CTkLabel(
+            limit_frame,
+            text="Results limit:",
+            font=ctk.CTkFont(size=13, weight="bold")
+        ).pack(side="left", padx=(0, 10))
+        
+        self.results_limit_var = ctk.StringVar(value="20")
+        
+        limit_options_frame = ctk.CTkFrame(limit_frame, fg_color="transparent")
+        limit_options_frame.pack(side="left")
+        
+        ctk.CTkRadioButton(
+            limit_options_frame,
+            text="5",
+            variable=self.results_limit_var,
+            value="5",
+            font=ctk.CTkFont(size=13)
+        ).pack(side="left", padx=(0, 15))
+        
+        ctk.CTkRadioButton(
+            limit_options_frame,
+            text="10",
+            variable=self.results_limit_var,
+            value="10",
+            font=ctk.CTkFont(size=13)
+        ).pack(side="left", padx=(0, 15))
+        
+        ctk.CTkRadioButton(
+            limit_options_frame,
+            text="20",
+            variable=self.results_limit_var,
+            value="20",
+            font=ctk.CTkFont(size=13)
+        ).pack(side="left")
+        
         # Search input frame
         search_input_frame = ctk.CTkFrame(search_scroll, corner_radius=12)
         search_input_frame.pack(fill="x", pady=(0, 15), padx=5)
@@ -871,6 +910,13 @@ Changes will be applied when you run activities."""
         try:
             documents = main_module.search_word(word, str(self.results_path), use_stoplist)
             
+            # Get the results limit
+            limit = int(self.results_limit_var.get())
+            
+            # Apply limit to results
+            total_documents = len(documents)
+            limited_documents = documents[:limit]
+            
             # Clear previous results
             self.results_textbox.configure(state='normal')
             self.results_textbox.delete("1.0", "end")
@@ -878,14 +924,23 @@ Changes will be applied when you run activities."""
             if documents:
                 # Update header
                 dict_type = "filtered (with stoplist)" if use_stoplist else "full (without stoplist)"
-                self.results_header.configure(
-                    text=f"Found '{word}' in {len(documents)} document(s) using {dict_type} dictionary:"
-                )
+                if total_documents > limit:
+                    self.results_header.configure(
+                        text=f"Found '{word}' in {total_documents} document(s) using {dict_type} dictionary (showing first {limit}):"
+                    )
+                else:
+                    self.results_header.configure(
+                        text=f"Found '{word}' in {total_documents} document(s) using {dict_type} dictionary:"
+                    )
                 
                 # Add results with better formatting
                 results_text = ""
-                for i, doc in enumerate(documents, 1):
+                for i, doc in enumerate(limited_documents, 1):
                     results_text += f"{i}. {doc}\n"
+                
+                # Add note if results were limited
+                if total_documents > limit:
+                    results_text += f"\n... and {total_documents - limit} more document(s) (limit: {limit} results)\n"
                 
                 # Insert results
                 self.results_textbox.insert("1.0", results_text)
@@ -893,10 +948,12 @@ Changes will be applied when you run activities."""
                 self.results_textbox.update_idletasks()  # Force update
                 
                 # Also log the documents found in console
-                self.log_message(f"Search for '{word}': Found in {len(documents)} document(s)")
+                self.log_message(f"Search for '{word}': Found in {total_documents} document(s) (showing {len(limited_documents)})")
                 self.log_message("Documents found:")
-                for i, doc in enumerate(documents, 1):
+                for i, doc in enumerate(limited_documents, 1):
                     self.log_message(f"  {i}. {doc}")
+                if total_documents > limit:
+                    self.log_message(f"  ... and {total_documents - limit} more document(s) (limit: {limit} results)")
             else:
                 self.results_header.configure(
                     text=f"Word '{word}' not found in the dictionary"
