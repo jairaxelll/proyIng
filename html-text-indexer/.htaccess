@@ -1,0 +1,29 @@
+# Apache configuration for HTML Text Indexer CGI application
+
+# Enable CGI execution
+Options +ExecCGI
+AddHandler cgi-script .cgi .py
+
+# Set default file
+DirectoryIndex index.cgi index.html
+
+# Allow access to static files
+<FilesMatch "\.(css|js|png|jpg|gif|ico|txt)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# Security: Prevent access to sensitive files
+<FilesMatch "^(main\.py|gui\.py|\.htaccess|\.git)">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Set Python path (adjust if needed)
+SetEnv PYTHONPATH /usr/bin/python3
+
+# Enable error logging
+ErrorLog logs/error.log
+CustomLog logs/access.log common
+
+

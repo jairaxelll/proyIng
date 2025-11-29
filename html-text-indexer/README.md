@@ -24,6 +24,20 @@ sudo dnf install python3-tkinter
 
 ## Quick Start
 
+### Option 1: Web Application (CGI-BIN)
+
+1. **Set up a web server** (Apache recommended)
+2. **Configure CGI** (see `CGI_README.md` for detailed instructions)
+3. **Access the web interface:**
+   ```
+   http://localhost/html-text-indexer/cgi-bin/index.cgi
+   ```
+4. **Run activities** through the web browser
+
+See `CGI_README.md` for complete setup instructions.
+
+### Option 2: Desktop GUI
+
 1. **Clone or download the project**
 2. **Launch the GUI:**
    - **Windows:** Double-click `launch_gui.bat`
@@ -38,11 +52,21 @@ sudo dnf install python3-tkinter
 ```
 html-text-indexer/
 ├── main.py                 # Main script with all activities
-├── gui.py                  # Graphical user interface (NEW!)
+├── gui.py                  # Graphical user interface
 ├── launch_gui.bat          # Windows GUI launcher
 ├── launch_gui.sh           # Linux/Mac GUI launcher
 ├── README.md               # This file
+├── CGI_README.md           # CGI web application setup guide
 ├── stoplist.txt            # Stop words for text filtering
+├── cgi-bin/                # CGI web application scripts
+│   ├── index.cgi          # Main web page
+│   ├── activities.cgi      # Activities interface
+│   ├── run_activity.cgi   # Activity runner
+│   ├── search.cgi         # Search interface
+│   └── config.cgi         # Configuration page
+├── static/                 # Web application static files
+│   ├── style.css          # Stylesheet
+│   └── script.js          # JavaScript
 ├── data/                   # Input and processed data
 │   ├── html_sources/       # Original HTML files (505 files)
 │   ├── extracted_text/     # Cleaned text files
@@ -81,9 +105,27 @@ The system performs 9 main activities:
 
 ## Usage
 
-### Graphical User Interface (Recommended)
+### Web Application (CGI-BIN) - Recommended for Servers
 
-Launch the GUI for an easy-to-use interface:
+Access the web interface through your browser:
+```
+http://localhost/html-text-indexer/cgi-bin/index.cgi
+```
+
+The web application provides:
+- 🌐 Browser-based interface (no installation needed)
+- ✨ Individual activity controls with descriptions
+- 🔍 Search functionality for indexed documents
+- 📊 Real-time activity execution and results
+- 🎛️ Configuration management
+- 📦 Batch processing (run multiple activities)
+- 🎨 Modern, responsive design
+
+See `CGI_README.md` for setup instructions.
+
+### Desktop GUI
+
+Launch the GUI for an easy-to-use desktop interface:
 ```bash
 python main.py --gui
 ```
