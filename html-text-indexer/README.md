@@ -136,11 +136,11 @@ python gui.py
 ```
 
 The GUI provides:
-- ✨ Individual activity controls with descriptions
-- 📊 Real-time console output
-- 🎛️ Configuration management (paths, settings)
-- 📦 Batch processing (run multiple activities)
-- 🎨 Modern, intuitive interface
+- Individual activity controls with descriptions
+- Real-time console output
+- Configuration management (paths, settings)
+- Batch processing (run multiple activities)
+- Modern, intuitive interface
 
 ### Command Line Interface
 
@@ -148,6 +148,9 @@ Run all activities sequentially:
 ```bash
 python main.py
 ```
+
+
+
 
 Run specific activities:
 ```bash
