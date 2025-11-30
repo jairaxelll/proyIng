@@ -7,6 +7,7 @@ Windows-compatible version
 
 import sys
 import os
+import time
 from pathlib import Path
 
 # Python 3.13 compatible - cgi module removed, using alternatives
@@ -94,7 +95,10 @@ def get_search_page(search_word=None, results=None, use_stoplist=False, limit=20
                 </select>
             </div>
             
-            <button type="submit" class="btn btn-primary">Search</button>
+            <div class="form-actions">
+                <button type="submit" name="action" value="search" class="btn btn-primary">Search</button>
+                <button type="submit" name="action" value="stress" class="btn btn-secondary">Local Stress Test</button>
+            </div>
         </form>
 """
     
@@ -112,7 +116,12 @@ def get_search_page(search_word=None, results=None, use_stoplist=False, limit=20
 """
             limited_results = results[:limit]
             for i, doc in enumerate(limited_results, 1):
-                html += f"<li>{escape(doc)}</li>"
+                # Each result links to the corresponding HTML file in data/html_sources
+                safe_doc = escape(doc)
+                html += (
+                    f'<li><a href="../data/html_sources/{safe_doc}" '
+                    f'target="_blank">{safe_doc}</a></li>'
+                )
             
             if len(results) > limit:
                 html += f"<li><em>... and {len(results) - limit} more document(s) (limit: {limit} results)</em></li>"
@@ -152,14 +161,40 @@ def main():
     search_word = form.getvalue('word')
     dict_version = form.getvalue('dict_version', 'no_stoplist')
     limit = int(form.getvalue('limit', 20))
+    action = form.getvalue('action', 'search')
     
     use_stoplist = (dict_version == 'with_stoplist')
     results = None
+    stress_info = None
     
     if search_word:
         try:
             output_dir = str(script_dir / "results")
-            results = main_module.search_word(search_word, output_dir, use_stoplist)
+            
+            if action == "stress":
+                # Ejecutar una prueba de estrés local: múltiples búsquedas consecutivas
+                iterations = 100  # número de veces que se repetirá la búsqueda
+                
+                start_time = time.time()
+                for _ in range(iterations):
+                    main_module.search_word(search_word, output_dir, use_stoplist)
+                end_time = time.time()
+                
+                total_time = end_time - start_time
+                avg_time = total_time / iterations if iterations > 0 else 0.0
+                
+                # Ejecutar una vez más para mostrar los documentos encontrados
+                results = main_module.search_word(search_word, output_dir, use_stoplist)
+                
+                stress_info = {
+                    "iterations": iterations,
+                    "total_time": total_time,
+                    "avg_time": avg_time,
+                    "docs_found": len(results) if results else 0,
+                }
+            else:
+                # Búsqueda normal
+                results = main_module.search_word(search_word, output_dir, use_stoplist)
         except Exception as e:
             html += f"""
             <main class="main-content">
@@ -174,6 +209,20 @@ def main():
             return
     
     html += get_search_page(search_word, results, use_stoplist, limit)
+    
+    # Si se ejecutó una prueba de estrés, mostrar un resumen debajo de los resultados
+    if stress_info is not None:
+        html += f"""
+        <section class="info-section">
+            <h3>Local Stress Test Summary</h3>
+            <p><strong>Search term(s):</strong> {escape(search_word)}</p>
+            <p><strong>Iterations:</strong> {stress_info['iterations']}</p>
+            <p><strong>Total time:</strong> {stress_info['total_time']:.4f} seconds</p>
+            <p><strong>Average time per search:</strong> {stress_info['avg_time']*1000:.2f} ms</p>
+            <p><strong>Documents found (per search):</strong> {stress_info['docs_found']}</p>
+        </section>
+        """
+    
     html += get_html_footer()
     
     print(html)

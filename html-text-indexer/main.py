@@ -850,28 +850,31 @@ def hash_function(key, size):
 
 def search_word(word, output_dir="results", use_stoplist=False):
     """
-    Actividad 12: Buscar una palabra en el diccionario y posting.
+    Actividad 12: Buscar una o varias palabras en el diccionario y posting.
     
     Args:
-        word: Palabra a buscar
+        word: Palabra(s) a buscar (por ejemplo: "exploitation hygiene").
+              Se separan por espacios y se buscan individualmente.
         output_dir: Directorio donde están los archivos de resultados
         use_stoplist: Si True, usa los archivos de actividad 9 (con stoplist),
                      si False, usa los archivos de actividad 8 (sin stoplist)
     
     Returns:
-        Lista de documentos que contienen la palabra, o lista vacía si no se encuentra
+        Lista de documentos que contienen al menos una de las palabras
+        (unión de resultados, sin duplicados), o lista vacía si no se encuentra
     """
     from pathlib import Path
     import re
     
-    # Convertir palabra a minúsculas para coincidir con el diccionario
+    # Convertir a minúsculas para coincidir con el diccionario
     word = word.lower().strip()
     
-    if not word:
+    # Separar en términos individuales (por espacios). Ej: "exploitation hygiene"
+    terms = [t for t in word.split() if t]
+    if not terms:
         return []
     
     base_dir = Path(output_dir)
-    HASH_TABLE_SIZE = 20000
     EMPTY_SLOT_INDICATOR = "vacio"
     
     # Seleccionar archivos según si se usa stoplist o no
@@ -891,65 +894,71 @@ def search_word(word, output_dir="results", use_stoplist=False):
         print(f"Error: No se encontró el archivo de posting: {posting_file}")
         return []
     
-    # Calcular hash de la palabra
-    hash_index = hash_function(word, HASH_TABLE_SIZE)
-    
-    # Paso 1: Construir índice completo del diccionario
-    # Mapeo: token -> (num_docs, posting_offset)
-    token_info = {}  # {token: num_docs}
-    all_tokens = []  # Lista de todos los tokens en orden alfabético
-    
-    with open(dict_file, 'r', encoding='utf-8') as f:
-        for line in f:
-            line = line.strip()
-            if not line:
-                continue
-            
-            # Parsear línea del diccionario
-            # Formato: Posición Hash: X, Token: Y, Frecuencia: Z, Archivos: W, Posición Posting: P
-            match = re.search(r'Posición Hash: \d+, Token: ([^,]+), Frecuencia: \d+, Archivos: (\d+), Posición Posting: -?\d+', line)
-            if match:
-                token, archivos = match.groups()
-                token = token.strip()
-                archivos = int(archivos)
+    # Función interna: busca UN solo término recorriendo diccionario y posting en disco
+    def _search_single_term(term: str):
+        posting_offset = 0      # Número de entradas en posting antes de este token
+        num_docs = 0            # Número de documentos donde aparece el término
+        found = False
+        
+        # Paso 1: Recorrer el diccionario para localizar el término y su posición en posting
+        with open(dict_file, 'r', encoding='utf-8') as f_dict:
+            for line in f_dict:
+                line = line.strip()
+                if not line:
+                    continue
                 
-                if token != EMPTY_SLOT_INDICATOR and archivos > 0:
-                    if token not in token_info:
-                        token_info[token] = archivos
-                        all_tokens.append(token)
-    
-    # Ordenar tokens alfabéticamente
-    all_tokens.sort()
-    
-    # Verificar si el token existe
-    if word not in token_info:
-        return []
-    
-    # Paso 2: Calcular el offset en el posting
-    # El posting está ordenado alfabéticamente por token
-    posting_offset = 0
-    for token in all_tokens:
-        if token == word:
-            break
-        posting_offset += token_info[token]
-    
-    # Paso 3: Leer los documentos del posting
-    num_docs = token_info[word]
-    documents = []
-    
-    with open(posting_file, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-        # Leer las líneas correspondientes a nuestro token
-        for i in range(posting_offset, min(posting_offset + num_docs, len(lines))):
-            line = lines[i].strip()
-            if line:
+                match = re.search(
+                    r'Posición Hash: \d+, Token: ([^,]+), Frecuencia: \d+, Archivos: (\d+), Posición Posting: -?\d+',
+                    line
+                )
+                if not match:
+                    continue
+                
+                token, archivos_str = match.groups()
+                token = token.strip()
+                archivos = int(archivos_str)
+                
+                if token == EMPTY_SLOT_INDICATOR or archivos <= 0:
+                    continue
+                
+                if token == term:
+                    num_docs = archivos
+                    found = True
+                    break
+                
+                # Para cualquier otro token válido, acumulamos su número de documentos
+                posting_offset += archivos
+        
+        if not found or num_docs <= 0:
+            return set()
+        
+        # Paso 2: Leer SOLO las líneas correspondientes a este término en el posting
+        docs_for_term = set()
+        with open(posting_file, 'r', encoding='utf-8') as f_post:
+            for i, line in enumerate(f_post):
+                if i < posting_offset:
+                    continue
+                if i >= posting_offset + num_docs:
+                    break
+                
+                line = line.strip()
+                if not line:
+                    continue
+                
                 parts = line.split(';')
                 if len(parts) >= 1:
                     doc_name = parts[0].strip()
-                    if doc_name and doc_name not in documents:  # Evitar duplicados
-                        documents.append(doc_name)
+                    if doc_name:
+                        docs_for_term.add(doc_name)
+        
+        return docs_for_term
     
-    return sorted(documents) if documents else []
+    # Buscar cada término individualmente y unir los resultados (sin duplicados)
+    all_docs = set()
+    for term in terms:
+        all_docs |= _search_single_term(term)
+    
+    return sorted(all_docs) if all_docs else []
 
 def actividad8(output_dir="results"):
     """
